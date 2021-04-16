@@ -1,0 +1,61 @@
+.menu {
+    background-color: #36393f;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#logo {
+    height: 8em;
+    padding-left: .75em;
+    padding-right: .75em;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    margin: .25em;
+}
+.menu a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 2em;
+    padding-left: .75em;
+    padding-right: .75em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin: .25em;
+    border-radius: .12em;
+}
+.menu a:hover {
+    text-decoration: none;
+    color: whitesmoke;
+
+}
+.menu a:active {
+    transform: translateY(.025em);
+}
+
+.ben {
+    background-color: #ffd294;
+}
+.tristan {
+    background-color: #fcaecf;
+}
+.wyatt {
+    background-color: #bda6ff;
+}
+.ethan {
+    background-color: #a3eff7;
+}
+
+.ben:hover {
+    background-color: #ffd294cb;
+}
+.tristan:hover {
+    background-color: #fcaecfcb;
+}
+.wyatt:hover {
+    background-color: #bda6ffcb;
+}
+.ethan:hover {
+    background-color: #a3eff7cb;
+}

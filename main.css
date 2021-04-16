@@ -1,0 +1,12 @@
+* {
+    font-family: 'Gibson-Italic','sans-serif';
+    font-style: italic;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Gibson-Italic';
+    font-weight: 100;
+    font-style: italic;
+    src: url('./resources/font/GibsonItalic.woff2') format('woff2');
+}

@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: flex-end;
 }
+
 #logo {
     height: 4em;
     padding-left: .75em;
@@ -29,6 +30,7 @@
     border-radius: .12em;
     transition: all 0.3s;
 }
+
 .menu a:hover {
     text-decoration: none;
     color: whitesmoke;
@@ -39,27 +41,21 @@
     transform: translateY(.025em);
 }
 
-.ben {
-}
-.tristan {
-}
-.wyatt {
-}
-.ethan {
-}
-
 .ben:hover {
     color: #ffd294 !important; 
     background-color: #ffd29417;
 }
+
 .tristan:hover {
     color: #fcaecf !important;
     background-color: #fcaecf17;
 }
+
 .wyatt:hover {
     color: #bda6ff !important;
     background-color: #bda6ff17;
 }
+
 .ethan:hover {
     color: #a3eff7 !important;
     background-color: #a3eff717;

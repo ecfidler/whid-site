@@ -24,6 +24,7 @@
     padding-bottom: .5em;
     margin: .25em;
     border-radius: .12em;
+    transition: all 0.3s;
 }
 .menu a:hover {
     text-decoration: none;
@@ -31,31 +32,32 @@
 
 }
 .menu a:active {
+    transition: none;
     transform: translateY(.025em);
 }
 
 .ben {
-    background-color: #ffd294;
 }
 .tristan {
-    background-color: #fcaecf;
 }
 .wyatt {
-    background-color: #bda6ff;
 }
 .ethan {
-    background-color: #a3eff7;
 }
 
 .ben:hover {
-    background-color: #ffd294cb;
+    color: #ffd294 !important; 
+    background-color: #ffd29417;
 }
 .tristan:hover {
-    background-color: #fcaecfcb;
+    color: #fcaecf !important;
+    background-color: #fcaecf17;
 }
 .wyatt:hover {
-    background-color: #bda6ffcb;
+    color: #bda6ff !important;
+    background-color: #bda6ff17;
 }
 .ethan:hover {
-    background-color: #a3eff7cb;
+    color: #a3eff7 !important;
+    background-color: #a3eff717;
 }

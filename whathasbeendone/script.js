@@ -37,7 +37,7 @@ setTimeout(() => {
         spread: 120,
         startVelocity: 45,
       });
-}, 750);
+}, 1000);
 
 const Carousel = {
     data() {

@@ -8,10 +8,20 @@ h1 {
 }
 
 p {
-    font-family: Whitney,Helvetica Neue, Helvetica, Arial, sans-serif; 
+    /* font-family: Whitney,Helvetica Neue, Helvetica, Arial, sans-serif;  */
+    font-family: canada-type-gibson, sans-serif;
     font-weight: 400;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.5em;
+    color: white;
+}
+
+span {
+    /* font-family: Whitney,Helvetica Neue, Helvetica, Arial, sans-serif;  */
+    font-family: canada-type-gibson, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
     color: white;
 }
 
@@ -293,4 +303,104 @@ section.timeline-outer {
     .social_links_box a i {
         font-size: 1em;
     }
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: black;
+    width: 80%;
+    margin: auto;
+}
+
+#stats {
+    display: flex;
+    max-width: 60%;
+    margin: auto;
+    /* padding-left: 10em;
+    padding-right: 10em; */
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#stats div.stat-block {
+    margin-top: 1.5em;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+    background-color: #393c43;
+    max-width: fit-content;
+    border-radius: 5px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#stats div.stat-block p {
+    padding-left: 0.3em;
+}
+
+#stats div.stat-block p.verb {
+    padding-top: 0.4em;
+    font-style: normal;
+}
+
+#stats div.stat-block p.inlined {
+    margin-top: 0.4em;
+    padding-top: 0.4em;
+    font-style: normal;
+}
+
+#stats div.stat-block .number {
+    font-style: normal;
+    font-weight: 600;
+    color: #2f3136;
+    font-size: xx-large;
+    text-align: center;
+    /* background-color: #a3eff7; */
+    width: fit-content;
+    padding-right: .3em;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#stats div.stat-block p.number {
+    padding-top: .15em;
+    padding-right: .3em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+#stats div.stat-block span.number {
+    padding-top: .15em;
+    padding-left: .3em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    margin-top: 2em;
+}
+
+#stats div.stat-block hr {
+    width: 150%;
+    position: relative;
+    left: -10%;
+    border: 1px solid #0b0c0e;
+}
+
+#stats div.stat-block p.subdata {
+    padding-top: 0.5em;
+}
+
+#stats div.stat-block p.subdata .subnumber {
+    border-radius: 5px;
+    color: #2f3136;
+    font-weight: 600;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    padding-top: 0.2em;
+}
+
+#stats div.stat-block p.noun {
+    padding-top: 0.9em;
+    font-style: normal;
+    text-align: right;
 }

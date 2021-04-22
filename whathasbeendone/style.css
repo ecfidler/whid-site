@@ -4,6 +4,7 @@ h1 {
     font-family: canada-type-gibson, sans-serif;
     font-weight: 500;
     font-style: normal;
+    font-size: 2.5rem;
     color: white;
 }
 
@@ -21,7 +22,7 @@ span {
     font-family: canada-type-gibson, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1em;
+    font-size: 1.5em;
     color: white;
 }
 
@@ -30,39 +31,39 @@ span {
     font-weight: 400;
     font-style: italic;
     
-    position: relative;
+    /* position: relative; */
     background-color: #393c43;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto auto;
-    width: 100%;
-    height: 330px;
+    /* width: 100%; */
+    height: 400px;
 
     color: white;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.363);
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.2);
     /* border-radius: 8px; */
 
-    display: flex;
+    /* display: flex; */
 }
 
 #header_info {
     /* margin-top: 3em; */
     /* width: 100%; */
-    margin-right: 0;
-    margin-left: 0;
-    max-width: 50vw;
+    /* margin-right: 0;
+    margin-left: 0; */
+    /* max-width: 50vw; */
 }
 
 #header_text {
-    padding-top: 9em;
+    /* padding-top: 11em; */
 
     display: block;
     text-align: right;
 
 }
 
-#header_text h1{ 
+#header_text h1 { 
     font-family: canada-type-gibson, sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -73,25 +74,12 @@ span {
     /* margin: auto; */
 }
 
-#ticker_container {
-    padding-top: 9em;
-    width: fit-content;
-    margin-right: auto;
-    margin-left: 0;
-}
-
 #header_ticker {
     width: 330px;
     height: 3.2em;
-    margin-left: 0;
-    margin-right: auto;
-    display: block;
-    text-align: right;
     padding-left: 1em;
-    padding-right: 1em;
     background-color: #7289da;
     border-radius: 5px;
-    text-align: center;
     overflow: hidden;
     position: relative;
 
@@ -127,13 +115,6 @@ canvas {
     width: inherit;
     z-index: 1;
     height: inherit;
-}
-
-
-@media (max-width: 945px) {
-    #head {
-        height: 650px;
-    }
 }
 
 body {
@@ -242,7 +223,7 @@ section.timeline-outer {
 }
 
 
-@media (max-width: 945px) {
+/* @media (max-width: 945px) {
     .timeline .event::before {
         left: 0.5px;
         top: 20px;
@@ -303,7 +284,7 @@ section.timeline-outer {
     .social_links_box a i {
         font-size: 1em;
     }
-}
+} */
 
 hr {
     border: none;
@@ -314,43 +295,43 @@ hr {
 }
 
 #stats {
-    display: flex;
-    max-width: 60%;
-    margin: auto;
+    /* display: flex; */
+    /* max-width: 60%; */
+    /* margin: auto; */
     /* padding-left: 10em;
     padding-right: 10em; */
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* justify-content: center;
+    flex-direction: row; */
 }
 
 #stats div.stat-block {
-    margin-top: 1.5em;
+    /* margin-top: 1.5em;
     margin-left: 0.75em;
-    margin-right: 0.75em;
+    margin-right: 0.75em; */
     background-color: #393c43;
-    max-width: fit-content;
+    /* max-width: fit-content; */
     border-radius: 5px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 #stats div.stat-block p {
-    padding-left: 0.3em;
+    /* padding-left: 0.3em; */
 }
 
 #stats div.stat-block p.verb {
-    padding-top: 0.4em;
+    /* padding-top: 0.4em; */
     font-style: normal;
 }
 
 #stats div.stat-block p.inlined {
-    margin-top: 0.4em;
-    padding-top: 0.4em;
+    /* margin-top: 0.4em;
+    padding-top: 0.4em; */
     font-style: normal;
 }
 
-#stats div.stat-block .number {
+.number { 
     font-style: normal;
     font-weight: 600;
     color: #2f3136;
@@ -365,18 +346,18 @@ hr {
 }
 
 #stats div.stat-block p.number {
-    padding-top: .15em;
-    padding-right: .3em;
-    margin-left: 2em;
-    margin-right: 2em;
+    /* padding-top: .15em; */
+    /* padding-right: .3em; */
+    /* margin-left: 2em;
+    margin-right: 2em; */
 }
 
-#stats div.stat-block span.number {
-    padding-top: .15em;
-    padding-left: .3em;
+span.number {
+    /* padding-top: .15em;
+    padding-left: .3em; */
     margin-left: 0.1em;
     margin-right: 0.1em;
-    margin-top: 2em;
+    /* margin-top: 2em; */
 }
 
 #stats div.stat-block hr {
@@ -388,19 +369,23 @@ hr {
 
 #stats div.stat-block p.subdata {
     padding-top: 0.5em;
+    font-size: 1em;
 }
 
 #stats div.stat-block p.subdata .subnumber {
     border-radius: 5px;
     color: #2f3136;
     font-weight: 600;
-    padding-left: 0.1em;
+    font-size: 1em;
+    /* padding-left: 0.1em;
     padding-right: 0.1em;
-    padding-top: 0.2em;
+    padding-top: 0.2em; */
 }
 
-#stats div.stat-block p.noun {
+#stats div.stat-block .noun {
     padding-top: 0.9em;
     font-style: normal;
     text-align: right;
+    /* vertical-align: bottom; */
+    margin-bottom: 0;
 }

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>what have i done </title>
 
@@ -22,25 +23,32 @@
 <body>
     <header id="head">
         <canvas id="header_canvas"></canvas>
-        <div class="container" id="header_info">
-            <div id="header_text">
-                <h1 data-aos="fade-up">5 years of</h1>
+
+        <div class="container-fluid pt-5">
+            <div class="row pt-5 justify-content-center">
+                <div class="col-6 pt-5" id="">
+                    <h1 data-aos="fade-up" class="text-center text-md-end pt-4">5 years of</h1>
+                </div>
+                <div class="col-12 col-md-6 pt-md-5 justify-content-center justify-content-md-start" data-aos="fade-up"
+                    data-aos-delay="1500" id="">
+                    <div class="pt-md-4">
+                        <div class="container-fluid mr-auto ms-md-0" id="header_ticker">
+                            <transition name="slide-fade">
+                                <h1 style="position:absolute;" v-if="name1">
+                                    {{ words[counter1] }}
+                                </h1>
+                            </transition>
+                            <transition name="slide-fade">
+                                <h1 style="position:absolute;" v-if="name2">
+                                    {{ words[counter2] }}
+                                </h1>
+                            </transition>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container" data-aos="fade-up" data-aos-delay="1500" id="ticker_container">
-            <div class="container" id="header_ticker">
-                <transition name="slide-fade">
-                    <h1 style="position:absolute;" v-if="name1">
-                        {{ words[counter1] }}
-                    </h1>
-                </transition>
-                <transition name="slide-fade">
-                    <h1 style="position:absolute;" v-if="name2">
-                        {{ words[counter2] }}
-                    </h1>
-                </transition>
-            </div>
-        </div>
+
     </header>
 
     <section id="timeline" class="timeline-outer">
@@ -50,7 +58,7 @@
         <ul class="timeline">
             <li class="event z-depth-2 blue-grey lighten-5" data-date="May 2020 - August 2020" data-aos="zoom-out-left">
                 <i class="fa fa-caret-left fa-3x blue-grey-text text-lighten-5" aria-hidden="true"></i>
-                <h3 class="place">Example</h3>
+                <h3 class="place py-2">Example</h3>
                 <h3 class="title">This is an example timeline block</h3>
                 <h3 class="location">third line</h3>
                 <hr class="timeline-hr">
@@ -60,53 +68,71 @@
             </li>
         </ul>
     </section>
-    
+
     <hr>
     <h1 id="content">
         Between April 26th, 2016 and April 26th, 2021, we...
     </h1>
-    <section id="stats">
-        <div class="container stat-block">
-            <p class="verb">sent</p>
-            <p class="number" style="background-color: #a3eff7;">5,000,000</p>
-            <p class="noun">messages.</p>
-        </div>
-        <div class="container stat-block">
-            <p class="verb">created</p>
-            <p class="number" style="background-color: #ffd294;">15</p>
-            <p class="noun">channels.</p>
-        </div>
-        <div class="container stat-block">
-            <p class="verb">used</p>
-            <p class="number" style="background-color: #fcaecf;">500</p>
-            <p class="noun">emojis.</p>
-        </div>
-        <div class="container stat-block">
-            <p class="verb">reacted</p>
-            <p class="number" style="background-color: #bda6ff;">9,000</p>
-            <p class="noun">times.</p>
-        </div>
-        <div class="container stat-block">
-            <p class="inlined">shredded
-                <span class="number" style="background-color: #fcaecf;">99,999,999</span>
-            times.</p>
-            <hr>
-            <p class="subdata">
-                <span class="subnumber" style="background-color: #fcaecf;">50</span>
-                gifs and
-                <span class="subnumber" style="background-color: #fcaecf;">450</span>
-                emojis.
-            </p>
-        </div>
-        <div class="container stat-block">
-            <p class="verb">sent cheeto</p>
-            <p class="number" style="background-color: #a3eff7;">-50</p>
-            <p class="noun">times.</p>
-        </div>
-        <div class="container stat-block">
-            <p class="verb">issued</p>
-            <p class="number" style="background-color: #ffd294;">10^e*pi</p>
-            <p class="noun">bot commands.</p>
+    <section class="container" id="stats">
+        <div class="row py-3 g-4">
+            <!-- break at medium -->
+            <div class="col-12 col-md-3">
+                <div class="p-3 px-4 stat-block">
+                    <p class="verb">sent</p>
+                    <p class="px-2 pt-1 number" style="background-color: #a3eff7;">5,000,000</p>
+                    <p class="noun">messages.</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 px-4 stat-block">
+                    <p class="verb">created</p>
+                    <p class="px-2 pt-1 number" style="background-color: #ffd294;">15</p>
+                    <p class="noun">channels.</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 px-4 stat-block">
+                    <p class="verb">used</p>
+                    <p class="px-2 pt-1 number" style="background-color: #fcaecf;">500</p>
+                    <p class="noun">emojis.</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="p-3 px-4 stat-block">
+                    <p class="verb">reacted</p>
+                    <p class="px-2 pt-1 number" style="background-color: #bda6ff;">9,000</p>
+                    <p class="noun">times.</p>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="p-3 px-4 stat-block">
+                    <p class="inlined">shredded
+                        <span class="px-2 pt-1 number" style="background-color: #fcaecf;">99,999,999</span>
+                        times.
+                    </p>
+                    <hr>
+                    <p class="subdata">
+                        <span class="px-1 pt-1 subnumber" style="background-color: #fcaecf;">50</span>
+                        gifs and
+                        <span class="px-1 pt-1 subnumber" style="background-color: #fcaecf;">450</span>
+                        emojis.
+                    </p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 px-4 stat-block">
+                    <p class="verb">sent cheeto</p>
+                    <p class="px-2 pt-1 number" style="background-color: #a3eff7;">-50</p>
+                    <p class="noun">times.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 px-4 stat-block">
+                    <p class="verb">issued</p>
+                    <p class="px-2 pt-1 number" style="background-color: #ffd294;">10^e*pi</p>
+                    <p class="noun">bot commands.</p>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -123,8 +149,8 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({

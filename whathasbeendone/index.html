@@ -21,17 +21,17 @@
 </head>
 
 <body>
-    <header id="head" class="justify-content-center align-items-center">
+    <header id="head">
         <canvas id="header_canvas"></canvas>
 
-        <div class="row justify-content-center align-items-center" style="height: inherit;">
-            <div class="col-12 col-md-6" id="">
-                <h1 data-aos="fade-up" class="text-center text-md-end pt-4">5 years of</h1>
+        <div class="row justify-content-center align-items-center" id="header-text">
+            <div class="col-12 col-xl-5 col-xxl-6" id="">
+                <h1 data-aos="fade-up" class="text-center text-xl-end pt-4">5 years of</h1>
             </div>
-            <div class="col-12 col-md-6 justify-content-center justify-content-md-start" data-aos="fade-up"
+            <div class="col-12 col-xl-7 col-xxl-6 justify-content-center justify-content-xl-start" data-aos="fade-up"
                 data-aos-delay="1500" id="">
-                <div class="pt-md-4">
-                    <div class="container-fluid mr-auto ms-md-0" id="header_ticker">
+                <div class="pt-xl-4 ">
+                    <div class="container-fluid ms-xl-0" id="header_ticker">
                         <transition name="slide-fade">
                             <h1 style="position:absolute;" v-if="name1">
                                 {{ words[counter1] }}
@@ -50,7 +50,7 @@
     </header>
 
     <section id="timeline" class="timeline-outer">
-        <h2 id="content" class="py-5" data-aos="fade-right" data-aos-once="true">
+        <h2 id="content" class="py-5" data-aos="fade-right" data-aos-delay="2000" data-aos-once="true">
             what has gotten us here?
         </h2>
         <ul class="timeline">

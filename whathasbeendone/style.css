@@ -1,5 +1,10 @@
 /* Code inspired by Ming Wang @ https://zmwang622.github.io/ */
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 h1 {
     font-family: canada-type-gibson, sans-serif;
     font-weight: 500;
@@ -43,24 +48,11 @@ span {
 }
 
 #head {
-    font-family: canada-type-gibson, sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    
-    /* position: relative; */
     background-color: #393c43;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: auto auto;
-    /* width: 100%; */
     height: 80vh;
-
-    color: white;
+    width: 100vw;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.363);
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.2);
-    /* border-radius: 8px; */
-
-    /* display: flex; */
 }
 
 #header_info {
@@ -71,12 +63,9 @@ span {
     /* max-width: 50vw; */
 }
 
-#header_text {
-    /* padding-top: 11em; */
-
-    display: block;
-    text-align: right;
-
+#header-text {
+    height: inherit;
+    width: inherit
 }
 
 #header_text h1 { 
@@ -86,13 +75,13 @@ span {
 }
 
 #head canvas, #header_info {
-    width: 100%;
+    /* width: 100vw; */
     /* margin: auto; */
 }
 
 #header_ticker {
-    width: 330px;
-    height: 3.2em;
+    width: 39rem;
+    height: 6.3rem;
     padding-left: 1em;
     background-color: #7289da;
     border-radius: 5px;

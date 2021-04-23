@@ -147,18 +147,17 @@
     <div class="container">
         <div class="row">
             <div class='col-5'>
-                <label for="nameList" class="form-label"></label>
-                <div class="input-group input-group-lg">
-                    <input class="form-control" list="datalistOptions" id="nameList" placeholder="Enter your name...">
-                    <datalist id="datalistOptions">
-                        <option value="El Jefe#5223">
-                        <option value="noss#0773">
-                        <option value="fops#1969">
-                        <option value="bebenebenebeb#8098">
-                        <option value="Chicago">
-                    </datalist>
-                    <!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
-                    <button class="btn btn-secondary" type="button"><i>whyd</i></button>
+                <div id="listApp">
+                    <label for="nameInput" class="form-label"></label>
+                    <div class="input-group input-group-lg">
+                        <input class="form-control" list="namelist" id="nameInput"
+                            placeholder="Enter your name...">
+                        <datalist id="namelist">
+                            <option v-for="name in names">{{name}}</option>
+                        </datalist>
+                        <!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
+                        <button class="btn btn-secondary" type="button"><i>whyd</i></button>
+                    </div>
                 </div>
                 <br>
             </div>

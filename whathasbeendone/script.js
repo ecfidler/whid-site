@@ -89,3 +89,20 @@ function getRandomIntBen(total, old) {
 }
 
 Vue.createApp(Carousel).mount('#header_ticker');
+
+const namelist = {
+  data() {
+    return {
+      name:'',
+      names:[
+        "El Jefe#5223",
+        "noss#0773",
+        "fops#1969",
+        "bebenebenebeb#8098",
+        "Chicago",
+	    ]
+	  }
+  }
+};
+
+Vue.createApp(namelist).mount('#listApp')

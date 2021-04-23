@@ -446,6 +446,33 @@ div[data-extra]:hover::after {
     font-family: canada-type-gibson, sans-serif;
 }
 
+span.subtext {
+    color:#aab2b9;
+}
+
+span.d-highlight {
+    border-radius: 3px;
+    padding-top: 3px;
+    padding-bottom: 0 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+    /* font-weight: 500; */
+    unicode-bidi: -moz-plaintext;
+    unicode-bidi: plaintext;
+    color: #7289da;
+    background: rgba(114,137,218,.1);
+    position: relative;
+}
+
+span.d-highlight:hover {
+    color: white;
+    background-color: #7289da;
+    transition: background-color 50ms ease-out,color 50ms ease-out;
+}
+
+/* --background-mentioned: rgba(250,166,26,0.05);
+--background-mentioned-hover: rgba(250,166,26,0.08); */
+
 #nameList {
     background-color: #2f3136;
     color: white;

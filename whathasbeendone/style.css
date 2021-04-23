@@ -409,3 +409,12 @@ span.number {
 .purple {
     background-color: #bda6ff;
 }
+
+.container {
+    font-family: canada-type-gibson, sans-serif;
+}
+
+#nameList {
+    background-color: #2f3136;
+    color: white;
+}

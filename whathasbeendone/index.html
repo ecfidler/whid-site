@@ -21,29 +21,27 @@
 </head>
 
 <body>
-    <header id="head">
+    <header id="head" class="justify-content-center align-items-center">
         <canvas id="header_canvas"></canvas>
 
-        <div class="container-fluid pt-5">
-            <div class="row pt-5 justify-content-center">
-                <div class="col-12 col-md-6 pt-5" id="">
-                    <h1 data-aos="fade-up" class="text-center text-md-end pt-4">5 years of</h1>
-                </div>
-                <div class="col-12 col-md-6 pt-md-5 justify-content-center justify-content-md-start" data-aos="fade-up"
-                    data-aos-delay="1500" id="">
-                    <div class="pt-md-4">
-                        <div class="container-fluid mr-auto ms-md-0" id="header_ticker">
-                            <transition name="slide-fade">
-                                <h1 style="position:absolute;" v-if="name1">
-                                    {{ words[counter1] }}
-                                </h1>
-                            </transition>
-                            <transition name="slide-fade">
-                                <h1 style="position:absolute;" v-if="name2">
-                                    {{ words[counter2] }}
-                                </h1>
-                            </transition>
-                        </div>
+        <div class="row justify-content-center align-items-center" style="height: inherit;">
+            <div class="col-12 col-md-6" id="">
+                <h1 data-aos="fade-up" class="text-center text-md-end pt-4">5 years of</h1>
+            </div>
+            <div class="col-12 col-md-6 justify-content-center justify-content-md-start" data-aos="fade-up"
+                data-aos-delay="1500" id="">
+                <div class="pt-md-4">
+                    <div class="container-fluid mr-auto ms-md-0" id="header_ticker">
+                        <transition name="slide-fade">
+                            <h1 style="position:absolute;" v-if="name1">
+                                {{ words[counter1] }}
+                            </h1>
+                        </transition>
+                        <transition name="slide-fade">
+                            <h1 style="position:absolute;" v-if="name2">
+                                {{ words[counter2] }}
+                            </h1>
+                        </transition>
                     </div>
                 </div>
             </div>
@@ -52,9 +50,9 @@
     </header>
 
     <section id="timeline" class="timeline-outer">
-        <h1 id="content">
+        <h2 id="content" class="py-5" data-aos="fade-right" data-aos-once="true">
             what has gotten us here?
-        </h1>
+        </h2>
         <ul class="timeline">
             <li class="event z-depth-2 blue-grey lighten-5" data-date="May 2020 - August 2020" data-aos="zoom-out-left">
                 <i class="fa fa-caret-left fa-3x blue-grey-text text-lighten-5" aria-hidden="true"></i>
@@ -70,41 +68,41 @@
     </section>
 
     <hr>
-    <h1 id="content" class="py-5" data-aos="fade-down">
+    <h2 id="content" class="py-5" data-aos="fade-down">
         what has been done between April 26th, 2016 and April 26th, 2021?
-    </h1>
-    <h2 class="container pt-5" data-aos="fade-right">We...</h2>
+    </h2>
+    <h3 class="container pt-5" data-aos="fade-right">We...</h3>
     <section class="container" id="stats">
         <div class="row pb-3 g-4">
-            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-down">
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up">
                 <div class="p-3 px-4 stat-block">
                     <p class="verb">sent</p>
                     <p class="px-2 pt-1 number blue">175,230</p>
                     <p class="noun">messages.</p>
                 </div>
             </div>
-            <div class="col-6 col-sm-6 col-lg-3" data-aos="fade-down" data-aos-delay="100">
+            <div class="col-6 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="p-3 px-4 stat-block">
                     <p class="verb">created</p>
                     <p class="px-2 pt-1 number orange">32</p> <!-- 23 text + 9 voice -->
                     <p class="noun">channels.</p>
                 </div>
             </div>
-            <div class="col-6 col-sm-6 col-lg-3" data-aos="fade-down" data-aos-delay="200">
+            <div class="col-6 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                 <div class="p-3 px-4 stat-block">
                     <p class="verb">used</p>
                     <p class="px-2 pt-1 number pink">12,725</p>
                     <p class="noun">emojis.</p>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-down" data-aos-delay="300">
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                 <div class="p-3 px-4 stat-block">
                     <p class="verb">reacted</p>
                     <p class="px-2 pt-1 number purple">14,038</p>
                     <p class="noun">times.</p>
                 </div>
             </div>
-            <div class="col-12 col-lg-6 col-xl-5" data-aos="fade-down" data-aos-delay="0">
+            <div class="col-12 col-lg-6 col-xl-5" data-aos="fade-up" data-aos-delay="0">
                 <div class="p-3 px-4 stat-block">
                     <p class="inlined text-center pt-2">
                         shredded
@@ -121,14 +119,14 @@
                 </div>
             </div>
             <div class="col">
-                <div class="p-3 px-4 stat-block" data-aos="fade-down" data-aos-delay="100">
+                <div class="p-3 px-4 stat-block" data-aos="fade-up" data-aos-delay="100">
                     <p class="verb">shared</p>
                     <p class="px-2 pt-1 number blue">3016</p>
                     <p class="noun">videos.</p>
                 </div>
             </div>
             <div class="col">
-                <div class="p-3 px-4 stat-block" data-aos="fade-down" data-aos-delay="200">
+                <div class="p-3 px-4 stat-block" data-aos="fade-up" data-aos-delay="200">
                     <p class="verb">issued</p>
                     <p class="px-2 pt-1 number orange">38565</p>
                     <p class="noun">bot commands.</p>
@@ -141,9 +139,9 @@
         wyatt purple #bda6ff -->
     </section>
 
-    <h1 id="content">
+    <h2 id="content">
         what have <b>you</b> done?
-    </h1>
+    </h2>
 
     <!-- dropdown box for choosing name -->
     <!-- rundown of individual stats -->

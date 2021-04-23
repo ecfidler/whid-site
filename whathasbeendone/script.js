@@ -1,7 +1,7 @@
 var canvas = document.getElementById('header_canvas');
 var count = 200;
 var defaults = {
-  origin: { y: 0.7 }
+  origin: { y: 0.5 }
 };
 
 // you should  only initialize a canvas once, so save this function

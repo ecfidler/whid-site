@@ -389,3 +389,16 @@ span.number {
     /* vertical-align: bottom; */
     margin-bottom: 0;
 }
+
+.orange {
+    background-color: #ffd294;
+}
+.blue {
+    background-color: #a3eff7;
+}
+.pink {
+    background-color: #fcaecf;
+}
+.purple {
+    background-color: #bda6ff;
+}

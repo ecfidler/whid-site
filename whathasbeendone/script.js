@@ -48,23 +48,32 @@ const Carousel = {
             counter2: 0,
             words: ['quality discussion', 'cheeto', 'games', 'gaming', 'gamers',
                     'art', 'tierlists', 'videos', 'music', 'laughs', 'memes', 
-                    'good times', '𝓗𝓮𝓪𝓿𝓮𝓷', 'movies', 'dubs', 'Ls']
+                    'good times', '𝓗𝓮𝓪𝓿𝓮𝓷', 'movies', 'dubs', 'Ls'],
         }
     },
     mounted() {
+        this.words = shuffleExceptFirst(this.words)
         setInterval(() => {
             if(this.name2 === true) {
-                this.counter1 = chooseRandomFunction(this.words.length, this.counter2);
+                this.counter1 = this.counter2 + 1;
                 this.name1 = true;
                 this.name2 = false;
             } else {
-                this.counter2 = chooseRandomFunction(this.words.length, this.counter1);
+                this.counter2 = this.counter1 + 1;
                 this.name1 = false;
                 this.name2 = true;
             }
         }, 3000);
     }
 };
+
+function shuffleExceptFirst(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i) + 1);
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr
+}
 
 // Actual most optimal code
 function chooseRandomFunction(total, old) {

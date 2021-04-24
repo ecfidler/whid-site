@@ -131,6 +131,43 @@ const messageLeaderboard = {
 };
 Vue.createApp(messageLeaderboard).mount("#messagesApp")
 
+const mentionsLeaderboard = {
+  data() {
+    return {
+      currentlySpam: true,
+      people: [
+        ["1.", "@fops", "1,164"],
+        ["2.", "@El Jefe", "797"],
+        ["3.", "@noss", "635"],
+        ["4.", "@bebenebenebeb", "631"],
+        ["5.", "@Saturn", "357"],
+      ],
+      hidden: [
+        ["1.", "@fops", "675"],
+        ["2.", "@El Jefe", "620"],
+        ["3.", "@noss", "513"],
+        ["4.", "@bebenebenebeb", "435"],
+        ["5.", "@Klankyer", "239"],
+      ]
+    }
+  },
+  methods: {
+    toggleSpam() {
+      [this.people, this.hidden] = [this.hidden, this.people];
+
+      this.currentlySpam = !this.currentlySpam;
+
+      setTimeout(() => {
+        enableTooltips();
+      }, 100)
+    },
+    map(key) {
+      return map[key]
+    }
+  }
+};
+Vue.createApp(mentionsLeaderboard).mount("#mentionsApp")
+
 map = {
   "🎲": "https://twemoji.maxcdn.com/v/latest/72x72/1f3b2.png",
   "👋": "https://twemoji.maxcdn.com/v/latest/72x72/1f44b.png",

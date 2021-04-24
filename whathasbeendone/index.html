@@ -80,7 +80,8 @@
                     <p class="px-2 pt-1 number blue" data-bs-toggle="tooltip" data-bs-placement="bottom"
                         data-bs-html="true"
                         title="1,575 in 2016,<br>7,208 in 2017,<br>9,752 in 2018,<br>30,502 in 2019,<br>96,646 in 2020,<br>and 29,547 in 2021 so far.">
-                        <u>175,230</u></p>
+                        <u>175,230</u>
+                    </p>
                     <p class="noun">messages.</p>
                 </div>
             </div>
@@ -266,7 +267,7 @@
                                 title="396 of these are from <span class='d-highlight'>@Mii-Sama#3255</span> in the span of less than 60 seconds.">
                                 <u>{{ emoji[2] }}</u></span>
                             <span v-else-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip" data-bs-placement="left"
-                                title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:.">
+                                title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:. So there are actually more than this!">
                                 <u>{{ emoji[2] }}</u></span>
                             <span v-else-if="[':youtube:',':spotify:'].includes(emoji[1])" data-bs-toggle="tooltip"
                                 data-bs-placement="left" data-bs-html="true"
@@ -343,7 +344,7 @@
 
                             <span v-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip" data-bs-placement="left"
                                 data-bs-html="true"
-                                title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:.">
+                                title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:. So there are actually more than this!">
                                 <u>{{ emoji[2] }}</u></span>
                             <span v-else>{{ emoji[2] }}</span>
                             <span v-if="emoji[0]=='1.'" class="subtext"> uses</span>

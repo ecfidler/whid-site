@@ -477,3 +477,7 @@ span.d-highlight:hover {
     background-color: #2f3136;
     color: white;
 }
+
+button span {
+    font-size: 1rem;
+}

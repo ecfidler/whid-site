@@ -90,6 +90,39 @@ function getRandomIntBen(total, old) {
 
 Vue.createApp(Carousel).mount('#header_ticker');
 
+const messageLeaderboard = {
+  data() {
+    return {
+      currentlySpam: true,
+      active: [
+        ["bebenebenebeb#8098",  "25,149"],
+        ["El Jefe#5223",        "20,433"],
+        ["Rythm#3722",          "19,974"],
+        ["fops#1969",           "16,942"],
+        ["Us#0704",             "12,685"],
+      ],
+      hidden: [
+        ["El Jefe#5223",        "12,492"],
+        ["bebenebenebeb#8098",  "11,235"],
+        ["fops#1969",           "9,956"],
+        ["noss#0773",           "7,592"],
+        ["Sharkwood#8876",      "4,962"],
+      ],
+    }
+  },
+  methods: {
+    toggleSpam() {
+      temp = this.active;
+      this.active = this.hidden;
+      this.hidden = temp;
+
+      this.currentlySpam = !this.currentlySpam
+    }
+  }
+};
+
+Vue.createApp(messageLeaderboard).mount("#messagesApp")
+
 const namelist = {
   data() {
     return {

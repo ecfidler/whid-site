@@ -155,36 +155,39 @@
     <section class="container mt-4">
         <div class="row">
             <div class="col-12 col-xxl-6">
-                <div class="row">
-                    <h2 class="col-7">
-                        Top perpetrators:
-                    </h2>
-                    <div class="col-5">
-                        <button type="button" class="btn btn-outline-secondary mt-2 active" data-bs-toggle="button"
-                            aria-pressed="true" autocomplete="off">
-                            Spam
-                        </button>
+                <div id="messagesApp">
+                    <div class="row">
+                        <h2 class="col-7">
+                            Top perpetrators:
+                        </h2>
+                        <div class="col-5">
+                            <button type="button" class="btn btn-outline-secondary mt-2 active" data-bs-toggle="button"
+                                aria-pressed="true" autocomplete="off" v-on:click="toggleSpam">
+                                <span v-if="currentlySpam">Spam</span>
+                                <strike v-else>Spam</strike>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <p class="col-6">1. <span class="d-highlight">@bebenebenebeb#8098 </span></p>
-                    <p class="col-6">25,149 <span class="subtext">messages sent</span></p>
-                </div>
-                <div class="row">
-                    <p class="col-6">2. <span class="d-highlight">@El Jefe#5223</span></p>
-                    <p class="col-6">20,433</p>
-                </div>
-                <div class="row">
-                    <p class="col-6">3. <span class="d-highlight">@Rythm#3722</span></p>
-                    <p class="col-6">19,974</p>
-                </div>
-                <div class="row">
-                    <p class="col-6">4. <span class="d-highlight">@fops#1969</span></p>
-                    <p class="col-6">16,942</p>
-                </div>
-                <div class="row">
-                    <p class="col-6">5. <span class="d-highlight">@Us#0704</span></p>
-                    <p class="col-6">12,685</p>
+                    <div class="row">
+                        <p class="col-6">1. <span class="d-highlight">@{{ active[0][0] }} </span></p>
+                        <p class="col-6">{{ active[0][1] }} <span class="subtext">messages sent</span></p>
+                    </div>
+                    <div class="row">
+                        <p class="col-6">2. <span class="d-highlight">@{{ active[1][0] }}</span></p>
+                        <p class="col-6">{{ active[1][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-6">3. <span class="d-highlight">@{{ active[2][0] }}</span></p>
+                        <p class="col-6">{{ active[2][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-6">4. <span class="d-highlight">@{{ active[3][0] }}</span></p>
+                        <p class="col-6">{{ active[3][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-6">5. <span class="d-highlight">@{{ active[4][0] }}</span></p>
+                        <p class="col-6">{{ active[4][1] }}</p>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-xxl-6">

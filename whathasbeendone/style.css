@@ -482,3 +482,15 @@ span.d-highlight:hover {
 button span {
     font-size: 1rem;
 }
+
+.emoji {
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 1.375em;
+    height: 1.375em;
+    vertical-align: bottom;
+}
+
+img[alt] {
+    text-indent: -9999px;
+}

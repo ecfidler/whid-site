@@ -129,8 +129,68 @@ const messageLeaderboard = {
     }
   }
 };
-
 Vue.createApp(messageLeaderboard).mount("#messagesApp")
+
+const emojisLeaderboard = {
+  data() {
+    return {
+      currentlySpam: true,
+      emojis: [
+        [":yoooooo:",   "403"],
+        [":kill:",      "216"],
+        [":gunright:",  "171"],
+        [":lfg:",       "165"],
+        [":trueshred:", "164"],
+        ["4,891"],
+      ],
+    }
+  },
+};
+Vue.createApp(emojisLeaderboard).mount("#emojisApp")
+
+const reactsLeaderboard = {
+  data() {
+    return {
+      currentlySpam: true,
+      active: [
+        [":upvote:",    "3,778"],
+        ["🎲",          "1,142"],
+        [":downvote:",  "884"],
+        [":lfg:",       "555"],
+        ["👋",          "377"],
+        ["18,165"],
+      ],
+      hidden: [
+        [":upvote:",    "3,297"],
+        [":downvote:",  "857"],
+        [":lfg:",       "502"],
+        ["📌",          "250"],
+        [":shredward:", "247"],
+        ["13,470"]
+      ],
+      map: {
+        ":upvote:": "../resources/emojis/upvote.png",
+        "🎲": "https://twemoji.maxcdn.com/v/latest/72x72/",
+        ":downvote:": "../resources/emojis/downvote.png",
+        ":lfg:": "../resources/emojis/lfg.png",
+        "👋": "https://twemoji.maxcdn.com/v/latest/72x72/",
+        ":shredward:": "../resources/emojis/shredward.png",
+        "📌": "https://twemoji.maxcdn.com/v/latest/72x72/"
+      }
+    }
+  },
+  methods: {
+    toggleSpam() {
+      temp = this.active;
+      this.active = this.hidden;
+      this.hidden = temp;
+
+      this.currentlySpam = !this.currentlySpam
+    }
+  }
+};
+Vue.createApp(reactsLeaderboard).mount("#reactionsApp")
+
 
 const namelist = {
   data() {

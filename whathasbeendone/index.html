@@ -176,7 +176,8 @@
                         </h2>
                         <div class="col-5">
                             <button type="button" class="btn btn-outline-secondary mt-2 active" data-bs-toggle="button"
-                                aria-pressed="true" autocomplete="off" v-on:click="toggleSpam" title="Toggle whether to include channels like #spam, #dev, #the-real-us, etc.">
+                                aria-pressed="true" autocomplete="off" v-on:click="toggleSpam"
+                                title="Toggle whether to include channels like #spam, #dev, #the-real-us, etc.">
                                 <span v-if="currentlySpam">Incl. Spam</span>
                                 <strike v-else>Incl. Spam</strike>
                             </button>
@@ -233,6 +234,99 @@
     </section>
 
 
+
+    <br>
+    <section class="container">
+        <div class="row">
+            <div class="col-12 col-xxl-4">
+                <div id="emojisApp">
+                    <div class="row">
+                        <h2 class="col-7">
+                            Emojis:
+                        </h2>
+                        <div class="col-5">
+                            <button disabled type="button" class="btn btn-outline-secondary mt-2 inactive"
+                                data-bs-toggle="button" autocomplete="off"
+                                title="Toggle whether to include channels like #spam, #dev, #the-real-us, etc.">
+                                <!-- <span v-if="currentlySpam">Incl. Spam</span> -->
+                                <strike>Incl. Spam</strike>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">1. {{ emojis[0][0] }}</p>
+                        <p class="col-12 col-md-6">{{ emojis[0][1] }} <span class="subtext">uses</span></p>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">2. {{ emojis[1][0] }}</p>
+                        <p class="col-12 col-md-6">{{ emojis[1][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">3. {{ emojis[2][0] }}</p>
+                        <p class="col-12 col-md-6">{{ emojis[2][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">4. {{ emojis[3][0] }}</p>
+                        <p class="col-12 col-md-6">{{ emojis[3][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">5. {{ emojis[4][0] }}</p>
+                        <p class="col-12 col-md-6">{{ emojis[4][1] }}</p>
+                    </div>
+                    <hr>
+                    <br>
+                    <div class="row">
+                        <p class="col-12 col-md-6">Total:</p>
+                        <p class="col-12 col-md-6">{{ emojis[5][0] }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xxl-4">
+                <div id="reactionsApp">
+                    <div class="row">
+                        <h2 class="col-7">
+                            Reactions:
+                        </h2>
+                        <div class="col-5">
+                            <button type="button" class="btn btn-outline-secondary mt-2 active" data-bs-toggle="button"
+                                aria-pressed="true" autocomplete="off" v-on:click="toggleSpam"
+                                title="Toggle whether to include channels like #spam, #dev, #the-real-us, etc.">
+                                <span v-if="currentlySpam">Incl. Spam</span>
+                                <strike v-else>Incl. Spam</strike>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">1. {{ active[0][0] }}</p>
+                        <p class="col-12 col-md-6">{{ active[0][1] }} <span class="subtext">uses</span></p>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">2. {{ active[1][0] }}</p>
+                        <p class="col-12 col-md-6">{{ active[1][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">3. {{ active[2][0] }}</p>
+                        <p class="col-12 col-md-6">{{ active[2][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">4. {{ active[3][0] }}</p>
+                        <p class="col-12 col-md-6">{{ active[3][1] }}</p>
+                    </div>
+                    <div class="row">
+                        <p class="col-12 col-md-6">5. {{ active[4][0] }}</p>
+                        <p class="col-12 col-md-6">{{ active[4][1] }}</p>
+                    </div>
+                    <hr>
+                    <br>
+                    <div class="row">
+                        <p class="col-12 col-md-6">Total:</p>
+                        <p class="col-12 col-md-6">{{ active[5][0] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
     <h2 id="content">
         what have <b>you</b> done?

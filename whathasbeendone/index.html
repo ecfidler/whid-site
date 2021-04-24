@@ -74,11 +74,13 @@
     <h3 class="container pt-5" data-aos="fade-right">We...</h3>
     <section class="container" id="stats">
         <div class="row pb-3 g-4">
-            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up"
-                data-extra="1,575 in 2016,&#xa;7,208 in 2017,&#xa;9,752 in 2018,&#xa;30,502 in 2019,&#xa;96,646 in 2020,&#xa;and 29,547 in 2021 so far.">
+            <div class="col-12 col-sm-6 col-lg-3" data-aos="fade-up">
                 <div class="p-3 px-4 stat-block">
                     <p class="verb">sent</p>
-                    <p class="px-2 pt-1 number blue">175,230</p>
+                    <p class="px-2 pt-1 number blue" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        data-bs-html="true"
+                        title="1,575 in 2016,<br>7,208 in 2017,<br>9,752 in 2018,<br>30,502 in 2019,<br>96,646 in 2020,<br>and 29,547 in 2021 so far.">
+                        <u>175,230</u></p>
                     <p class="noun">messages.</p>
                 </div>
             </div>
@@ -137,7 +139,7 @@
                 <div class="p-3 px-4 stat-block" data-aos="fade-up" data-aos-delay="00">
                     <p class="verb">invited</p>
                     <p class="px-2 pt-1 number purple" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        data-bs-customClass="tooltip" title="52 internationals and 140 non-internationals.">
+                        title="52 internationals and 140 non-internationals.">
                         <u>192</u>
                     </p>
                     <p class=" noun">members!</p>
@@ -158,10 +160,6 @@
                 </div>
             </div>
         </div>
-        <!-- ethan blue #a3eff7
-        ben orange #ffd294
-        tristan pink #fcaecf
-        wyatt purple #bda6ff -->
     </section>
 
     <br>
@@ -258,7 +256,8 @@
                     </div>
                     <div v-for="emoji in active" class="row">
                         <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]" class="emoji">
+                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
+                                class="emoji">
                         </p>
                         <p class="col-6 col-md-7">
 
@@ -269,8 +268,8 @@
                             <span v-else-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip" data-bs-placement="left"
                                 title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:.">
                                 <u>{{ emoji[2] }}</u></span>
-                            <span v-else-if="[':youtube:',':spotify:'].includes(emoji[1])" data-bs-toggle="tooltip" data-bs-placement="left"
-                                data-bs-html="true"
+                            <span v-else-if="[':youtube:',':spotify:'].includes(emoji[1])" data-bs-toggle="tooltip"
+                                data-bs-placement="left" data-bs-html="true"
                                 title="<span class='d-highlight'>@Rythm#3722</span> sends an emoji for Youtube or Spotify each time you play a song on it.">
                                 <u>{{ emoji[2] }}</u></span>
                             <span v-else>{{ emoji[2] }}</span>
@@ -305,7 +304,8 @@
                     </div>
                     <div v-for="emoji in active" class="row">
                         <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]" class="emoji">
+                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
+                                class="emoji">
                         </p>
                         <p class="col-6 col-md-7">{{ emoji[2] }}
                             <span v-if="emoji[0]=='1.'" class="subtext">uses</span>
@@ -336,7 +336,8 @@
                     </div>
                     <div v-for="emoji in active" class="row">
                         <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]" class="emoji">
+                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
+                                class="emoji">
                         </p>
                         <p class="col-6 col-md-7">
 

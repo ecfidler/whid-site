@@ -131,52 +131,43 @@ const messageLeaderboard = {
 };
 Vue.createApp(messageLeaderboard).mount("#messagesApp")
 
+map = {
+  "🎲": "https://twemoji.maxcdn.com/v/latest/72x72/1f3b2.png",
+  "👋": "https://twemoji.maxcdn.com/v/latest/72x72/1f44b.png",
+  "📌": "https://twemoji.maxcdn.com/v/latest/72x72/1f4cc.png",
+  "👍": "https://twemoji.maxcdn.com/v/latest/72x72/1f44d.png",
+  ":upvote:": "../resources/emojis/upvote.png",
+  ":downvote:": "../resources/emojis/downvote.png",
+  ":lfg:": "../resources/emojis/lfg.png",
+  ":shredward:": "../resources/emojis/shredward.png",
+  ":yoooooo:": "../resources/emojis/yoooooo.png",
+  ":gunright:": "../resources/emojis/gunright.png",
+  ":kill:": "../resources/emojis/kill.png",
+  ":youtube:": "../resources/emojis/youtube.png",
+  ":spotify:": "../resources/emojis/spotify.png",
+  ":trueshred:": "../resources/emojis/trueshred.gif",
+}
+
 const emojisLeaderboard = {
   data() {
     return {
       currentlySpam: true,
-      emojis: [
-        [":yoooooo:",   "403"],
-        [":kill:",      "216"],
-        [":gunright:",  "171"],
-        [":lfg:",       "165"],
-        [":trueshred:", "164"],
-        ["4,891"],
-      ],
-    }
-  },
-};
-Vue.createApp(emojisLeaderboard).mount("#emojisApp")
-
-const reactsLeaderboard = {
-  data() {
-    return {
-      currentlySpam: true,
       active: [
-        [":upvote:",    "3,778"],
-        ["🎲",          "1,142"],
-        [":downvote:",  "884"],
-        [":lfg:",       "555"],
-        ["👋",          "377"],
-        ["18,165"],
+        ["1.", ":youtube:",   "6,461"],
+        ["2.", ":spotify:",   "887"],
+        ["3.", ":yoooooo:",   "403"],
+        ["4.", ":kill:",      "217"],
+        ["5.", "👍",  "199"],
       ],
+      totalActive: "12,725",
+      totalHidden: "4,891",
       hidden: [
-        [":upvote:",    "3,297"],
-        [":downvote:",  "857"],
-        [":lfg:",       "502"],
-        ["📌",          "250"],
-        [":shredward:", "247"],
-        ["13,470"]
-      ],
-      map: {
-        ":upvote:": "../resources/emojis/upvote.png",
-        "🎲": "https://twemoji.maxcdn.com/v/latest/72x72/",
-        ":downvote:": "../resources/emojis/downvote.png",
-        ":lfg:": "../resources/emojis/lfg.png",
-        "👋": "https://twemoji.maxcdn.com/v/latest/72x72/",
-        ":shredward:": "../resources/emojis/shredward.png",
-        "📌": "https://twemoji.maxcdn.com/v/latest/72x72/"
-      }
+        ["1.", ":yoooooo:",   "403"],
+        ["2.", ":kill:",      "216"],
+        ["3.", ":gunright:",  "171"],
+        ["4.", ":lfg:",       "165"],
+        ["5.", ":trueshred:", "164"],
+      ]
     }
   },
   methods: {
@@ -185,11 +176,95 @@ const reactsLeaderboard = {
       this.active = this.hidden;
       this.hidden = temp;
 
-      this.currentlySpam = !this.currentlySpam
+      this.currentlySpam = !this.currentlySpam;
+
+      [this.totalActive, this.totalHidden] = [this.totalHidden, this.totalActive];
+    },
+    map(key) {
+      return map[key]
+    }
+  }
+};
+Vue.createApp(emojisLeaderboard).mount("#emojisApp")
+
+const reactsLeaderboard = {
+  data() {
+    return {
+      currentlySpam: true,
+      active: [
+        ["1.", ":upvote:",    "3,778"],
+        ["2.", "🎲",          "1,142"],
+        ["3.", ":downvote:",  "884"],
+        ["4.", ":lfg:",       "555"],
+        ["5.", "👋",          "377"],
+      ],
+      totalActive: "18,165",
+      totalHidden: "13,470",
+      hidden: [
+        ["1.", ":upvote:",    "3,297"],
+        ["2.", ":downvote:",  "857"],
+        ["3.", ":lfg:",       "502"],
+        ["4.", "📌",          "250"],
+        ["5.", ":shredward:", "247"],
+      ]
+    }
+  },
+  methods: {
+    toggleSpam() {
+      temp = this.active;
+      this.active = this.hidden;
+      this.hidden = temp;
+
+      this.currentlySpam = !this.currentlySpam;
+
+      [this.totalActive, this.totalHidden] = [this.totalHidden, this.totalActive];
+    },
+    map(key) {
+      return map[key]
     }
   }
 };
 Vue.createApp(reactsLeaderboard).mount("#reactionsApp")
+
+const combinedLeaderboard = {
+  data() {
+    return {
+      currentlySpam: true,
+      active: [
+        ["1.", ":upvote:",    "3,795"],
+        ["2.", "🎲",          "1,142"],
+        ["3.", ":downvote:",  "892"],
+        ["4.", ":lfg:",       "730"],
+        ["5.", ":shredward:", "378"],
+        // ["5.", ":trueshred:", "328"],
+      ],
+      totalActive: "18,165",
+      totalHidden: "13,470",
+      hidden: [
+        ["1.", ":upvote:",  "3,310"],
+        ["2.", ":downvote:",  "862"],
+        ["3.", ":lfg:",  "667"],
+        ["4.", ":shredward:",  "347"],
+        ["5.", ":trueshred:",  "314"],
+      ]
+    }
+  },
+  methods: {
+    toggleSpam() {
+      temp = this.active;
+      this.active = this.hidden;
+      this.hidden = temp;
+
+      this.currentlySpam = !this.currentlySpam;
+
+      [this.totalActive, this.totalHidden] = [this.totalHidden, this.totalActive];
+    },
+    map(key) {
+      return map[key]
+    }
+  }
+};
+Vue.createApp(combinedLeaderboard).mount("#combinedApp")
 
 
 const namelist = {

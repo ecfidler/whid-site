@@ -9,92 +9,92 @@ var defaults = {
 canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true });
 
 function fire(particleRatio, opts) {
-    canvas.confetti(Object.assign({}, defaults, opts, {
-      particleCount: Math.floor(count * particleRatio)
-    }));
-  }
+  canvas.confetti(Object.assign({}, defaults, opts, {
+    particleCount: Math.floor(count * particleRatio)
+  }));
+}
 
 setTimeout(() => {
-    fire(0.25, {
-        spread: 26,
-        startVelocity: 55,
-      });
-      fire(0.2, {
-        spread: 60,
-      });
-      fire(0.35, {
-        spread: 100,
-        decay: 0.91,
-        scalar: 0.8
-      });
-      fire(0.1, {
-        spread: 120,
-        startVelocity: 25,
-        decay: 0.92,
-        scalar: 1.2
-      });
-      fire(0.1, {
-        spread: 120,
-        startVelocity: 45,
-      });
+  fire(0.25, {
+    spread: 26,
+    startVelocity: 55,
+  });
+  fire(0.2, {
+    spread: 60,
+  });
+  fire(0.35, {
+    spread: 100,
+    decay: 0.91,
+    scalar: 0.8
+  });
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 25,
+    decay: 0.92,
+    scalar: 1.2
+  });
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 45,
+  });
 }, 1000);
 
 const Carousel = {
-    data() {
-        return {
-            name1: false,
-            name2: true,
-            counter1: 1,
-            counter2: 0,
-            words: ['quality discussion', 'cheeto', 'games', 'gaming', 'gamers',
-                    'art', 'tierlists', 'videos', 'music', 'laughs', 'memes', 
-                    'good times', '𝓗𝓮𝓪𝓿𝓮𝓷', 'movies', 'dubs', 'Ls'],
-        }
-    },
-    mounted() {
-        this.words = shuffleExceptFirst(this.words)
-        setInterval(() => {
-            if(this.name2 === true) {
-                this.counter1 = (this.counter2 + 1) % this.words.length;
-                this.name1 = true;
-                this.name2 = false;
-            } else {
-                this.counter2 = (this.counter1 + 1) % this.words.length;
-                this.name1 = false;
-                this.name2 = true;
-            }
-        }, 3000);
+  data() {
+    return {
+      name1: false,
+      name2: true,
+      counter1: 1,
+      counter2: 0,
+      words: ['quality discussion', 'cheeto', 'games', 'gaming', 'gamers',
+        'art', 'tierlists', 'videos', 'music', 'laughs', 'memes',
+        'good times', '𝓗𝓮𝓪𝓿𝓮𝓷', 'movies', 'dubs', 'Ls'],
     }
+  },
+  mounted() {
+    this.words = shuffleExceptFirst(this.words)
+    setInterval(() => {
+      if (this.name2 === true) {
+        this.counter1 = (this.counter2 + 1) % this.words.length;
+        this.name1 = true;
+        this.name2 = false;
+      } else {
+        this.counter2 = (this.counter1 + 1) % this.words.length;
+        this.name1 = false;
+        this.name2 = true;
+      }
+    }, 3000);
+  }
 };
 
 function shuffleExceptFirst(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i) + 1);
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i) + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr
 }
 
 // Actual most optimal code
 function chooseRandomFunction(total, old) {
-    const pick = Math.floor(Math.random() * 2);
-    if(pick == 1)
-        return getRandomIntBen(total, old);
-    return getRandomIntBrendan(total, old);
+  const pick = Math.floor(Math.random() * 2);
+  if (pick == 1)
+    return getRandomIntBen(total, old);
+  return getRandomIntBrendan(total, old);
 }
 
 function getRandomIntBrendan(total, old) {
-    let newNum = Math.floor(Math.random() * total);
-    if(newNum == old)
-        ++newNum < total ? null : newNum -= 2;
-    return newNum;
+  let newNum = Math.floor(Math.random() * total);
+  if (newNum == old)
+    ++newNum < total ? null : newNum -= 2;
+  return newNum;
 }
 
 function getRandomIntBen(total, old) {
-    let newNum = Math.floor(Math.random() * (total-1));
-    if (newNum >= old)
-        newNum = (newNum + 1) % total;
-    return newNum;
+  let newNum = Math.floor(Math.random() * (total - 1));
+  if (newNum >= old)
+    newNum = (newNum + 1) % total;
+  return newNum;
 }
 
 Vue.createApp(Carousel).mount('#header_ticker');
@@ -104,18 +104,18 @@ const messageLeaderboard = {
     return {
       currentlySpam: true,
       active: [
-        ["bebenebenebeb#8098",  "25,149"],
-        ["El Jefe#5223",        "20,433"],
-        ["Rythm#3722",          "19,974"],
-        ["fops#1969",           "16,942"],
-        ["Us#0704",             "12,685"],
+        ["bebenebenebeb#8098", "25,149"],
+        ["El Jefe#5223", "20,433"],
+        ["Rythm#3722", "19,974"],
+        ["fops#1969", "16,942"],
+        ["Us#0704", "12,685"],
       ],
       hidden: [
-        ["El Jefe#5223",        "12,492"],
-        ["bebenebenebeb#8098",  "11,235"],
-        ["fops#1969",           "9,956"],
-        ["noss#0773",           "7,592"],
-        ["Sharkwood#8876",      "4,962"],
+        ["El Jefe#5223", "12,492"],
+        ["bebenebenebeb#8098", "11,235"],
+        ["fops#1969", "9,956"],
+        ["noss#0773", "7,592"],
+        ["Sharkwood#8876", "4,962"],
       ],
     }
   },
@@ -153,19 +153,19 @@ const emojisLeaderboard = {
     return {
       currentlySpam: true,
       active: [
-        ["1.", ":youtube:",   "6,461"],
-        ["2.", ":spotify:",   "887"],
-        ["3.", ":yoooooo:",   "403"],
-        ["4.", ":kill:",      "217"],
-        ["5.", "👍",  "199"],
+        ["1.", ":youtube:", "6,461"],
+        ["2.", ":spotify:", "887"],
+        ["3.", ":yoooooo:", "403"],
+        ["4.", ":kill:", "217"],
+        ["5.", "👍", "199"],
       ],
       totalActive: "12,725",
       totalHidden: "4,891",
       hidden: [
-        ["1.", ":yoooooo:",   "403"],
-        ["2.", ":kill:",      "216"],
-        ["3.", ":gunright:",  "171"],
-        ["4.", ":lfg:",       "165"],
+        ["1.", ":yoooooo:", "403"],
+        ["2.", ":kill:", "216"],
+        ["3.", ":gunright:", "171"],
+        ["4.", ":lfg:", "165"],
         ["5.", ":trueshred:", "164"],
       ]
     }
@@ -195,19 +195,19 @@ const reactsLeaderboard = {
     return {
       currentlySpam: true,
       active: [
-        ["1.", ":upvote:",    "3,778"],
-        ["2.", "🎲",          "1,142"],
-        ["3.", ":downvote:",  "884"],
-        ["4.", ":lfg:",       "555"],
-        ["5.", "👋",          "377"],
+        ["1.", ":upvote:", "3,778"],
+        ["2.", "🎲", "1,142"],
+        ["3.", ":downvote:", "884"],
+        ["4.", ":lfg:", "555"],
+        ["5.", "👋", "377"],
       ],
       totalActive: "18,165",
       totalHidden: "13,470",
       hidden: [
-        ["1.", ":upvote:",    "3,297"],
-        ["2.", ":downvote:",  "857"],
-        ["3.", ":lfg:",       "502"],
-        ["4.", "📌",          "250"],
+        ["1.", ":upvote:", "3,297"],
+        ["2.", ":downvote:", "857"],
+        ["3.", ":lfg:", "502"],
+        ["4.", "📌", "250"],
         ["5.", ":shredward:", "247"],
       ]
     }
@@ -234,21 +234,21 @@ const combinedLeaderboard = {
     return {
       currentlySpam: true,
       active: [
-        ["1.", ":upvote:",    "3,795"],
-        ["2.", "🎲",          "1,142"],
-        ["3.", ":downvote:",  "892"],
-        ["4.", ":lfg:",       "730"],
+        ["1.", ":upvote:", "3,795"],
+        ["2.", "🎲", "1,142"],
+        ["3.", ":downvote:", "892"],
+        ["4.", ":lfg:", "730"],
         ["5.", ":shredward:", "378"],
         // ["5.", ":trueshred:", "328"],
       ],
       totalActive: "18,165",
       totalHidden: "13,470",
       hidden: [
-        ["1.", ":upvote:",  "3,310"],
-        ["2.", ":downvote:",  "862"],
-        ["3.", ":lfg:",  "667"],
-        ["4.", ":shredward:",  "347"],
-        ["5.", ":trueshred:",  "314"],
+        ["1.", ":upvote:", "3,310"],
+        ["2.", ":downvote:", "862"],
+        ["3.", ":lfg:", "667"],
+        ["4.", ":shredward:", "347"],
+        ["5.", ":trueshred:", "314"],
       ]
     }
   },
@@ -273,8 +273,8 @@ Vue.createApp(combinedLeaderboard).mount("#combinedApp")
 const namelist = {
   data() {
     return {
-      name:'',
-      names:[
+      name: '',
+      names: [
         'fops#1969', 'bebenebenebeb#8098', 'El Jefe#5223', 'noss#0773',
         'Duhiggles#6156', 'TheInfinity#3826', 'SilentKON#2259',
         'Chris63479#5104', 'Sharkwood#8876', 'XxxOilBaron69xxX#1543',
@@ -333,7 +333,7 @@ const namelist = {
         'Greenedar#8008', 'EriAndo#5096', 'luckypeachie#5765', 'AELR#6890',
         'elif#5004', 'BigDWH14#2911', 'Kim Jah Un#1827', 'min#1473',
         'Qwerty239#0239', '__lopunny#9908', 'keylimelover#9457']
-	  }
+    }
   }
 };
 

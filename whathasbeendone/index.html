@@ -338,8 +338,14 @@
                         <p class="col-6 col-md-5">{{ emoji[0] }}
                             <img aria-label="emoji[1]" :src="map(emoji[1])" alt="emoji[1]" class="emoji">
                         </p>
-                        <p class="col-6 col-md-7">{{ emoji[2] }}
-                            <span v-if="emoji[0]=='1.'" class="subtext">uses</span>
+                        <p class="col-6 col-md-7">
+
+                            <span v-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip" data-bs-placement="left"
+                                data-bs-html="true"
+                                title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:.">
+                                <u>{{ emoji[2] }}</u></span>
+                            <span v-else>{{ emoji[2] }}</span>
+                            <span v-if="emoji[0]=='1.'" class="subtext"> uses</span>
                         </p>
                     </div>
                     <hr>

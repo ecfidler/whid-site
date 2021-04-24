@@ -179,6 +179,9 @@ const emojisLeaderboard = {
       this.currentlySpam = !this.currentlySpam;
 
       [this.totalActive, this.totalHidden] = [this.totalHidden, this.totalActive];
+      setTimeout(() => {
+        enableTooltips();
+      }, 100)
     },
     map(key) {
       return map[key]
@@ -335,3 +338,16 @@ const namelist = {
 };
 
 Vue.createApp(namelist).mount('#listApp')
+
+var tooltipList;
+
+function enableTooltips() {
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+
+  tooltipList = tooltipTriggerList.map(
+    function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+};
+
+enableTooltips();

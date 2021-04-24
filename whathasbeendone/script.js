@@ -55,11 +55,11 @@ const Carousel = {
         this.words = shuffleExceptFirst(this.words)
         setInterval(() => {
             if(this.name2 === true) {
-                this.counter1 = this.counter2 + 1;
+                this.counter1 = (this.counter2 + 1) % this.words.length;
                 this.name1 = true;
                 this.name2 = false;
             } else {
-                this.counter2 = this.counter1 + 1;
+                this.counter2 = (this.counter1 + 1) % this.words.length;
                 this.name1 = false;
                 this.name2 = true;
             }

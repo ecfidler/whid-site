@@ -468,6 +468,7 @@ span.d-highlight:hover {
     color: white;
     background-color: #7289da;
     transition: background-color 50ms ease-out,color 50ms ease-out;
+    cursor: pointer;
 }
 
 /* --background-mentioned: rgba(250,166,26,0.05);

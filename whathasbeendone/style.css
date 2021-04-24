@@ -5,12 +5,46 @@ html, body {
     overflow-x: hidden;
 }
 
-h1 {
-    font-family: canada-type-gibson, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 5rem;
-    color: white;
+@media (max-width: 768px) {
+    h1 {
+        font-family: canada-type-gibson, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 3rem;
+        color: white;
+    }
+    #header_ticker {
+        width: 24rem;
+        height: 3.7rem;
+        padding-left: 1em;
+        background-color: #7289da;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+}
+@media (min-width: 768px) {
+    h1 {
+        font-family: canada-type-gibson, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 5rem;
+        color: white;
+    }
+    #header_ticker {
+        width: 39rem;
+        height: 6.3rem;
+        padding-left: 1em;
+        background-color: #7289da;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    }
 }
 
 h2 {
@@ -77,18 +111,6 @@ span {
 #head canvas, #header_info {
     /* width: 100vw; */
     /* margin: auto; */
-}
-
-#header_ticker {
-    width: 39rem;
-    height: 6.3rem;
-    padding-left: 1em;
-    background-color: #7289da;
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
-
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 #header_ticker h1 {

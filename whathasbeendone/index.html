@@ -232,7 +232,7 @@
                         </div>
                     </div>
                     <transition-group name="lb" tag="p" style="height: 260px;">
-                        <div v-for="person in active" v-bind:key="person[1]" class="row" class="msgs-item">
+                        <div v-for="person in active" v-bind:key="person[1]" class="row">
                             <p class="col-12 col-md-6">{{ person[0] }} <span class="d-highlight">@{{ person[1] }}
                                 </span></p>
                             <p class="col-12 col-md-6">{{ person[2] }} <span v-if="person[0]=='1.'"

@@ -428,19 +428,13 @@ button span {
 }
 
 .lb-leave-to {
-    /* transition: transform 1s; */
     visibility: hidden;
     position: absolute;
-    /* display: none; */
 }
 
 .lb-enter-from {
     opacity: 0;
     transform: translateY(40px);
-}
-
-.lb-item {
-    opacity: 1;
 }
 
 .emoji {

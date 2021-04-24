@@ -136,9 +136,10 @@
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="p-3 px-4 stat-block" data-aos="fade-up" data-aos-delay="00">
                     <p class="verb">invited</p>
-                    <p class="px-2 pt-1 number purple" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-customClass="tooltip"
-                        title="52 internationals and 140 non-internationals.">
-                        <u>192</u></p>
+                    <p class="px-2 pt-1 number purple" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        data-bs-customClass="tooltip" title="52 internationals and 140 non-internationals.">
+                        <u>192</u>
+                    </p>
                     <p class=" noun">members!</p>
                 </div>
             </div>
@@ -264,6 +265,13 @@
                             <span v-if="emoji[1]==':yoooooo:'" data-bs-toggle="tooltip" data-bs-placement="left"
                                 data-bs-html="true"
                                 title="396 of these are from <span class='d-highlight'>@Mii-Sama#3255</span> in the span of less than 60 seconds.">
+                                <u>{{ emoji[2] }}</u></span>
+                            <span v-else-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip" data-bs-placement="left"
+                                title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:.">
+                                <u>{{ emoji[2] }}</u></span>
+                            <span v-else-if="[':youtube:',':spotify:'].includes(emoji[1])" data-bs-toggle="tooltip" data-bs-placement="left"
+                                data-bs-html="true"
+                                title="<span class='d-highlight'>@Rythm#3722</span> sends an emoji for Youtube or Spotify each time you play a song on it.">
                                 <u>{{ emoji[2] }}</u></span>
                             <span v-else>{{ emoji[2] }}</span>
                             <span v-if="emoji[0]=='1.'" class="subtext"> uses</span>

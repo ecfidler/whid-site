@@ -258,7 +258,7 @@
                     </div>
                     <div v-for="emoji in active" class="row">
                         <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" alt="emoji[1]" class="emoji">
+                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]" class="emoji">
                         </p>
                         <p class="col-6 col-md-7">
 
@@ -305,7 +305,7 @@
                     </div>
                     <div v-for="emoji in active" class="row">
                         <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" alt="emoji[1]" class="emoji">
+                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]" class="emoji">
                         </p>
                         <p class="col-6 col-md-7">{{ emoji[2] }}
                             <span v-if="emoji[0]=='1.'" class="subtext">uses</span>
@@ -336,7 +336,7 @@
                     </div>
                     <div v-for="emoji in active" class="row">
                         <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" alt="emoji[1]" class="emoji">
+                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]" class="emoji">
                         </p>
                         <p class="col-6 col-md-7">
 
@@ -367,7 +367,7 @@
     <!-- dropdown box for choosing name -->
     <div class="container">
         <div class="row">
-            <div class='col-5'>
+            <div class='col-12 col-md-5'>
                 <div id="listApp">
                     <label for="nameInput" class="form-label"></label>
                     <div class="input-group input-group-lg">

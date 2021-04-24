@@ -261,6 +261,9 @@ const combinedLeaderboard = {
       this.currentlySpam = !this.currentlySpam;
 
       [this.totalActive, this.totalHidden] = [this.totalHidden, this.totalActive];
+      setTimeout(() => {
+        enableTooltips();
+      }, 100)
     },
     map(key) {
       return map[key]

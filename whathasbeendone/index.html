@@ -231,7 +231,7 @@
                             </button>
                         </div>
                     </div>
-                    <transition-group name="lb" tag="p" style="height: 260px;">
+                    <transition-group name="lb" tag="p">
                         <div v-for="person in active" v-bind:key="person[1]" class="row">
                             <p class="col-12 col-md-6">{{ person[0] }} <span class="d-highlight">@{{ person[1] }}
                                 </span></p>
@@ -261,26 +261,29 @@
                             </button>
                         </div>
                     </div>
-                    <div v-for="person in people" class="row">
-                        <p class="col-12 col-md-6">
-                            {{ person[0] }}
-                            <span class="d-highlight">
-                                {{ person[1] }}
-                            </span>
-                        </p>
-                        <p class="col-12 col-md-6">
-                            <span v-if="person[1]=='@Saturn'" data-bs-toggle="tooltip" data-bs-placement="left"
-                                data-bs-html="true"
-                                title="<span class='d-highlight'>@[DEAD] Rebel Ben#3223</span> spammed this mention 215 times in individual messages over the course of an hour.">
-                                <u>{{ person[2] }}</u>
-                            </span>
-                            <span v-else>{{ person[2] }}</span>
+                    <transition-group name="lb" tag="p">
 
-                            <span v-if="person[0]=='1.'" class="subtext">
-                                times
-                            </span>
-                        </p>
-                    </div>
+                        <div v-for="person in people" class="row" v-bind:key="person[1]">
+                            <p class="col-12 col-md-6">
+                                {{ person[0] }}
+                                <span class="d-highlight">
+                                    {{ person[1] }}
+                                </span>
+                            </p>
+                            <p class="col-12 col-md-6">
+                                <span v-if="person[1]=='@Saturn'" data-bs-toggle="tooltip" data-bs-placement="left"
+                                    data-bs-html="true"
+                                    title="<span class='d-highlight'>@[DEAD] Rebel Ben#3223</span> spammed this mention 215 times in individual messages over the course of an hour.">
+                                    <u>{{ person[2] }}</u>
+                                </span>
+                                <span v-else>{{ person[2] }}</span>
+
+                                <span v-if="person[0]=='1.'" class="subtext">
+                                    times
+                                </span>
+                            </p>
+                        </div>
+                    </transition-group>
                 </div>
             </div>
             <div class="col-12 col-xxl-6">
@@ -333,28 +336,31 @@
                             </button>
                         </div>
                     </div>
-                    <div v-for="emoji in active" class="row">
-                        <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
-                                class="emoji">
-                        </p>
-                        <p class="col-6 col-md-7">
+                    <transition-group name="lb" tag="p">
+                        <div v-for="emoji in active" class="row" v-bind:key="emoji[1]">
+                            <p class="col-6 col-md-5">{{ emoji[0] }}
+                                <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
+                                    class="emoji">
+                            </p>
+                            <p class="col-6 col-md-7">
 
-                            <span v-if="emoji[1]==':yoooooo:'" data-bs-toggle="tooltip" data-bs-placement="left"
-                                data-bs-html="true"
-                                title="396 of these are from <span class='d-highlight'>@Mii-Sama#3255</span> in the span of less than 60 seconds.">
-                                <u>{{ emoji[2] }}</u></span>
-                            <span v-else-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip" data-bs-placement="left"
-                                title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:. So there are actually more than this!">
-                                <u>{{ emoji[2] }}</u></span>
-                            <span v-else-if="[':youtube:',':spotify:'].includes(emoji[1])" data-bs-toggle="tooltip"
-                                data-bs-placement="left" data-bs-html="true"
-                                title="<span class='d-highlight'>@Rythm#3722</span> sends an emoji for Youtube or Spotify each time you play a song on it.">
-                                <u>{{ emoji[2] }}</u></span>
-                            <span v-else>{{ emoji[2] }}</span>
-                            <span v-if="emoji[0]=='1.'" class="subtext"> uses</span>
-                        </p>
-                    </div>
+                                <span v-if="emoji[1]==':yoooooo:'" data-bs-toggle="tooltip" data-bs-placement="left"
+                                    data-bs-html="true"
+                                    title="396 of these are from <span class='d-highlight'>@Mii-Sama#3255</span> in the span of less than 60 seconds.">
+                                    <u>{{ emoji[2] }}</u></span>
+                                <span v-else-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip"
+                                    data-bs-placement="left"
+                                    title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:. So there are actually more than this!">
+                                    <u>{{ emoji[2] }}</u></span>
+                                <span v-else-if="[':youtube:',':spotify:'].includes(emoji[1])" data-bs-toggle="tooltip"
+                                    data-bs-placement="left" data-bs-html="true"
+                                    title="<span class='d-highlight'>@Rythm#3722</span> sends an emoji for Youtube or Spotify each time you play a song on it.">
+                                    <u>{{ emoji[2] }}</u></span>
+                                <span v-else>{{ emoji[2] }}</span>
+                                <span v-if="emoji[0]=='1.'" class="subtext"> uses</span>
+                            </p>
+                        </div>
+                    </transition-group>
                     <hr>
                     <br>
                     <div class="row">
@@ -381,15 +387,17 @@
                             </button>
                         </div>
                     </div>
-                    <div v-for="emoji in active" class="row">
-                        <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
-                                class="emoji">
-                        </p>
-                        <p class="col-6 col-md-7">{{ emoji[2] }}
-                            <span v-if="emoji[0]=='1.'" class="subtext">uses</span>
-                        </p>
-                    </div>
+                    <transition-group name="lb" tag="p">
+                        <div v-for="emoji in active" class="row" v-bind:key="emoji[1]">
+                            <p class="col-6 col-md-5">{{ emoji[0] }}
+                                <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
+                                    class="emoji">
+                            </p>
+                            <p class="col-6 col-md-7">{{ emoji[2] }}
+                                <span v-if="emoji[0]=='1.'" class="subtext">uses</span>
+                            </p>
+                        </div>
+                    </transition-group>
                     <hr>
                     <br>
                     <div class="row">
@@ -413,24 +421,26 @@
                             </button>
                         </div>
                     </div>
-                    <div v-for="emoji in active" class="row">
-                        <p class="col-6 col-md-5">{{ emoji[0] }}
-                            <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
-                                class="emoji">
-                        </p>
-                        <p class="col-6 col-md-7">
+                    <transition-group name="lb" tag="p">
+                        <div v-for="emoji in active" class="row" v-bind:key="emoji[1]">
+                            <p class="col-6 col-md-5">{{ emoji[0] }}
+                                <img aria-label="emoji[1]" :src="map(emoji[1])" :title="emoji[1]" alt="emoji[1]"
+                                    class="emoji">
+                            </p>
+                            <p class="col-6 col-md-7">
 
-                            <span v-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip" data-bs-placement="left"
-                                data-bs-html="true"
-                                title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:. So there are actually more than this!">
-                                <u>{{ emoji[2] }}</u></span>
-                            <span v-else-if="emoji[1]==':upvote:'" data-bs-toggle="tooltip" data-bs-placement="left"
-                                data-bs-html="true" title=":upvote: has only been sent in a message 17 times!">
-                                <u>{{ emoji[2] }}</u></span>
-                            <span v-else>{{ emoji[2] }}</span>
-                            <span v-if="emoji[0]=='1.'" class="subtext"> uses</span>
-                        </p>
-                    </div>
+                                <span v-if="emoji[1]==':trueshred:'" data-bs-toggle="tooltip" data-bs-placement="left"
+                                    data-bs-html="true"
+                                    title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:. So there are actually more than this!">
+                                    <u>{{ emoji[2] }}</u></span>
+                                <span v-else-if="emoji[1]==':upvote:'" data-bs-toggle="tooltip" data-bs-placement="left"
+                                    data-bs-html="true" title=":upvote: has only been sent in a message 17 times!">
+                                    <u>{{ emoji[2] }}</u></span>
+                                <span v-else>{{ emoji[2] }}</span>
+                                <span v-if="emoji[0]=='1.'" class="subtext"> uses</span>
+                            </p>
+                        </div>
+                    </transition-group>
                     <hr>
                     <br>
                     <div class="row">

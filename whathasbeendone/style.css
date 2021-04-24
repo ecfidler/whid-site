@@ -420,11 +420,17 @@ button span {
 }
 
 .lb-move {
-    transition: transform 1s;
+    transition: transform 0.75s;
 }
 
 .lb-enter-active {
-  transition: 1s ease;
+  transition: 0.75s ease;
+}
+
+.lb-leave-active {
+    
+    visibility: hidden;
+    position: absolute;
 }
 
 .lb-leave-to {

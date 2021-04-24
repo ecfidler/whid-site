@@ -231,26 +231,14 @@
                             </button>
                         </div>
                     </div>
-                    <div class="row">
-                        <p class="col-12 col-md-6">1. <span class="d-highlight">@{{ active[0][0] }} </span></p>
-                        <p class="col-12 col-md-6">{{ active[0][1] }} <span class="subtext">messages sent</span></p>
-                    </div>
-                    <div class="row">
-                        <p class="col-12 col-md-6">2. <span class="d-highlight">@{{ active[1][0] }}</span></p>
-                        <p class="col-12 col-md-6">{{ active[1][1] }}</p>
-                    </div>
-                    <div class="row">
-                        <p class="col-12 col-md-6">3. <span class="d-highlight">@{{ active[2][0] }}</span></p>
-                        <p class="col-12 col-md-6">{{ active[2][1] }}</p>
-                    </div>
-                    <div class="row">
-                        <p class="col-12 col-md-6">4. <span class="d-highlight">@{{ active[3][0] }}</span></p>
-                        <p class="col-12 col-md-6">{{ active[3][1] }}</p>
-                    </div>
-                    <div class="row">
-                        <p class="col-12 col-md-6">5. <span class="d-highlight">@{{ active[4][0] }}</span></p>
-                        <p class="col-12 col-md-6">{{ active[4][1] }}</p>
-                    </div>
+                    <transition-group name="lb" tag="p" style="height: 260px;">
+                        <div v-for="person in active" v-bind:key="person[1]" class="row" class="msgs-item">
+                            <p class="col-12 col-md-6">{{ person[0] }} <span class="d-highlight">@{{ person[1] }}
+                                </span></p>
+                            <p class="col-12 col-md-6">{{ person[2] }} <span v-if="person[0]=='1.'"
+                                    class="subtext">messages sent</span></p>
+                        </div>
+                    </transition-group>
                 </div>
             </div>
         </div>

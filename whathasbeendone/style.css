@@ -419,6 +419,30 @@ button span {
     font-size: 1rem;
 }
 
+.lb-move {
+    transition: transform 1s;
+}
+
+.lb-enter-active {
+  transition: 1s ease;
+}
+
+.lb-leave-to {
+    /* transition: transform 1s; */
+    visibility: hidden;
+    position: absolute;
+    /* display: none; */
+}
+
+.lb-enter-from {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.lb-item {
+    opacity: 1;
+}
+
 .emoji {
     -o-object-fit: contain;
     object-fit: contain;

@@ -250,7 +250,7 @@ section.timeline-outer {
 }
 
 
-/* @media (max-width: 945px) {
+@media (max-width: 945px) {
     .timeline .event::before {
         left: 0.5px;
         top: 20px;
@@ -311,7 +311,7 @@ section.timeline-outer {
     .social_links_box a i {
         font-size: 1em;
     }
-} */
+}
 
 hr {
     border: none;

@@ -131,8 +131,12 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-3 col-xl-4">
                 <div class="p-3 px-4 stat-block" data-aos="fade-up" data-aos-delay="200">
-                    <p class="verb">issued</p>
-                    <p class="px-2 pt-1 number orange">38,565</p>
+                    <p class="verb">issued
+                        <span class="subtext" data-bs-toggle="tooltip"
+                            title="Some commands are used so infrequently that it's hard to track them down in the logs.">
+                            <u>at least</u></span>
+                    </p>
+                    <p class="px-2 pt-1 number orange">41,960</p>
                     <p class="noun">bot commands.</p>
                 </div>
             </div>
@@ -158,6 +162,16 @@
                     <p class="verb">sent "fuck"</p>
                     <p class="px-2 pt-1 number pink">842</p>
                     <p class="noun">times.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="p-3 px-4 stat-block" data-aos="fade-up" data-aos-delay="200">
+                    <p class="verb">posted</p>
+                    <p class="px-2 pt-1 number purple" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        title="11,359 by people and the rest by bots">
+                        <u>14,391</u>
+                    </p>
+                    <p class="noun">images.</p>
                 </div>
             </div>
         </div>
@@ -347,8 +361,7 @@
                                 title=":shred: and :trueshred: are the same emoji, but this only counts :trueshred:. So there are actually more than this!">
                                 <u>{{ emoji[2] }}</u></span>
                             <span v-else-if="emoji[1]==':upvote:'" data-bs-toggle="tooltip" data-bs-placement="left"
-                                data-bs-html="true"
-                                title=":upvote: has only been sent in a message 17 times!">
+                                data-bs-html="true" title=":upvote: has only been sent in a message 17 times!">
                                 <u>{{ emoji[2] }}</u></span>
                             <span v-else>{{ emoji[2] }}</span>
                             <span v-if="emoji[0]=='1.'" class="subtext"> uses</span>

@@ -255,6 +255,75 @@
             </div>
         </div>
     </section>
+    <br>
+    <section class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-xxl-6">
+                <div id="mentionsApp">
+                    <div class="row">
+                        <h2 class="col-7">
+                            Most mentioned:
+                        </h2>
+                        <div class="col-5">
+                            <button type="button" class="btn btn-outline-secondary mt-2 active" data-bs-toggle="button"
+                                aria-pressed="true" autocomplete="off" v-on:click="toggleSpam"
+                                title="Toggle whether to include channels like #spam, #dev, #the-real-us, etc.">
+                                <span v-if="currentlySpam">Incl. Spam</span>
+                                <strike v-else>Incl. Spam</strike>
+                            </button>
+                        </div>
+                    </div>
+                    <div v-for="person in people" class="row">
+                        <p class="col-12 col-md-6">
+                            {{ person[0] }}
+                            <span class="d-highlight">
+                                {{ person[1] }}
+                            </span>
+                        </p>
+                        <p class="col-12 col-md-6">
+                            <span v-if="person[1]=='@Saturn'" data-bs-toggle="tooltip" data-bs-placement="left"
+                                data-bs-html="true"
+                                title="<span class='d-highlight'>@[DEAD] Rebel Ben#3223</span> spammed this mention 215 times in individual messages over the course of an hour.">
+                                <u>{{ person[2] }}</u>
+                            </span>
+                            <span v-else>{{ person[2] }}</span>
+
+                            <span v-if="person[0]=='1.'" class="subtext">
+                                times
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xxl-6">
+                <h2>
+                    Most <span class="d-highlight">@everyone</span>s:
+                </h2>
+                <div class="row">
+                    <p class="col-6">1. <span class="d-highlight">@El Jefe#5223</span></p>
+                    <p class="col-6">63 <span class="subtext">pings</span></p>
+                </div>
+                <div class="row">
+                    <p class="col-6">2. <span class="d-highlight">@Us#0704</span></p>
+                    <p class="col-6">56</p>
+                </div>
+                <div class="row">
+                    <p class="col-6">3. <span class="d-highlight">@noss#0773</span></p>
+                    <p class="col-6">42</p>
+                </div>
+                <div class="row">
+                    <p class="col-6">4. <span class="d-highlight">@SilentKON#2259</span></p>
+                    <p class="col-6">
+                        <u data-bs-toggle="tooltip" title="These all worked btw.">28</u>
+                    </p>
+                </div>
+                <div class="row">
+                    <p class="col-6">5. <span class="d-highlight">@bebenebenebeb#8098</span></p>
+                    <p class="col-6">16</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 

@@ -223,7 +223,7 @@ function strToReacts(str) {
   reacts = [];
   pairs.forEach(pair => {
     [emoji, count] = pair.split(" ");
-    if (emoji.length > 2) // on our data, means it's custom
+    if (emoji.length > 2) // on our data, this means it's custom
       emoji = ":" + emoji + ":"
     count = count.substring(1, count.length-1);
     reacts.push([emoji, count, map[emoji]]);

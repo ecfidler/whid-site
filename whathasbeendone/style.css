@@ -563,22 +563,42 @@ img[alt] {
 }
 
 .reactions {
-    justify-self: start;
-    -ms-flex-item-align: start;
-    align-self: start;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    width: 100%;
     display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-wrap: wrap;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    margin-bottom: -.25rem;
-    padding-bottom: .125rem;
+}
+
+.reaction-bubble {
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #42454a;
+    color: #72767d;
+    width: 3.125em;
+    padding-left: .375em;
+    padding-right: .375em;
+    margin-left: .125em;
+    margin-top: .125em;
+    cursor: pointer;
+}
+
+.reaction-emoji {
+    width: 16px;
+    height: 16px;
+}
+
+.reaction-count {
+    font-size: .875em;
+    margin-top: .125em;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+}
+
+.reaction-bubble:hover {
+    color: #dcddde;
 }
 
 .russell {

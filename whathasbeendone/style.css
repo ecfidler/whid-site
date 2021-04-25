@@ -454,9 +454,19 @@ img[alt] {
     text-indent: -9999px;
 }
 
+.message-block {
+    background-color: #393c43;
+    border-radius: 5px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    /* overflow: hidden; */
+}
+
 .message {
     min-height: 2.75rem;
     padding-left: 56px;
+    padding-right: 0.5em;
+    padding-top: 0.1em;
+    /* padding-bottom: 0.1em; */
     position: relative;
     flex: 0 0 auto;
 
@@ -601,6 +611,12 @@ img[alt] {
     color: #dcddde;
 }
 
+.message-content {
+    margin-left: 0.1em;
+    font-size: 1rem;
+    color: white;
+}
+
 .russell {
     color: rgb(100, 187, 111);
 }
@@ -618,4 +634,7 @@ img[alt] {
 }
 .wyatt {
     color: rgb(150, 111, 214);
+}
+.anniv-color {
+    color: lightgray;
 }

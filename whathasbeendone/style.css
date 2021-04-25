@@ -554,7 +554,12 @@ img[alt] {
 
 .attachment img {
     width: 90%;
-    border-radius: 3px;
+    border-radius: 4px;
+}
+
+.attachment video {
+    width: 90%;
+    border-radius: 4px;
 }
 
 .reactions {
@@ -587,4 +592,10 @@ img[alt] {
 }
 .sergei {
 
+}
+.ethan {
+    color: rgb(151, 235, 234);
+}
+.wyatt {
+    color: rgb(150, 111, 214);
 }

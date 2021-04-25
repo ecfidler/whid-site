@@ -655,20 +655,76 @@
 
     <!-- dropdown box for choosing name -->
     <div class="container">
-        <div class="row">
-            <div class='col-12 col-md-5'>
-                <div id="listApp">
+        <div id="whydApp">
+            <div class="row">
+                <div class='col-12 col-md-5'>
+
                     <label for="nameInput" class="form-label"></label>
                     <div class="input-group input-group-lg">
-                        <input class="form-control" list="namelist" id="nameInput" placeholder="Enter your name...">
+                        <input v-model="name" class="form-control" list="namelist" id="nameInput"
+                            placeholder="Enter your name...">
                         <datalist id="namelist">
                             <option v-for="name in names">{{name}}</option>
                         </datalist>
-                        <!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
-                        <button class="btn btn-secondary" type="button"><i>whyd</i></button>
+                        <button class="btn btn-secondary" type="button"
+                            v-on:click="inputButtonPressed"><i>whyd</i></button>
+                    </div>
+
+
+                </div>
+                <div v-if='!show' class="content pt-5">
+                    <h3>
+                        <i>well, <span class="d-highlight">{{ nameDisplay }}</span>, let's see what you've been up
+                            to.</i>
+                    </h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            sent {{ messagesSent }} messages
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            used {{ channelUseCount }} channels
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            sent {{ emojiCount }} emojis
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            received {{ upvotes }} upvotes
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            endured {{ downvotes }} downvotes
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            most common reaction to your messages was {{ mostReceivedReact }}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            joined on {{ joinDate }}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            your last message before the anniversary was {{ lastMessage }}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            first message {{ firstMessage }}
+                        </p>
                     </div>
                 </div>
-                <br>
             </div>
         </div>
     </div>
@@ -710,6 +766,7 @@
         });
     </script>
     <script src="script.js"></script>
+    <script src="whyd.js"></script>
 
 </body>
 

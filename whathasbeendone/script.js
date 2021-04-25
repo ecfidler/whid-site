@@ -168,6 +168,27 @@ const mentionsLeaderboard = {
 };
 Vue.createApp(mentionsLeaderboard).mount("#mentionsApp")
 
+const mostReactedMessages = {
+  data() {
+    return {
+      jacobReacts: [],
+      russellReacts: [],
+      kianReacts: [],
+      sergeiReacts: [],
+      ethanReacts: [],
+      wyattReacts: [],
+    }
+  },
+  mounted() {
+    // parse reactions lists    
+  },
+  methods: {
+
+  }
+}
+
+Vue.createApp(mostReactedMessages).mount("#reactedMessagesApp")
+
 map = {
   "🎲": "https://twemoji.maxcdn.com/v/latest/72x72/1f3b2.png",
   "👋": "https://twemoji.maxcdn.com/v/latest/72x72/1f44b.png",

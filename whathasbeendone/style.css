@@ -308,18 +308,18 @@ hr {
     margin: auto;
 }
 
-#stats div.stat-block {
+.stat-block {
     background-color: #393c43;
     border-radius: 5px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
-#stats div.stat-block p.verb {
+.stat-block p.verb {
     font-style: normal;
 }
 
-#stats div.stat-block p.inlined {
+.stat-block p.inlined {
     font-style: normal;
 }
 
@@ -428,7 +428,6 @@ button span {
 }
 
 .lb-leave-active {
-    
     visibility: hidden;
     position: absolute;
 }
@@ -453,4 +452,139 @@ button span {
 
 img[alt] {
     text-indent: -9999px;
+}
+
+.message {
+    min-height: 2.75rem;
+    padding-left: 56px;
+    position: relative;
+    flex: 0 0 auto;
+
+    margin-bottom: 1em;
+}
+
+.name-bar {
+    flex: 0 0 auto;
+    padding: 0;
+    margin-top: 1em;
+}
+
+.name-ts {
+    padding: 0;
+    margin: 0px !important;
+
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+}
+
+.name {
+    margin-right: .25rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+
+    position: static;
+    margin-left: 0;
+    padding-left: 0;
+    text-indent: 0;
+}
+
+.timestamp {
+    position: relative;
+    min-height: 1.375rem;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: inherit;
+    font-family: inherit;
+
+    height: 1.25rem;
+    cursor: default;
+    pointer-events: none;
+    font-weight: 500;
+
+    margin-left: .25rem;
+
+    font-size: 0.75rem;
+    line-height: 1.375rem;
+    color: #72767d;
+    vertical-align: baseline;
+}
+
+.avatar {
+    position: absolute;
+    left: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.message-extras {
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: .25rem;
+    text-indent: 0;
+    min-height: 0;
+    min-width: 0;
+    padding-top: .125rem;
+    padding-bottom: .125rem;
+    position: relative;
+}
+
+.attachment {
+    justify-self: start;
+    -ms-flex-item-align: start;
+    align-self: start;
+    position: relative;
+}
+
+.attachment img {
+    width: 90%;
+    border-radius: 3px;
+}
+
+.reactions {
+    justify-self: start;
+    -ms-flex-item-align: start;
+    align-self: start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: -.25rem;
+    padding-bottom: .125rem;
+}
+
+.russell {
+    color: rgb(100, 187, 111);
+}
+.kian {
+    color: rgb(241, 196, 15);
+}
+.jacob {
+    color: rgb(113, 168, 231);
+}
+.sergei {
+
 }

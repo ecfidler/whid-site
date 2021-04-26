@@ -315,14 +315,14 @@ const emojisLeaderboard = {
       active: [
         ["1.", ":youtube:", "6,461"],
         ["2.", ":spotify:", "887"],
-        ["3.", ":yoooooo:", "403"],
+        ["3.", ":YOOOOOO:", "403"],
         ["4.", ":kill:", "217"],
         ["5.", "👍", "199"],
       ],
       totalActive: "12,725",
       totalHidden: "4,891",
       hidden: [
-        ["1.", ":yoooooo:", "403"],
+        ["1.", ":YOOOOOO:", "403"],
         ["2.", ":kill:", "216"],
         ["3.", ":gunright:", "171"],
         ["4.", ":lfg:", "165"],

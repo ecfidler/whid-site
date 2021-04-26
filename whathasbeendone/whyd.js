@@ -1,7 +1,21 @@
+totalChans = comma(23)
+
+function loadData(name) {
+  favChan = "#do"
+  favChanNum = comma(5000)
+  msgsSent = comma(50)
+  chanCount = comma(23)
+}
+
+function comma(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const namelist = {
   data() {
     return {
-      show: false,
+      show1: false,
+      show2: false,
       name: 'fops#1969',
       nameDisplay: 'fops#1969',
       names: [
@@ -76,17 +90,82 @@ const namelist = {
 
       today: '',
 
+      messagesActive: [],
+      messages: [
+
+      ]
+
     }
   },
   methods: {
     inputButtonPressed() {
       if (this.names.includes(this.name)) {
         this.nameDisplay = this.name;
-        this.show = true;
+        this.show1 = true;
+        loadData(this.name);
+        this.constructMessages();
       } else {
         alert('invalid input')
       }
     },
+    afterFirstEnter() {
+      setTimeout(s => {
+        this.show2 = true;
+        this.messagesActive = this.messages;
+      }, 500)
+    },
+    afterSecondEnter() {
+
+    },
+    constructMessages() {
+      this.messages = [
+        [0, "looks like...",],
+        [1, "you've sent " + msgsSent + " messages.",],
+        [1, "that's across " + chanCount + " of our " + totalChans + " channels.",],
+        [0, chanCount != totalChans ? "those other channels miss you 😔" : "woah 😮",],
+        [0, "",],
+        [0, "also,",],
+        [1, "it looks like " + favChan + " is your favorite channel",],
+        [1, "cause you've sent " + favChanNum + " messages there.",],
+        [0, "not too bad!",],
+        [0, "",],
+        [0, "",],
+        [0, "",],
+        [0, "",],
+        [0, "",],
+        [0, "",],
+      ]
+    },
+    styleMessage(val) {
+      var style = {};
+      if (val === 1)
+        style.fontSize = '2rem';
+      else
+        style.fontSize = '1.25rem';
+      return style
+    },
+
+
+    beforeEnter(el) {
+      el.style.opacity = 0
+      gsap.to(el, {y:20})
+    },
+    enter(el, done) {
+      gsap.to(el, {
+        opacity: 1,
+        // delay: el.dataset.index * 1.6,
+        delay: el.dataset.index * 0.1,
+        onComplete: done,
+        y: 0,
+      })
+    },
+    leave(el, done) {
+      gsap.to(el, {
+        opacity: 0,
+        delay: el.dataset.index * 1,
+        onComplete: done
+      })
+    }
   },
   mounted() {
     var today = new Date();

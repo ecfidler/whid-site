@@ -450,7 +450,7 @@ button span {
 }
 
 .lb-enter-active {
-  transition: 0.75s ease;
+    transition: 0.75s ease;
 }
 
 .lb-leave-active {
@@ -504,8 +504,27 @@ img[alt] {
     margin-bottom: 1em;
 }
 
+.message-continue {
+    min-height: 2.75rem;
+    padding-left: 76px;
+    padding-right: 0.5em;
+    /* padding-top: 1px; */
+    padding-bottom: 0.2em;
+
+    margin-top: -1.2em;
+
+    position: relative;
+    flex: 0 0 auto;
+
+    margin-bottom: 1em;
+}
+
 .message:hover {
     background-color: rgba(4,4,5,0.07);
+}
+
+.message.nohover:hover {
+    background-color: rgba(0,0,0,0.00);
 }
 
 .name-bar {

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="whyd.css" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="https://use.typekit.net/yqw3cyb.css">
 
@@ -803,69 +804,82 @@
 
 
                 </div>
-                <div v-if='!show' class="content pt-5">
-                    <div class="message">
-                        <div class="name-bar">
-                            <img class="avatar" src="../resources/avatars/jerma.webp">
-                            <h2 class="name-ts">
-                                <span class="name anniv-color">JermaBot</span>
-                                <span class="timestamp">{{ today }}</span>
-                            </h2>
+                <transition name="slide" @after-enter="afterFirstEnter">
+                        <div v-if='show1' class="message nohover mt-5">
+                            <div class="name-bar">
+                                <img class="avatar" src="../resources/avatars/jerma.webp">
+                                <h2 class="name-ts">
+                                    <span class="name anniv-color">JermaBot</span>
+                                    <span class="timestamp">{{ today }}</span>
+                                </h2>
+                            </div>
+                            <div class="message-content">
+                                well, <span class="d-highlight">{{ nameDisplay }}</span>, let's see what you've been up
+                                to.
+                            </div>
                         </div>
-                        <div class="message-content">
-                            well, <span class="d-highlight">{{ nameDisplay }}</span>, let's see what you've been up
-                            to.
+                </transition>
+
+                <div class="message-continue">
+                    <transition-group name="slide" tag="p"
+                        :css="false"
+                        @before-enter="beforeEnter"
+                        @enter="enter"
+                        @leave="leave">
+                        <div v-for="(message, index) in messagesActive" class="message-content"
+                            :key="index"
+                            :data-index="index"
+                            :style="styleMessage(message[0])">
+                            {{ message[1] }}
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>
-                                sent {{ messagesSent }} messages
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                used {{ channelUseCount }} channels
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                sent {{ emojiCount }} emojis
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                received {{ upvotes }} upvotes
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                endured {{ downvotes }} downvotes
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                most common reaction to your messages was {{ mostReceivedReact }}
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                joined on {{ joinDate }}
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                your last message before the anniversary was {{ lastMessage }}
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                first message {{ firstMessage }}
-                            </p>
-                        </div>
-                    </div>
+                    </transition-group>
                 </div>
 
+                <!-- <div class="col">
+                        <p>
+                            sent {{ messagesSent }} messages
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            used {{ channelUseCount }} channels
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            sent {{ emojiCount }} emojis
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            received {{ upvotes }} upvotes
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            endured {{ downvotes }} downvotes
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            most common reaction to your messages was {{ mostReceivedReact }}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            joined on {{ joinDate }}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            your last message before the anniversary was {{ lastMessage }}
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            first message {{ firstMessage }}
+                        </p>
+                    </div> -->
             </div>
         </div>
     </div>
@@ -911,6 +925,8 @@
             anchorPlacement: "center-bottom",
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+
     <script src="script.js"></script>
     <script src="whyd.js"></script>
 

@@ -1,5 +1,3 @@
-/* Code inspired by Ming Wang @ https://zmwang622.github.io/ */
-
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -141,6 +139,8 @@ body {
 
     background: #2f3136;
 }
+
+/* Timeline inspired by Ming Wang @ https://zmwang622.github.io/ */
 
 #content {
     margin-top: 50px;

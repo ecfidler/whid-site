@@ -48,7 +48,7 @@ const Carousel = {
       counter2: 0,
       words: ['quality discussion', 'cheeto', 'games', 'gaming', 'gamers',
         'art', 'tierlists', 'videos', 'music', 'laughs', 'memes',
-        'good times', '𝓗𝓮𝓪𝓿𝓮𝓷', 'movies', 'dubs', 'Ls'],
+        'good times', '𝓗𝓮𝓪𝓿𝓮𝓷', 'movies', 'dubs', 'Ls', 'jerma', 'james'],
     }
   },
   mounted() {

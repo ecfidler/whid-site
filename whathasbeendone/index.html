@@ -831,7 +831,7 @@
                             :key="index"
                             :data-index="index"
                             :style="styleMessage(message[0])">
-                            <div v-if="message.length==4">
+                            <div v-if="message[0] == 1">
                                 <div v-if="index%4==0">
                                     {{message[1]}}<span class="px-2 pt-1 number inlined pink">{{message[2]}}</span>{{message[3]}}
                                 </div>
@@ -844,7 +844,28 @@
                                 <div v-else-if="index%4==3">
                                     {{message[1]}}<span class="px-2 pt-1 number inlined purple">{{message[2]}}</span>{{message[3]}}
                                 </div>
-        
+                            </div>
+                            <div v-else-if="message[0]==2">
+                                <div class="message-block m-5 px-0" style="max-width: fit-content;">
+                                    <div class="message pe-4" >
+                                        <div class="name-bar">
+                                            <img class="avatar" src="../resources/avatars/you.png">
+            
+                                            <h2 class="name-ts">
+                                                <span class="name anniv-color">You!</span>
+                                                <span class="timestamp">{{ firstMsgDate }}</span>
+                                            </h2>
+                                        </div>
+                                        <div v-if="message[1].length>0" class="message-content">
+                                            <h3>{{ message[1] }}</h3>
+                                        </div>
+                                        <div class="message-extras">
+                                            <div class="attachment">
+                                                <img v-if="message[2].length>0" :src="message[2]">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div v-else>
                                 {{message[1]}}

@@ -1,10 +1,34 @@
+path = 'data/'
+
 totalChans = comma(23)
 
 function getJoinDate(name) {
-  joinDate = null
+  fetch(path + 'join_date.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      joinDate = new Date(data['Date'][name]).toLocaleDateString('en-US');
+    });
+}
+
+function getFirstDate(name) {
+  fetch(path + 'first_message.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      firstDate = new Date(data['Date'][name]).toLocaleDateString('en-US');
+      firstMsg = data['Content'][name]
+      firstMsgImg = data['Attachments'][name]
+
+      if (firstMsgImg == null)
+        firstMsgImg = ''
+      if (firstMsg == null)
+        firstMsg = ''
+    });
 }
 
 function loadData(name) {
+  name = name
   favChan = "#do"
   favChanNum = comma(6000)
   msgsSent = comma(50)
@@ -14,9 +38,8 @@ function loadData(name) {
   downvoteCount = comma(400000000)
 
   firstDate = "04/26/2100"
+  getFirstDate(name)
   getJoinDate(name)
-  if (!joinDate)
-    joinDate = firstDate
 
   firstMsg = "hello penis"
 
@@ -107,7 +130,7 @@ const namelist = {
       mostReceivedReact: 'h',
       joinDate: 'e',
       lastMessage: 'l',
-      firstMessage: 'p',
+      firstMsgDate: 'p',
 
       today: '',
 
@@ -140,17 +163,22 @@ const namelist = {
         this.nameDisplay = this.name;
         this.show = true;
         this.loadData(this.name);
-        this.constructMessages();
+        setTimeout(() => {
+          this.constructMessages();
+        }, 1100);
       } else {
         alert('invalid input')
       }
     },
     loadData(name) {
       loadData(name)
-      this.mostReceivedReact = mostReact
-      this.lastMessage = lastMessage
-      this.lastMsgImg = lastMsgImg
-      this.lastMsgDate = lastMsgDate
+      setTimeout(() => {
+        this.mostReceivedReact = mostReact
+        this.lastMessage = lastMessage
+        this.lastMsgImg = lastMsgImg
+        this.lastMsgDate = lastMsgDate
+        this.firstMsgDate = firstDate
+      }, 1000);
     },
     afterFirstEnter() {
       this.constructStats();
@@ -201,8 +229,8 @@ const namelist = {
         [0, "i hope it wasn't embarrasing 😳"],
         [0, "ah, here it is."],
         [0, "it said:"],
-        [1, '', firstMsg, ''],
-        [1, ""],
+        [2, firstMsg, firstMsgImg],
+        [0, ""],
         [0, "hmm. what else...",],
         [1, "ah! you've sent ", msgsSent, " messages.",],
         [1, "that's across ", chanCount, " of our " + totalChans + " channels.",],

@@ -12,3 +12,7 @@
     transform: translateY(60px);
     opacity: 0;
 }
+
+#whydApp * .message-block {
+    font-size: 1rem;
+}

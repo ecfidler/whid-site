@@ -267,7 +267,7 @@ map = {
   ":wyattPog:": "../resources/emojis/wyattPog.png", 
   ":YAMERO:": "../resources/emojis/YAMERO.gif", 
   ":YOOO:": "../resources/emojis/YOOO.png", 
-  ":YOOOOOO:": "../resources/emojis/YOOOOOO.png", 
+  ":YOOOOOO:": "../resources/emojis/yoooooo.png", 
   ":youtube:": "../resources/emojis/youtube.png",
 
 }

@@ -245,7 +245,7 @@ h3 a:hover {
     color: lightblue;
 }
 
-@media (max-width: 945px) {
+@media (max-width: 992px) {
     .timeline .event::before {
         left: 0.5px;
         top: 20px;

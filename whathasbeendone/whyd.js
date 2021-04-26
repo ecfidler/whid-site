@@ -11,7 +11,7 @@ function getJoinDate(name) {
     });
 }
 
-function getFirstDate(name) {
+function getFirstMsg(name) {
   fetch(path + 'first_message.json')
     .then(response => response.json())
     .then(data => {
@@ -63,13 +63,27 @@ function getEmojiCount(name) {
     });
 }
 
+function getMostReaction(name) {
+  fetch(path + 'most_reaction.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      mostReact = data['reaction'][name]
+      mostReactCount = comma(data['count'][name])
+    });
+}
+
 function loadData(name) {  
   getJoinDate(name)
-  getFirstDate(name)
-  favChan = "#do"
-  favChanNum = comma(6000)
+  getFirstMsg(name)
+
   getMsgsSent(name)
   getChanCount(name)
+
+  favChan = "#do"
+  favChanNum = comma(6000)
+
+
   // emojiCount = comma(5000)
   getEmojiCount(name)
   upvoteCount = comma(300000)
@@ -77,7 +91,8 @@ function loadData(name) {
 
   firstMsg = "hello penis"
 
-  mostReact = '../resources/emojis/upvote.png'
+  // mostReact = '../resources/emojis/upvote.png'
+  getMostReaction(name)
 
   // lastMsgImg = false
   // lastMessage = 'Bullshit'
@@ -208,6 +223,7 @@ const namelist = {
       loadData(name)
       setTimeout(() => {
         this.mostReceivedReact = mostReact
+        this.mostReceivedReactCount = mostReactCount
         this.lastMessage = lastMessage
         this.lastMsgImg = lastMsgImg
         this.lastMsgDate = lastMsgDate

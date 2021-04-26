@@ -915,7 +915,8 @@
                     <div v-if="this.final2" class="container text-end">
                         <h3 class="ms-5 ps-5">besides upvote, you got more  
                             <img v-if="mostReceivedReact.startsWith('..')" :src="mostReceivedReact" class="emoji">
-                            <b v-else>{{ mostReceivedReact }}</b>
+                            <b v-else :title="'You got ' + mostReceivedReactCount + ' of them!'" 
+                            >{{ mostReceivedReact }}</b>
                             reactions on your messages than anything else.
                         </h3>
                     </div>

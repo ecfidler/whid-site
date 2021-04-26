@@ -239,10 +239,10 @@ section.timeline-outer {
 }
 
 h3 a {
-    color: white;
+    color: lightblue;
 }
 h3 a:hover {
-    color: lightblue;
+    color: #7289da;
 }
 
 @media (max-width: 992px) {

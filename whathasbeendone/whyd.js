@@ -150,6 +150,7 @@ const namelist = {
       this.mostReceivedReact = mostReact
       this.lastMessage = lastMessage
       this.lastMsgImg = lastMsgImg
+      this.lastMsgDate = lastMsgDate
     },
     afterFirstEnter() {
       this.constructStats();

@@ -596,10 +596,56 @@ img[alt] {
     border-radius: 4px;
 }
 
-.attachment video {
-    width: 90%;
-    border-radius: 4px;
+@media (max-width: 576px) {
+    .attachment video {
+        width: 90%;
+        border-radius: 4px;
+        height: calc(220px * .5625);
+    } 
 }
+@media (min-width: 576px) {
+    .attachment video {
+        width: 381px;
+        border-radius: 4px;
+        height: 214px;
+    } 
+}
+@media (min-width: 768px) {
+    .attachment video {
+        height: calc(219px * .5625);
+        width: 219px;
+        border-radius: 4px;
+    } 
+}
+@media (min-width: 992px) {
+    .attachment video {
+        height: calc(327px * .5625);
+        width: 327px;
+        border-radius: 4px;
+        /* height: 250px; */
+    } 
+}
+@media (min-width: 1200px) {
+    .attachment video {
+        height: calc(408px * .5625);
+        width: 408px;
+        border-radius: 4px;
+        /* height: 250px; */
+    } 
+}
+@media (min-width: 1400px) {
+    .attachment video {
+        height: calc(490px * .5625);
+        width: 490px;
+        border-radius: 4px;
+        /* height: 250px; */
+    } 
+}
+
+
+
+
+/* 56.25% */
 
 .reactions {
     width: 100%;

@@ -911,10 +911,26 @@
                         </h3>
                     </div>
                 </transition>
-                <transition name="slide" >
-                    <div v-if="this.final5" class="container p-5">
-                        <img v-if="lastMsgImg" :src="lastMessage">
-                        <h3 v-else class="px-2 pt-1 number inlined pink">{{ lastMessage }}</h3>
+                <transition name="slide" class="justify-content-center ">
+                    <div v-if="this.final5" class="message-block m-5 px-0 mx-auto d-block" style="max-width: fit-content;">
+                        <div class="message pe-4" >
+                            <div class="name-bar">
+                                <img class="avatar" src="../resources/avatars/you.png">
+
+                                <h2 class="name-ts">
+                                    <span class="name anniv-color">You!</span>
+                                    <span class="timestamp">{{ lastMsgDate }}</span>
+                                </h2>
+                            </div>
+                            <div v-if="lastMessage.length>0" class="message-content">
+                                <h3>{{ lastMessage }}</h3>
+                            </div>
+                            <div class="message-extras">
+                                <div class="attachment">
+                                    <img v-if="lastMsgImg.length>0" :src="lastMsgImg">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </transition>
                 <transition name="slide" >

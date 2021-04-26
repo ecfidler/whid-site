@@ -22,8 +22,11 @@ function loadData(name) {
 
   mostReact = '../resources/emojis/upvote.png'
 
-  lastMsgImg = false
-  lastMessage = 'Bullshit'
+  // lastMsgImg = false
+  // lastMessage = 'Bullshit'
+  lastMsgImg = '../resources/emojis/upvote.png'
+  lastMessage = 'pain!'
+  lastMsgDate = firstDate
 }
 
 function comma(x) {
@@ -126,8 +129,9 @@ const namelist = {
       final5: false,
       final6: false,
 
-      lastMessage: '',
+      lastMessage: 'ehehehehe',
       lastMsgImg: false,
+      lastMsgDate: '',
     }
   },
   methods: {

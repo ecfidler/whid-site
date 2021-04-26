@@ -136,7 +136,6 @@ canvas {
 }
 
 body {
-    font-family: Whitney,Helvetica Neue, Helvetica, Arial, sans-serif;
 
     /* margin: 20px; */
 
@@ -154,7 +153,8 @@ section.timeline-outer {
 }
 
 .timeline {
-    border-left: 10px solid #66bb6a;
+    border-left: 10px solid #393c43;
+    border-radius: 10px;
     color: white;
     margin: 50px auto;
     margin-left: 30%;
@@ -207,9 +207,9 @@ section.timeline-outer {
 }
 
 .timeline .event:after {
-    box-shadow: 0 0 0 3px #0d47a1;
+    box-shadow: 0 0 0 3px #7289da;
     left: -30px;
-    background: #0d47a1;
+    background: #7289da;
     margin-top: 20px;
     border-radius: 50%;
     height: 11px;
@@ -223,12 +223,6 @@ section.timeline-outer {
     border-bottom: 0px solid #333;
 }
 
-/* .place {
-    font-family: "Circular Bold", Arial;
-    line-height: 1em;
-    margin-bottom: -15px
-} */
-
 .title {
     line-height: 1em;
     font-size: 1.2em !important;
@@ -240,6 +234,16 @@ section.timeline-outer {
     font-size: 1.2em !important;
 }
 
+.place {
+    font-weight: 500;
+}
+
+h3 a {
+    color: white;
+}
+h3 a:hover {
+    color: lightblue;
+}
 
 @media (max-width: 945px) {
     .timeline .event::before {

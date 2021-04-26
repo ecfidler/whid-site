@@ -1,16 +1,16 @@
-var canvas = document.getElementById('header_canvas');
-var count = 200;
-var defaults = {
+var confettiCanvas = document.getElementById('header_canvas');
+var confettiCount = 200;
+var confettiDefaults = {
   origin: { y: 0.5 }
 };
 
 // you should  only initialize a canvas once, so save this function
 // we'll save it to the canvas itself for the purpose of this demo
-canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true });
+confettiCanvas.confetti = confettiCanvas.confetti || confetti.create(confettiCanvas, { resize: true });
 
 function fire(particleRatio, opts) {
-  canvas.confetti(Object.assign({}, defaults, opts, {
-    particleCount: Math.floor(count * particleRatio)
+  confettiCanvas.confetti(Object.assign({}, confettiDefaults, opts, {
+    particleCount: Math.floor(confettiCount * particleRatio)
   }));
 }
 

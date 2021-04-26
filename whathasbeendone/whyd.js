@@ -1,10 +1,26 @@
 totalChans = comma(23)
 
+function getJoinDate(name) {
+  joinDate = null
+}
+
 function loadData(name) {
   favChan = "#do"
-  favChanNum = comma(5000)
+  favChanNum = comma(6000)
   msgsSent = comma(50)
   chanCount = comma(23)
+  emojiCount = comma(5000)
+  upvoteCount = comma(300000)
+  downvoteCount = comma(400000000)
+
+  firstDate = "04/26/2100"
+  getJoinDate(name)
+  if (!joinDate)
+    joinDate = firstDate
+
+  firstMsg = "hello penis"
+
+
 }
 
 function comma(x) {
@@ -14,8 +30,7 @@ function comma(x) {
 const namelist = {
   data() {
     return {
-      show1: false,
-      show2: false,
+      show: false,
       name: 'fops#1969',
       nameDisplay: 'fops#1969',
       names: [
@@ -90,18 +105,25 @@ const namelist = {
 
       today: '',
 
+      // msgDelay: 1.6,
+      msgDelay: 0.1,
+
       messagesActive: [],
-      messages: [
+      messages: [],
 
-      ]
+      msgDone: false,
 
+      wstatsActive: [],
+      wstats: [],
+
+      final: false,
     }
   },
   methods: {
     inputButtonPressed() {
       if (this.names.includes(this.name)) {
         this.nameDisplay = this.name;
-        this.show1 = true;
+        this.show = true;
         loadData(this.name);
         this.constructMessages();
       } else {
@@ -109,31 +131,47 @@ const namelist = {
       }
     },
     afterFirstEnter() {
-      setTimeout(s => {
-        this.show2 = true;
+      this.constructStats();
+      setTimeout(() => {
         this.messagesActive = this.messages;
       }, 500)
+
     },
     afterSecondEnter() {
-
+      setTimeout(() => {
+        this.msgDone = true;  
+        setTimeout(() => {
+          this.wstatsActive = this.wstats;
+        }, 1000);
+      }, 1000 * this.msgDelay * this.messages.length)
+    },
+    afterThirdEnter() {
+      setTimeout(() => {
+        this.final = true
+      }, 1000 * this.msgDelay * this.wstats.length)
     },
     constructMessages() {
       this.messages = [
         [0, "looks like...",],
-        [1, "you've sent " + msgsSent + " messages.",],
-        [1, "that's across " + chanCount + " of our " + totalChans + " channels.",],
+        [1, "you joined on ", joinDate, ""],
+        [0, "also,",],
+        [1, "your first message was on ", firstDate, ""],
+        [0, firstDate == joinDate ? "pretty speedy there huh?" : "took your sweet time with that didn't you?"],
+        [0, "let's see what it said"],
+        [0, "i hope it wasn't embarrasing 😳"],
+        [0, "ah, here it is."],
+        [0, "it said:"],
+        [1, '', firstMsg, ''],
+        [1, ""],
+        [0, "hmm. what else...",],
+        [1, "ah! you've sent ", msgsSent, " messages.",],
+        [1, "that's across ", chanCount, " of our " + totalChans + " channels.",],
         [0, chanCount != totalChans ? "those other channels miss you 😔" : "woah 😮",],
         [0, "",],
-        [0, "also,",],
-        [1, "it looks like " + favChan + " is your favorite channel",],
-        [1, "cause you've sent " + favChanNum + " messages there.",],
+        [0, "check this out",],
+        [1, "it looks like ", favChan, " is your favorite channel",],
+        [1, "cause you've sent ", favChanNum, " messages there.",],
         [0, "not too bad!",],
-        [0, "",],
-        [0, "",],
-        [0, "",],
-        [0, "",],
-        [0, "",],
-        [0, "",],
       ]
     },
     styleMessage(val) {
@@ -142,7 +180,15 @@ const namelist = {
         style.fontSize = '2rem';
       else
         style.fontSize = '1.25rem';
+
       return style
+    },
+    constructStats() {
+      this.wstats = [
+        ["used", emojiCount, "emojis"],
+        ["received", upvoteCount, "upvotes"],
+        ["and endured", downvoteCount, "downvotes."],
+      ]
     },
 
 
@@ -153,8 +199,7 @@ const namelist = {
     enter(el, done) {
       gsap.to(el, {
         opacity: 1,
-        // delay: el.dataset.index * 1.6,
-        delay: el.dataset.index * 0.1,
+        delay: el.dataset.index * this.msgDelay,
         onComplete: done,
         y: 0,
       })

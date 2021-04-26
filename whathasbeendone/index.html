@@ -805,7 +805,7 @@
 
                 </div>
                 <transition name="slide" @after-enter="afterFirstEnter">
-                        <div v-if='show1' class="message nohover mt-5">
+                        <div v-if='show' class="message nohover mt-5">
                             <div class="name-bar">
                                 <img class="avatar" src="../resources/avatars/jerma.webp">
                                 <h2 class="name-ts">
@@ -825,26 +825,107 @@
                         :css="false"
                         @before-enter="beforeEnter"
                         @enter="enter"
-                        @leave="leave">
+                        @leave="leave"
+                        @after-enter="afterSecondEnter">
                         <div v-for="(message, index) in messagesActive" class="message-content"
                             :key="index"
                             :data-index="index"
                             :style="styleMessage(message[0])">
-                            {{ message[1] }}
+                            <div v-if="message.length==4">
+                                <div v-if="index%4==0">
+                                    {{message[1]}}<span class="px-2 pt-1 number inlined pink">{{message[2]}}</span>{{message[3]}}
+                                </div>
+                                <div v-else-if="index%4==1">
+                                    {{message[1]}}<span class="px-2 pt-1 number inlined orange">{{message[2]}}</span>{{message[3]}}
+                                </div>
+                                <div v-else-if="index%4==2">
+                                    {{message[1]}}<span class="px-2 pt-1 number inlined blue">{{message[2]}}</span>{{message[3]}}
+                                </div>
+                                <div v-else-if="index%4==3">
+                                    {{message[1]}}<span class="px-2 pt-1 number inlined purple">{{message[2]}}</span>{{message[3]}}
+                                </div>
+        
+                            </div>
+                            <div v-else>
+                                {{message[1]}}
+                            </div>
                         </div>
                     </transition-group>
                 </div>
 
+                <transition name="slide" >
+                    <div v-if="msgDone" class="container p-5">
+                        <h3 class="ms-5 ps-5">you have also...</h3>
+                    </div>
+                </transition>
+
+                <div class="message-continue text-center">
+                    <transition-group name="slide" tag="p"
+                        :css="false"
+                        @before-enter="beforeEnter"
+                        @enter="enter"
+                        @leave="leave"
+                        @after-enter="afterThirdEnter">
+                        <h3 v-for="(wstat, index) in wstatsActive" :key="index"
+                            :data-index="index">
+
+                            <div v-if="index%4==0">
+                                {{wstat[0]}} <span class="px-2 pt-1 number inlined orange">{{wstat[1]}}</span> {{wstat[2]}}
+                            </div>
+                            <div v-else-if="index%4==1">
+                                {{wstat[0]}} <span class="px-2 pt-1 number inlined pink">{{wstat[1]}}</span> {{wstat[2]}}
+                            </div>
+                            <div v-else-if="index%4==2">
+                                {{wstat[0]}} <span class="px-2 pt-1 number inlined blue">{{wstat[1]}}</span> {{wstat[2]}}
+                            </div>
+                            <div v-else-if="index%4==3">
+                                {{wstat[0]}} <span class="px-2 pt-1 number inlined purple">{{wstat[1]}}</span> {{wstat[2]}}
+                            </div>
+                        </h3>
+                    </transition-group>
+                </div>
+
+                <transition name="slide" >
+                    <div v-if="this.final" class="container p-5">
+                        <h3 class="ms-5 ps-5">speaking of which:</h3>
+                    </div>
+                </transition>
+
+                <!-- <div class="message-continue">
+                    <transition-group name="slide" tag="p"
+                        :css="false"
+                        @before-enter="beforeEnter"
+                        @enter="enter"
+                        @leave="leave"
+                        @after-enter="afterSecondEnter">
+                        <div v-for="(message, index) in messagesActive" class="message-content"
+                            :key="index"
+                            :data-index="index"
+                            :style="styleMessage(message[0])">
+                            <div v-if="message.length==4">
+                                <div v-if="index%4==0">
+                                    {{message[1]}}<span class="px-2 pt-1 number inlined pink">{{message[2]}}</span>{{message[3]}}
+                                </div>
+                                <div v-else-if="index%4==1">
+                                    {{message[1]}}<span class="px-2 pt-1 number inlined orange">{{message[2]}}</span>{{message[3]}}
+                                </div>
+                                <div v-else-if="index%4==2">
+                                    {{message[1]}}<span class="px-2 pt-1 number inlined blue">{{message[2]}}</span>{{message[3]}}
+                                </div>
+                                <div v-else-if="index%4==3">
+                                    {{message[1]}}<span class="px-2 pt-1 number inlined purple">{{message[2]}}</span>{{message[3]}}
+                                </div>
+        
+                            </div>
+                            <div v-else>
+                                {{message[1]}}
+                            </div>
+                        </div>
+                    </transition-group>
+                </div> -->
+
                 <!-- <div class="col">
-                        <p>
-                            sent {{ messagesSent }} messages
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            used {{ channelUseCount }} channels
-                        </p>
-                    </div>
+
                     <div class="col">
                         <p>
                             sent {{ emojiCount }} emojis

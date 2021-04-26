@@ -180,6 +180,10 @@ section.timeline-outer {
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
 }
 
+.timeline * h3 {
+    line-height: 1.25em !important;
+}
+
 .timeline p {
     margin: 10px 10px 15px 10px;
 }

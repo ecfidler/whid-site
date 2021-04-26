@@ -83,6 +83,35 @@ function getVoteCounts(name) {
     });
 }
 
+function getLastMsg(name) {
+  fetch(path + 'last_messages.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      lastMessage = data['Content'][name]
+      lastMsgImg = data['Attachments'][name]
+      lastMsgDate = new Date(data['Date'][name]).toLocaleDateString('en-US');
+
+
+      if (lastMessage == null)
+        lastMessage = ''
+      if (lastMsgImg == null)
+        lastMsgImg = ''
+      if (lastMsgDate == null)
+        lastMsgDate = ''
+    });
+}
+
+function getFavChannel(name) {
+  fetch(path + 'fav_channel.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      favChan = "#" + data['channel'][name]
+      favChanNum = comma(data['count'][name])
+    });
+}
+
 function loadData(name) {  
   getJoinDate(name)
   getFirstMsg(name)
@@ -90,8 +119,9 @@ function loadData(name) {
   getMsgsSent(name)
   getChanCount(name)
 
-  favChan = "#do"
-  favChanNum = comma(6000)
+  // favChan = "#do"
+  // favChanNum = comma(6000)
+  getFavChannel(name)
 
   getEmojiCount(name)
 

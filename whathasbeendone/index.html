@@ -809,62 +809,63 @@
                             <img class="avatar" src="../resources/avatars/jerma.webp">
                             <h2 class="name-ts">
                                 <span class="name anniv-color">JermaBot</span>
-                                <span class="timestamp">04/26/2021</span>
+                                <span class="timestamp">{{ today }}</span>
                             </h2>
                         </div>
                         <div class="message-content">
-                            <i>well, <span class="d-highlight">{{ nameDisplay }}</span>, let's see what you've been up
-                                to.</i>
+                            well, <span class="d-highlight">{{ nameDisplay }}</span>, let's see what you've been up
+                            to.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>
+                                sent {{ messagesSent }} messages
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                used {{ channelUseCount }} channels
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                sent {{ emojiCount }} emojis
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                received {{ upvotes }} upvotes
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                endured {{ downvotes }} downvotes
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                most common reaction to your messages was {{ mostReceivedReact }}
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                joined on {{ joinDate }}
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                your last message before the anniversary was {{ lastMessage }}
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                first message {{ firstMessage }}
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p>
-                            sent {{ messagesSent }} messages
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            used {{ channelUseCount }} channels
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            sent {{ emojiCount }} emojis
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            received {{ upvotes }} upvotes
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            endured {{ downvotes }} downvotes
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            most common reaction to your messages was {{ mostReceivedReact }}
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            joined on {{ joinDate }}
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            your last message before the anniversary was {{ lastMessage }}
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            first message {{ firstMessage }}
-                        </p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

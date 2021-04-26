@@ -72,6 +72,10 @@ p {
     color: white;
 }
 
+u {
+    text-decoration-style: dotted;
+}
+
 span {
     /* font-family: Whitney,Helvetica Neue, Helvetica, Arial, sans-serif;  */
     font-family: canada-type-gibson, sans-serif;

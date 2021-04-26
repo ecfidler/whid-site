@@ -50,7 +50,7 @@
     </header>
 
     <section id="timeline" class="timeline-outer">
-        <h2 id="content" class="py-5" data-aos="fade-right" data-aos-delay="2000" data-aos-once="true">
+        <h2 id="content" class="py-5" data-aos="fade-right" data-aos-delay="000" data-aos-once="true">
             what has gotten us here?
         </h2>
         <ul class="timeline">
@@ -68,6 +68,7 @@
     </section>
 
     <hr>
+
     <h2 id="content" class="py-5" data-aos="fade-down">
         what has been done between April 26th, 2016 and April 26th, 2021?
     </h2>
@@ -190,8 +191,8 @@
     <br>
     <br>
     <section class="container mt-4">
-        <div class="row">
-            <div class="col-12 col-xxl-6">
+        <div class="row g-4">
+            <div class="col-12 col-xxl-6 p-3 leaderboard" data-aos="fade-right">
                 <h2>
                     Top crime scenes:
                 </h2>
@@ -214,10 +215,10 @@
                 <div class="row">
                     <p class="col-6">5. <span class="d-highlight">#dont</span></p>
                     <p class="col-6" data-bs-toggle="tooltip" data-bs-placement="left"
-                    title="This is an estimation, of course."><u>6,799</u></p>
+                        title="This is an estimation, of course."><u>6,799</u></p>
                 </div>
             </div>
-            <div class="col-12 col-xxl-6">
+            <div class="col-12 col-xxl-6 p-3" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">
                 <div id="messagesApp">
                     <div class="row">
                         <h2 class="col-7">
@@ -247,7 +248,7 @@
     <br>
     <section class="container mt-4">
         <div class="row">
-            <div class="col-12 col-xxl-6">
+            <div class="col-12 col-xxl-6 p-3" data-aos="fade-up">
                 <div id="mentionsApp">
                     <div class="row">
                         <h2 class="col-7">
@@ -287,7 +288,8 @@
                     </transition-group>
                 </div>
             </div>
-            <div class="col-12 col-xxl-6">
+            <div class="col-12 col-xxl-6 p-3 leaderboard" data-aos="fade-left"
+                data-aos-anchor-placement="bottom-bottom">
                 <h2>
                     Most <span class="d-highlight">@everyone</span>s:
                 </h2>
@@ -300,9 +302,10 @@
                     <p class="col-6">56</p>
                 </div>
                 <div class="row">
-                    <p class="col-6">3. <span class="d-highlight">@noss#0773</span></p> 
+                    <p class="col-6">3. <span class="d-highlight">@noss#0773</span></p>
                     <p class="col-6">
-                        <u data-bs-toggle="tooltip" data-bs-html="true" title="<img height='32px' src='../resources/emojis/trueshred.gif'>">42</u>
+                        <u data-bs-toggle="tooltip" data-bs-html="true"
+                            title="<img height='32px' src='../resources/emojis/trueshred.gif'>">42</u>
                     </p>
                 </div>
                 <div class="row">
@@ -877,7 +880,9 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
+            // once: true,
             duration: 800,
+            anchorPlacement: "center-bottom",
         });
     </script>
     <script src="script.js"></script>

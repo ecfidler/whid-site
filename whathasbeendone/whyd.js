@@ -1,6 +1,6 @@
 path = 'data/'
 
-totalChans = comma(23)
+totalChans = 21
 
 function getJoinDate(name) {
   fetch(path + 'join_date.json')
@@ -27,19 +27,53 @@ function getFirstDate(name) {
     });
 }
 
-function loadData(name) {
-  name = name
+function getMsgsSent(name) {
+  fetch(path + 'num_msg_sent.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      msgsSent = comma(data[name])
+    });
+}
+
+function getChanCount(name) {
+  fetch(path + 'num_chan_part.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      chanCount = comma(data[name])
+    });
+}
+
+function getChanCount(name) {
+  fetch(path + 'num_chan_part.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      chanCount = comma(data[name])
+    });
+}
+
+function getEmojiCount(name) {
+  fetch(path + 'num_emojis.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      emojiCount = comma(data[name])
+    });
+}
+
+function loadData(name) {  
+  getJoinDate(name)
+  getFirstDate(name)
   favChan = "#do"
   favChanNum = comma(6000)
-  msgsSent = comma(50)
-  chanCount = comma(23)
-  emojiCount = comma(5000)
+  getMsgsSent(name)
+  getChanCount(name)
+  // emojiCount = comma(5000)
+  getEmojiCount(name)
   upvoteCount = comma(300000)
   downvoteCount = comma(400000000)
-
-  firstDate = "04/26/2100"
-  getFirstDate(name)
-  getJoinDate(name)
 
   firstMsg = "hello penis"
 
@@ -49,7 +83,7 @@ function loadData(name) {
   // lastMessage = 'Bullshit'
   lastMsgImg = '../resources/emojis/upvote.png'
   lastMessage = 'pain!'
-  lastMsgDate = firstDate
+  lastMsgDate = '04/04/0444'
 }
 
 function comma(x) {
@@ -236,7 +270,7 @@ const namelist = {
         [1, "that's across ", chanCount, " of our " + totalChans + " channels.",],
         [0, chanCount != totalChans ? "those other channels miss you 😔" : "woah 😮",],
         [0, "",],
-        [0, "check this out",],
+        [0, "oh check this out:",],
         [1, "it looks like ", favChan, " is your favorite channel",],
         [1, "cause you've sent ", favChanNum, " messages there.",],
         [0, "not too bad!",],

@@ -890,83 +890,47 @@
                         <h3 class="ms-5 ps-5">speaking of which:</h3>
                     </div>
                 </transition>
+                <transition name="slide" >
+                    <div v-if="this.final2" class="container text-end">
+                        <h3 class="ms-5 ps-5">besides upvote, you got more  
+                            <img v-if="mostReceivedReact.startsWith('..')" :src="mostReceivedReact" class="emoji">
+                            <b v-else>{{ mostReceivedReact }}</b>
+                            reactions on your messages than anything else.
+                        </h3>
+                    </div>
+                </transition>
+                <transition name="slide" >
+                    <div v-if="this.final3" class="container p-5 pb-0">
+                        <h3 class="ms-5 ps-5">OH! before I forget. 
+                        </h3>
+                    </div>
+                </transition>
+                <transition name="slide" >
+                    <div v-if="this.final4" class="container p-5 pt-0 pb-0">
+                        <h3 class="ms-5 ps-5">this was the last thing you said before the anniversary:
+                        </h3>
+                    </div>
+                </transition>
+                <transition name="slide" >
+                    <div v-if="this.final5" class="container p-5">
+                        <img v-if="lastMsgImg" :src="lastMessage">
+                        <h3 v-else class="px-2 pt-1 number inlined pink">{{ lastMessage }}</h3>
+                    </div>
+                </transition>
+                <transition name="slide" >
+                    <div v-if="this.final6" class="container p-5 pt-1 text-end">
+                        <h3 class="ms-5 ps-5 subtext">i hope that was one for the history books.
+                        </h3>
+                    </div>
+                </transition>
 
-                <!-- <div class="message-continue">
-                    <transition-group name="slide" tag="p"
-                        :css="false"
-                        @before-enter="beforeEnter"
-                        @enter="enter"
-                        @leave="leave"
-                        @after-enter="afterSecondEnter">
-                        <div v-for="(message, index) in messagesActive" class="message-content"
-                            :key="index"
-                            :data-index="index"
-                            :style="styleMessage(message[0])">
-                            <div v-if="message.length==4">
-                                <div v-if="index%4==0">
-                                    {{message[1]}}<span class="px-2 pt-1 number inlined pink">{{message[2]}}</span>{{message[3]}}
-                                </div>
-                                <div v-else-if="index%4==1">
-                                    {{message[1]}}<span class="px-2 pt-1 number inlined orange">{{message[2]}}</span>{{message[3]}}
-                                </div>
-                                <div v-else-if="index%4==2">
-                                    {{message[1]}}<span class="px-2 pt-1 number inlined blue">{{message[2]}}</span>{{message[3]}}
-                                </div>
-                                <div v-else-if="index%4==3">
-                                    {{message[1]}}<span class="px-2 pt-1 number inlined purple">{{message[2]}}</span>{{message[3]}}
-                                </div>
-        
-                            </div>
-                            <div v-else>
-                                {{message[1]}}
-                            </div>
-                        </div>
-                    </transition-group>
-                </div> -->
+                
 
-                <!-- <div class="col">
-
-                    <div class="col">
-                        <p>
-                            sent {{ emojiCount }} emojis
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            received {{ upvotes }} upvotes
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            endured {{ downvotes }} downvotes
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            most common reaction to your messages was {{ mostReceivedReact }}
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            joined on {{ joinDate }}
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            your last message before the anniversary was {{ lastMessage }}
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            first message {{ firstMessage }}
-                        </p>
-                    </div> -->
+                    <!-- most common reaction to your messages was {{ mostReceivedReact }}
+                     your last message before the anniversary was {{ lastMessage }} -->
             </div>
         </div>
     </div>
-
-
-    <!-- rundown of individual stats -->
 
     <br>
     <br>
@@ -1001,7 +965,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
-            // once: true,
+            once: true,
             duration: 800,
             anchorPlacement: "center-bottom",
         });

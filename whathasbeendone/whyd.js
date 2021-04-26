@@ -20,7 +20,10 @@ function loadData(name) {
 
   firstMsg = "hello penis"
 
+  mostReact = '../resources/emojis/upvote.png'
 
+  lastMsgImg = false
+  lastMessage = 'Bullshit'
 }
 
 function comma(x) {
@@ -106,7 +109,7 @@ const namelist = {
       today: '',
 
       // msgDelay: 1.6,
-      msgDelay: 0.1,
+      msgDelay: 0.01,
 
       messagesActive: [],
       messages: [],
@@ -117,6 +120,14 @@ const namelist = {
       wstats: [],
 
       final: false,
+      final2: false,
+      final3: false,
+      final4: false,
+      final5: false,
+      final6: false,
+
+      lastMessage: '',
+      lastMsgImg: false,
     }
   },
   methods: {
@@ -124,11 +135,17 @@ const namelist = {
       if (this.names.includes(this.name)) {
         this.nameDisplay = this.name;
         this.show = true;
-        loadData(this.name);
+        this.loadData(this.name);
         this.constructMessages();
       } else {
         alert('invalid input')
       }
+    },
+    loadData(name) {
+      loadData(name)
+      this.mostReceivedReact = mostReact
+      this.lastMessage = lastMessage
+      this.lastMsgImg = lastMsgImg
     },
     afterFirstEnter() {
       this.constructStats();
@@ -139,7 +156,7 @@ const namelist = {
     },
     afterSecondEnter() {
       setTimeout(() => {
-        this.msgDone = true;  
+        this.msgDone = true;
         setTimeout(() => {
           this.wstatsActive = this.wstats;
         }, 1000);
@@ -148,6 +165,24 @@ const namelist = {
     afterThirdEnter() {
       setTimeout(() => {
         this.final = true
+        setTimeout(() => {
+          this.final2 = true
+          setTimeout(() => {
+            this.final3 = true
+            setTimeout(() => {
+              this.final4 = true
+              setTimeout(() => {
+                this.final5 = true
+                setTimeout(() => {
+                  this.final6 = true
+                  setTimeout(() => {
+                    this.constructThankyou()
+                  }, 1000)
+                }, 1000)
+              }, 1000)
+            }, 1000)
+          }, 1500)
+        }, 1000)
       }, 1000 * this.msgDelay * this.wstats.length)
     },
     constructMessages() {
@@ -190,11 +225,16 @@ const namelist = {
         ["and endured", downvoteCount, "downvotes."],
       ]
     },
+    constructThankyou() {
+      this.thankyou = [
+        []
+      ]
+    },
 
 
     beforeEnter(el) {
       el.style.opacity = 0
-      gsap.to(el, {y:20})
+      gsap.to(el, { y: 20 })
     },
     enter(el, done) {
       gsap.to(el, {

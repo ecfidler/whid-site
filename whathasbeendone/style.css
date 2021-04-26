@@ -391,8 +391,8 @@ span.number {
     font-family: canada-type-gibson, sans-serif;
 }
 
-span.subtext {
-    color:#aab2b9;
+.subtext {
+    color:#aab2b9 !important;
 }
 
 span.d-highlight {

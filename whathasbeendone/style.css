@@ -675,8 +675,8 @@ img[alt] {
 }
 
 .reaction-emoji {
-    width: 16px;
-    height: 16px;
+    max-width: 1em;
+    max-height: 1em;
 }
 
 .reaction-count {

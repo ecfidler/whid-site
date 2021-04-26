@@ -334,6 +334,7 @@ hr {
     font-size: xx-large;
     text-align: center;
     width: fit-content;
+    width: -moz-fit-content;
     padding-right: .3em;
     margin: auto;
     border-radius: 5px;

@@ -73,6 +73,16 @@ function getMostReaction(name) {
     });
 }
 
+function getVoteCounts(name) {
+  fetch(path + 'num_votes.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      upvoteCount = comma(data['upvotes'][name])
+      downvoteCount = comma(data['downvotes'][name])
+    });
+}
+
 function loadData(name) {  
   getJoinDate(name)
   getFirstMsg(name)
@@ -83,22 +93,19 @@ function loadData(name) {
   favChan = "#do"
   favChanNum = comma(6000)
 
-
-  // emojiCount = comma(5000)
   getEmojiCount(name)
-  upvoteCount = comma(300000)
-  downvoteCount = comma(400000000)
 
-  firstMsg = "hello penis"
+  getVoteCounts(name)
 
-  // mostReact = '../resources/emojis/upvote.png'
   getMostReaction(name)
 
   // lastMsgImg = false
   // lastMessage = 'Bullshit'
-  lastMsgImg = '../resources/emojis/upvote.png'
-  lastMessage = 'pain!'
-  lastMsgDate = '04/04/0444'
+  // lastMsgImg = '../resources/emojis/upvote.png'
+  // lastMessage = 'pain!'
+  // lastMsgDate = '04/04/0444'
+  getLastMsg(name)
+
 }
 
 function comma(x) {

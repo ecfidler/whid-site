@@ -429,6 +429,18 @@ span.d-highlight:hover {
     padding-bottom: 0.1em;
 }
 
+.card-group {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background-color: #393c43;
+    border-radius: 7px;
+    /* overflow: hidden; */
+    padding-top: 5px; 
+    padding-bottom: 0.1em;
+}
+
 button span {
     font-size: 1rem;
 }

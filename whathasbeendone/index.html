@@ -322,16 +322,20 @@
         </div>
     </section>
 
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <section class="container pt-2">
 
         <section id="reactedMessagesApp">
-            <h2 id="content">
+            <h2 id="content" data-aos="fade-up">
                 what have we reacted to the most?
             </h2>
 
             <div class="row" data-masonry='{"percentPosition": true }'>
-                <div class="col-12 col-md-6 mt-4">
+                <div class="col-12 col-md-6 mt-4" data-aos="fade-up">
                     <div class="message-block m-1">
                         <div class="message">
                             <div class="name-bar">
@@ -399,7 +403,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 mt-4">
+                <div class="col-12 col-md-6 mt-4" data-aos="fade-up">
                     <div class="message-block m-1">
                         <a href="https://discord.com/channels/173840048343482368/200852342667476992/799395222710648843"
                             target="_blank" title="Go to original!">
@@ -446,7 +450,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 mt-4">
+                <div class="col-12 col-md-6 mt-4" data-aos="fade-up">
                     <div class="message-block m-1">
                         <a href="https://discord.com/channels/173840048343482368/557780039127793666/803463791978217472"
                             target="_blank" title="Go to original!">
@@ -491,7 +495,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 mt-4">
+                <div class="col-12 col-md-6 mt-4" data-aos="fade-up">
                     <div class="message-block m-1">
                         <a href="https://discord.com/channels/173840048343482368/200852342667476992/740799450473299968"
                             target="_blank" title="Go to original!">
@@ -538,7 +542,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 mt-4">
+                <div class="col-12 col-md-6 mt-4" data-aos="fade-up">
                     <div class="message-block m-1">
                         <a href="https://discord.com/channels/173840048343482368/200852342667476992/415684468557479948"
                             target="_blank" title="Go to original!">
@@ -553,7 +557,8 @@
                                 </div>
                                 <div class="message-extras">
                                     <div class="attachment">
-                                        <video autoplay loop src="../resources/videos/headgone.mp4" type="video/mp4">
+                                        <video playsinline autoplay muted loop src="../resources/videos/headgone.mp4"
+                                            type="video/mp4">
                                             video.
                                         </video>
                                     </div>
@@ -584,7 +589,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 mt-4">
+                <div class="col-12 col-md-6 mt-4" data-aos="fade-up">
                     <div class="message-block m-1 gx-0">
                         <a href="https://discord.com/channels/173840048343482368/200852342667476992/740801255676313671"
                             target="_blank" title="Go to original!">
@@ -629,12 +634,15 @@
             </div>
         </section>
 
-        <h2 class="pt-5">overall tho, here are our fav emojis</h2>
-        <div class="row pt-1">
-            <div class="col-12 col-md-6 col-lg-4">
+        <br>
+
+        <h2 class="pt-5">overall tho, here are our fav emojis.</h2>
+
+        <div class="row pt-1 card-group">
+            <div class="col-12 col-md-6 col-lg-4 card pt-3 px-4">
                 <div id="emojisApp">
                     <div class="row">
-                        <h2 class="col-7">
+                        <h2 class="col">
                             Emojis:
                         </h2>
                         <div class="col-5">
@@ -682,7 +690,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 card pt-3 px-4">
                 <div id="reactionsApp">
                     <div class="row">
                         <h2 class="col-7">
@@ -716,7 +724,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 card pt-3 px-4">
                 <div id="combinedApp">
                     <div class="row">
                         <h2 class="col-7">
@@ -763,16 +771,24 @@
         </div>
     </section>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <h2 id="content">
+    <h2 id="content" data-aos="fade-up">
         what have <b>you</b> done?
     </h2>
+
+    <br>
+    <br>
 
     <!-- dropdown box for choosing name -->
     <div class="container">
         <div id="whydApp">
             <div class="row">
-                <div class='col-12 col-md-5'>
+                <div class='col-12 col-md-5' data-aos="fade-up">
 
                     <label for="nameInput" class="form-label"></label>
                     <div class="input-group input-group-lg">
@@ -788,10 +804,19 @@
 
                 </div>
                 <div v-if='!show' class="content pt-5">
-                    <h3>
-                        <i>well, <span class="d-highlight">{{ nameDisplay }}</span>, let's see what you've been up
-                            to.</i>
-                    </h3>
+                    <div class="message">
+                        <div class="name-bar">
+                            <img class="avatar" src="../resources/avatars/jerma.webp">
+                            <h2 class="name-ts">
+                                <span class="name anniv-color">JermaBot</span>
+                                <span class="timestamp">04/26/2021</span>
+                            </h2>
+                        </div>
+                        <div class="message-content">
+                            <i>well, <span class="d-highlight">{{ nameDisplay }}</span>, let's see what you've been up
+                                to.</i>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">

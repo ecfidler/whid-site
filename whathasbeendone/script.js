@@ -279,7 +279,7 @@ const mostReactedMessages = {
       russellStr:  'lfg (7),upvote (8),❤️ (7),intensifeyes (7),wyattPog (7),👍 (7),trueshred (7),drake (7),chad (7),dogeKek (8),BarryBustaNutBenson (7),YAMERO (7),😫 (8),😩 (7),💯 (7),YOOOOOO (7),blushcat (7),kirby (7),partyparrot (7),ranbowfrog (7)',
       kianStr:  'upvote (7),😱 (7),🥭 (7),YAMERO (7),😩 (7),🍔 (7),ahegao1 (7),sonervous (7),cum (7),🤢 (7),💯 (6),kylecum (7),joe (7),dab (7),Nora (7),ahriHeart (7),partyparrot (7),PogBreathing (7),wyatt2 (7),lfg (7)',
       sergeiStr:  'upvote (10),cheeto (9),⬛ (5),downvote (7),Downvote (7),👎 (6),downvote (7),downvote (7),Downvote (7),downvote (7),downvote (7),downvote (7),downvote (6),davithumbsdown (6),👇 (7),dabThumbsDown (6),votedown (6),🔻 (5),🔽 (5),⬇️ (6)',
-      ethanStr:  '😋 (7),🔜 (6),🤰 (6),🕺 (6),🍑 (7),🤺 (6),snek (6),kass (6),wyatt2 (6),smug1 (6),wyatt3 (6),bea (6),kale (6),swastika (6),ahegao1 (6),Doubt1 (6),pizza (5),sonervous (6),markwood (6),themeaning (6)',
+      ethanStr:  '😋 (7),🔜 (6),🤰 (6),🕺 (6),🍑 (7),🤺 (6),snek (6),kass (6),wyatt2 (6),smug1 (6),wyatt3 (6),bea (6),kale (6),😳 (6),ahegao1 (6),Doubt1 (6),pizza (5),sonervous (6),markwood (6),themeaning (6)',
       wyattStr1:  'lfg (7),partyparrot (6),PogBreathing (7),trueshred (7),drake (6),ranbowfrog (6),littleman (6),jam (5),bananna (5),KomodoHype (5),popcat (6),EraEra (5),Celly (6),kevingif (5),stevespin (6),goopie (6),elaineDance (6),defaultDance (6),snowWiggle (6),speen (6)',
       wyattStr2:  'votedown (17),downvote (15),downvote (15),downdoot (15),downvote (15),downvote (10),Downvote (10),downvote (10),downvote (10)',
       jacobReacts: [],

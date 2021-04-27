@@ -1186,12 +1186,12 @@
 
                 <transition name="slide" >
                     <div v-if="this.final" class="container p-5">
-                        <h3 class="ms-5 ps-5">speaking of which:</h3>
+                        <h3 class="ms-5 ps-lg-5">speaking of which:</h3>
                     </div>
                 </transition>
                 <transition name="slide" >
-                    <div v-if="this.final2" class="container text-end">
-                        <h3 class="ms-5 ps-5">besides upvote, you got more  
+                    <div v-if="this.final2" class="container text-center text-lg-end">
+                        <h3 class="ms-5 ps-lg-5 pe-lg-5">besides upvote, you got more  
                             <img v-if="mostReceivedReact.startsWith('..')" :src="mostReceivedReact" class="emoji">
                             <b v-else :title="'You got ' + mostReceivedReactCount + ' of them!'" 
                             >:{{ mostReceivedReact }}:</b>
@@ -1201,17 +1201,17 @@
                 </transition>
                 <transition name="slide" >
                     <div v-if="this.final3" class="container p-5 pb-0">
-                        <h3 class="ms-5 ps-5">OH! before I forget. 
+                        <h3 class="ms-5 ps-lg-5">OH! before I forget. 
                         </h3>
                     </div>
                 </transition>
                 <transition name="slide" >
                     <div v-if="this.final4" class="container p-5 pt-0 pb-0">
-                        <h3 class="ms-5 ps-5">this was the last thing you said before the anniversary:
+                        <h3 class="ms-5 ps-lg-5">this was the last thing you said before the anniversary:
                         </h3>
                     </div>
                 </transition>
-                <transition name="slide" class="justify-content-center ">
+                <transition name="slide" class="justify-content-center">
                     <div v-if="this.final5" class="message-block m-5 px-0 mx-auto d-block" style="max-width: fit-content;">
                         <div class="message pe-4" >
                             <div class="name-bar">
@@ -1235,7 +1235,7 @@
                 </transition>
                 <transition name="slide" >
                     <div v-if="this.final6" class="container p-5 pt-1 text-end">
-                        <h3 class="ms-5 ps-5 subtext">i hope that was one for the history books.
+                        <h3 class="ms-5 ps-lg-5 pe-lg-5 subtext">i hope that was one for the history books.
                         </h3>
                     </div>
                 </transition>

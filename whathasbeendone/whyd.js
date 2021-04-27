@@ -222,8 +222,8 @@ const namelist = {
 
       today: '',
 
-      // msgDelay: 1.6,
-      msgDelay: 0.01,
+      msgDelay: 1.6,
+      // msgDelay: 0.01,
 
       messagesActive: [],
       messages: [],

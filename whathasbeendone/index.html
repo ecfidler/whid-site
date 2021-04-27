@@ -1076,7 +1076,8 @@
                             <option v-for="name in names">{{name}}</option>
                         </datalist>
                         <button class="btn btn-secondary" type="button"
-                            v-on:click="inputButtonPressed"><i>whyd</i></button>
+                            v-on:click="inputButtonPressed"
+                            :disabled="buttonDisabled"><i>whyd</i></button>
                     </div>
 
 
@@ -1193,7 +1194,7 @@
                         <h3 class="ms-5 ps-5">besides upvote, you got more  
                             <img v-if="mostReceivedReact.startsWith('..')" :src="mostReceivedReact" class="emoji">
                             <b v-else :title="'You got ' + mostReceivedReactCount + ' of them!'" 
-                            >{{ mostReceivedReact }}</b>
+                            >:{{ mostReceivedReact }}:</b>
                             reactions on your messages than anything else.
                         </h3>
                     </div>
@@ -1238,21 +1239,35 @@
                         </h3>
                     </div>
                 </transition>
-
-                
-
-                    <!-- most common reaction to your messages was {{ mostReceivedReact }}
-                     your last message before the anniversary was {{ lastMessage }} -->
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <transition name="slide">
+                <div v-if="showthanks" class='text-center pt-5' data-aos="fade-up">
+                    <h2><i>aight, that's it, there's no more stats.</i></h2>
+                    <p class="subtext">
+                        <i>
+                        and seriously, thank you all for an amazing 5 years. I'm so grateful to have all of you as friends
+                        and the server as such a great place to be. It's been a wild ride, and there has been an astounding amount
+                        of great memories that we've made throughout the years. So thank you, again, for making this place a home.
+                        <br>
+                        <br>
+                        ...now, the real question is: where will we be 5 years from <b>today</b>?
+                    </i>
+                    </p>
+                    <p>
+                    </p>
+                </div>
+            </transition>
         </div>
+
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>

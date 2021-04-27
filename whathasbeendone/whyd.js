@@ -145,9 +145,10 @@ function comma(x) {
 const namelist = {
   data() {
     return {
+      buttonDisabled: false,
       show: false,
-      name: 'fops#1969',
-      nameDisplay: 'fops#1969',
+      name: '',
+      nameDisplay: '',
       names: [
         'fops#1969', 'bebenebenebeb#8098', 'El Jefe#5223', 'noss#0773',
        'Duhiggles#6156', 'TheInfinity#3826', 'SilentKON#2259',
@@ -239,7 +240,9 @@ const namelist = {
       final5: false,
       final6: false,
 
-      lastMessage: 'ehehehehe',
+      showthanks: false,
+
+      lastMessage: '',
       lastMsgImg: false,
       lastMsgDate: '',
     }
@@ -250,11 +253,12 @@ const namelist = {
         this.nameDisplay = this.name;
         this.show = true;
         this.loadData(this.name);
+        this.buttonDisabled = true;
         setTimeout(() => {
           this.constructMessages();
         }, 1100);
       } else {
-        alert('invalid input')
+        console.log('invalid input')
       }
     },
     loadData(name) {
@@ -298,7 +302,7 @@ const namelist = {
                   this.final6 = true
                   setTimeout(() => {
                     this.constructThankyou()
-                  }, 1000)
+                  }, 1500)
                 }, 1000)
               }, 1000)
             }, 1000)
@@ -347,9 +351,7 @@ const namelist = {
       ]
     },
     constructThankyou() {
-      this.thankyou = [
-        []
-      ]
+      this.showthanks = true;
     },
 
 

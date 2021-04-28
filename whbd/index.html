@@ -1161,11 +1161,11 @@
 
                 <transition name="slide" >
                     <div v-if="msgDone" class="container px-5 pb-1 pt-4">
-                        <h3 class="ms-5 ps-5 pb-5">you have also...</h3>
+                        <h3 class="ms-5 ps-0 ps-lg-5 pb-5">you have also...</h3>
                     </div>
                 </transition>
 
-                <div class="message-continue text-center">
+                <div class="text-center">
                     <transition-group name="slide" tag="p"
                         :css="false"
                         @before-enter="beforeEnter"
@@ -1193,12 +1193,12 @@
 
                 <transition name="slide" >
                     <div v-if="this.final" class="container p-5">
-                        <h3 class="ms-5 ps-lg-5">speaking of which:</h3>
+                        <h3 class="ms-5 ps-0 ps-lg-5">speaking of which:</h3>
                     </div>
                 </transition>
                 <transition name="slide" >
                     <div v-if="this.final2" class="container text-center text-lg-end">
-                        <h3 class="ms-5 ps-lg-5 pe-lg-5">besides upvote, you got more  
+                        <h3 class="ps-0 ps-lg-5 pe-lg-5">besides upvote, you got more  
                             <img v-if="mostReceivedReact.startsWith('..')" :src="mostReceivedReact" class="emoji">
                             <b v-else :title="'You got ' + mostReceivedReactCount + ' of them!'" 
                             >:{{ mostReceivedReact }}:</b>
@@ -1208,13 +1208,13 @@
                 </transition>
                 <transition name="slide" >
                     <div v-if="this.final3" class="container p-5 pb-0">
-                        <h3 class="ms-5 ps-lg-5">OH! before I forget. 
+                        <h3 class="ps-0 ps-lg-5">OH! before I forget. 
                         </h3>
                     </div>
                 </transition>
                 <transition name="slide" >
                     <div v-if="this.final4" class="container p-5 pt-0 pb-0">
-                        <h3 class="ms-5 ps-lg-5">this was the last thing you said before the anniversary:
+                        <h3 class="ps-0 ps-lg-5">this was the last thing you said before the anniversary:
                         </h3>
                     </div>
                 </transition>
@@ -1242,7 +1242,7 @@
                 </transition>
                 <transition name="slide" >
                     <div v-if="this.final6" class="container p-5 pt-1 text-end">
-                        <h3 class="ms-5 ps-lg-5 pe-lg-5 subtext">i hope that was one for the history books.
+                        <h3 class="ms-5 ps-0 ps-lg-5 pe-lg-5 subtext">i hope that was one for the history books.
                         </h3>
                     </div>
                 </transition>

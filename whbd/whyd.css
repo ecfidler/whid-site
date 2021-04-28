@@ -16,3 +16,8 @@
 #whydApp * .message-block {
     font-size: 1rem;
 }
+
+.whydmsg {
+    max-width: fit-content;
+    max-width: -moz-fit-content;
+}

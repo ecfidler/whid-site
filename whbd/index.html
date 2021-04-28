@@ -918,13 +918,14 @@
         <h2 class="pt-5">overall tho, here are our fav emojis.</h2>
 
         <div class="row pt-1 card-group">
-            <div class="col-12 col-md-6 col-lg-4 card pt-3 px-4">
+            <div class="col-12 col-lg-4">
+            <div class="card pt-3 px-4">
                 <div id="emojisApp">
                     <div class="row">
-                        <h2 class="col">
+                        <h2 class="col-5 col-lg-12 col-xxl-7">
                             Emojis:
                         </h2>
-                        <div class="col-5">
+                        <div class="col-5 col-lg-12 col-xxl-5 pb-4 pb-xxl-0">
                             <button type="button" class="btn btn-outline-secondary mt-2 active" data-bs-toggle="button"
                                 aria-pressed="true" autocomplete="off" v-on:click="toggleSpam"
                                 title="Toggle whether to include channels like #spam, #dev, #the-real-us, etc.">
@@ -969,13 +970,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 card pt-3 px-4">
+            </div>
+            <div class="col-12 col-lg-4 ">
+            <div class="card pt-3 px-4">
                 <div id="reactionsApp">
                     <div class="row">
-                        <h2 class="col-7">
+                        <h2 class="col-5 col-lg-12 col-xxl-7">
                             Reactions:
                         </h2>
-                        <div class="col-5">
+                        <div class="col-5 col-lg-12 col-xxl-5 pb-4 pb-xxl-0">
                             <button type="button" class="btn btn-outline-secondary mt-2 active" data-bs-toggle="button"
                                 aria-pressed="true" autocomplete="off" v-on:click="toggleSpam"
                                 title="Toggle whether to include channels like #spam, #dev, #the-real-us, etc.">
@@ -1003,13 +1006,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 card pt-3 px-4">
+            </div>
+            <div class="col-12 col-lg-4">
+            <div class="card pt-3 px-4">
                 <div id="combinedApp">
                     <div class="row">
-                        <h2 class="col-7">
+                        <h2 class="col-5 col-lg-12 col-xxl-7">
                             Combined:
                         </h2>
-                        <div class="col-5">
+                        <div class="col-5 col-lg-12 col-xxl-5 pb-4 pb-xxl-0">
                             <button type="button" class="btn btn-outline-secondary mt-2 active" data-bs-toggle="button"
                                 aria-pressed="true" autocomplete="off" v-on:click="toggleSpam"
                                 title="Toggle whether to include channels like #spam, #dev, #the-real-us, etc.">
@@ -1045,6 +1050,7 @@
                         <p class="col-6 col-md-7">{{ totalActive }}</p>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
         </div>

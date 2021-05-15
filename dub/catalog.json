@@ -1,22 +1,16 @@
 {
-  "season1": {
-    "episodes": [
-      {
-        "title": "Origins",
-        "releaseDate": "2020-04-14T00:00:00.000Z",
-        "id": "s1e1"
-      },
-      {
-        "title": "Sonic The Hedge",
-        "releaseDate": "1969-04-20T00:00:00.000Z",
-        "id": "s1e2"
-      }
-    ]
-  },
-  "season2": {
-    "episodes": []
-  },
-  "specials": {
-    "episodes": []
-  }
+  "s1": [
+    {
+      "title": "Origins",
+      "releaseDate": "2020-04-14T00:00:00.000Z",
+      "id": "s1-e1"
+    },
+    {
+      "title": "Sonic The Hedge",
+      "releaseDate": "1969-04-20T00:00:00.000Z",
+      "id": "s1-e2"
+    }
+  ],
+  "s2": [],
+  "extra": []
 }

@@ -102,8 +102,7 @@ async function loadCatalog() {
 }
 
 function getEpisodeFromList(episodes, id) {
-    for (const epIndex in episodes) {
-        const episode = episodes[epIndex];
+    for (const episode of episodes) {
         if (episode["id"] === id) {
             return episode;
         }

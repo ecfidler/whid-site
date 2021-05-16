@@ -36,7 +36,31 @@ const player = {
     }
 }
 
-const app = Vue.createApp(player).mount('#playerApp')
+Vue.createApp(player).mount('#playerApp')
+
+const gallery = {
+    data() {
+        return {
+            activeEpisodes: [],
+            activeSeason: "s1",
+
+            seasons: {},
+        }
+    },
+    async mounted() {
+        // load all episode data
+        // make the buttons using the "name" field of each season
+        //  buttons need some sort of id for which season they are
+        //  maybe add a parameter to a v-on call
+        // set the active episodes to s1
+
+    },
+    methods: {
+        // onButtonPressed - changes the displayed season
+    }
+}
+
+Vue.createApp(gallery).mount('#galleryApp')
 
 function getID() {
     let id = getIDFromURL()

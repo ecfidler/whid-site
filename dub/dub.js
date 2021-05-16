@@ -45,16 +45,17 @@ async function getVideoDataFromID(id) {
     const request = async () => {
         const response = await fetch(jsonPath);
         const json = await response.json();
-        const season = json[getSeason(id)]
-        outEp = getEpisodeFromSeason(season, id);
+        const season = json[getSeason(id)];
+        const episodes = season["episodes"];
+        outEp = getEpisodeFromList(episodes, id);
     }
     await request();
     return outEp
 }
 
-function getEpisodeFromSeason(season, id) {
-    for (const epIndex in season) {
-        const episode = season[epIndex];
+function getEpisodeFromList(episodes, id) {
+    for (const epIndex in episodes) {
+        const episode = episodes[epIndex];
         if (episode["id"] === id) {
             return episode;
         }

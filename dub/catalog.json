@@ -3,42 +3,42 @@
     "name": "Season 1",
     "episodes": [
       {
-        "title": "The One We Don't Talk About",
+        "title": "1. The One We Don't Talk About",
         "releaseDate": "2020-04-14",
         "id": "s1-e1"
       },
       {
-        "title": "Get Isekaied",
+        "title": "2. Get Isekaied",
         "releaseDate": "2020-04-21",
         "id": "s1-e2"
       },
       {
-        "title": "SIMP",
+        "title": "3. SIMP",
         "releaseDate": "2020-05-12",
         "id": "s1-e3"
       },
       {
-        "title": "Attack On Tacos",
+        "title": "4. Attack On Tacos",
         "releaseDate": "2020-06-04",
         "id": "s1-e4"
       },
       {
-        "title": "Jojo's Smashing Adventure",
+        "title": "5. Jojo's Smashing Adventure",
         "releaseDate": "2020-06-21",
         "id": "s1-e5"
       },
       {
-        "title": "My Saucy AAAAcademia",
+        "title": "6. My Saucy AAAAcademia",
         "releaseDate": "2020-07-12",
         "id": "s1-e6"
       },
       {
-        "title": "The OTHER One We Don't Talk About",
+        "title": "7. The OTHER One We Don't Talk About",
         "releaseDate": "2020-08-03",
         "id": "s1-e7"
       },
       {
-        "title": "Snord",
+        "title": "8. Snord",
         "releaseDate": "2020-08-29",
         "id": "s1-e8"
       }

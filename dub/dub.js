@@ -1,5 +1,12 @@
 jsonPath = "catalog.json"
 
+class VideoIDError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "VideoIDError";
+    }
+}
+
 const player = {
     data() {
         return {
@@ -11,8 +18,14 @@ const player = {
     },
     async mounted() {
         // populate instance variables
-        const id = getID();
-        const data = await getVideoDataFromID(id);
+        try {
+            var id = getID();
+            var data = await getVideoDataFromID(id);
+        } catch (err) {
+            if (err instanceof VideoIDError)
+                goToGallery();
+            else throw err
+        }
 
         this.title = data["title"];
         this.releaseDate = constructDate(data["releaseDate"]);
@@ -28,7 +41,7 @@ const app = Vue.createApp(player).mount('#playerApp')
 function getID() {
     let id = getIDFromURL()
     if (id === null) {
-        window.location.replace("../dub");
+        throw new VideoIDError("No ID supplied in URL");
     }
     return id
 }
@@ -60,6 +73,7 @@ function getEpisodeFromList(episodes, id) {
             return episode;
         }
     }
+    throw new VideoIDError("Video ID not found in catalog")
 }
 
 function constructVideoURL(id) {
@@ -78,3 +92,6 @@ function constructDate(date) {
     return joinDate = new Date(date).toLocaleDateString('en-US');
 }
 
+function goToGallery() {
+    window.location.replace("../dub?error=True");
+}

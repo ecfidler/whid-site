@@ -143,7 +143,7 @@ function constructThumbnailURL(id) {
 }
 
 function constructDate(date) {
-    return joinDate = new Date(date).toLocaleDateString('en-US');
+    return joinDate = new Date(date + " EST").toLocaleDateString('en-US');
 }
 
 function goToGallery() {

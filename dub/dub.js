@@ -16,23 +16,28 @@ const player = {
             thumbnailURL: "",
         }
     },
-    async mounted() {
+    mounted() {
         // populate instance variables
         try {
-            var id = getID();
-            var data = await getVideoDataFromID(id);
+            this.setupPage();
         } catch (err) {
             if (err instanceof VideoIDError)
                 goToGallery();
             else throw err
         }
+    },
+    methods: {
+        async setupPage() {
+            let id = getID();
+            let data = await getVideoDataFromID(id);
 
-        this.title = data["title"];
-        this.releaseDate = constructDate(data["releaseDate"]);
-        this.videoURL = constructVideoURL(id);
-        this.thumbnailURL = constructThumbnailURL(id);
+            this.title = data["title"];
+            this.releaseDate = constructDate(data["releaseDate"]);
+            this.videoURL = constructVideoURL(id);
+            this.thumbnailURL = constructThumbnailURL(id);
 
-        document.title = "Watching " + this.title
+            document.title = "Watching " + this.title
+        }
     }
 }
 
@@ -49,6 +54,7 @@ const gallery = {
     },
     async mounted() {
         // load all episode data
+
         // make the buttons using the "name" field of each season
         //  buttons need some sort of id for which season they are
         //  maybe add a parameter to a v-on call
@@ -78,16 +84,21 @@ function getIDFromURL() {
 }
 
 async function getVideoDataFromID(id) {
-    let outEp;
+    var catalog = await loadCatalog();
+    const season = catalog[getSeason(id)];
+    const episodes = season["episodes"];
+    let outEp = getEpisodeFromList(episodes, id);
+    return outEp
+}
+
+async function loadCatalog() {
+    var json;
     const request = async () => {
         const response = await fetch(jsonPath);
-        const json = await response.json();
-        const season = json[getSeason(id)];
-        const episodes = season["episodes"];
-        outEp = getEpisodeFromList(episodes, id);
-    }
+        json = await response.json();
+    };
     await request();
-    return outEp
+    return json;
 }
 
 function getEpisodeFromList(episodes, id) {

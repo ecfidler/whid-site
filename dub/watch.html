@@ -8,6 +8,7 @@
     <title>Watch what have i dubbed</title>
 
     <link href="../resources/styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
         </div>
     </nav>
 
-    <div class="container mt-5" id="playerApp">
+    <div class="container mt-5" id="playerApp" v-cloak>
         <video playsinline controls :src="videoURL" :poster="thumbnailURL"
             type="video/mp4" style="width: inherit; max-height: 75vh;">
             Sorry, your browser doesn't support embedded videos.

@@ -16,10 +16,10 @@ const player = {
             thumbnailURL: "",
         }
     },
-    mounted() {
+    async mounted() {
         // populate instance variables
         try {
-            this.setupPage();
+            await this.setupPage();
         } catch (err) {
             if (err instanceof VideoIDError)
                 goToGallery();
@@ -46,27 +46,38 @@ Vue.createApp(player).mount('#playerApp')
 const gallery = {
     data() {
         return {
-            activeEpisodes: [],
             activeSeason: "s1",
-
             seasons: {},
+            showAlert: false,
         }
     },
     async mounted() {
-        // load all episode data
-
-        // make the buttons using the "name" field of each season
-        //  buttons need some sort of id for which season they are
-        //  maybe add a parameter to a v-on call
-        // set the active episodes to s1
-
+        this.seasons = await loadCatalog();
+        this.showAlert = getErrorFromURL();
     },
     methods: {
-        // onButtonPressed - changes the displayed season
+        title(episode) {
+            return episode['title']
+        },
+        date(episode) {
+            return constructDate(episode['releaseDate'])
+        },
+        thumbnail(episode) {
+            return constructThumbnailURL(episode['id'])
+        },
+        video(episode) {
+            return constructWatchURL(episode['id'])
+        }
     }
 }
 
 Vue.createApp(gallery).mount('#galleryApp')
+
+function getErrorFromURL() {
+    let params = getParamsFromURL();
+    let error = params.get("error");
+    return Boolean(error)
+}
 
 function getID() {
     let id = getIDFromURL()
@@ -77,10 +88,15 @@ function getID() {
 }
 
 function getIDFromURL() {
-    let uri = window.location.search.substring(1);
-    let params = new URLSearchParams(uri);
+    let params = getParamsFromURL();
     let id = params.get("v");
     return id;
+}
+
+function getParamsFromURL() {
+    let uri = window.location.search.substring(1);
+    let params = new URLSearchParams(uri);
+    return params;
 }
 
 async function getVideoDataFromID(id) {
@@ -110,6 +126,10 @@ function getEpisodeFromList(episodes, id) {
     throw new VideoIDError("Video ID not found in catalog")
 }
 
+function constructWatchURL(id) {
+    return "watch.html?v=" + id
+}
+
 function constructVideoURL(id) {
     return "resources/videos/" + getSeason(id) + "/" + id + ".mp4"
 }
@@ -127,5 +147,5 @@ function constructDate(date) {
 }
 
 function goToGallery() {
-    window.location.replace("../dub?error=True");
+    window.location.replace("../dub/?error=true");
 }

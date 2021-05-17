@@ -32,11 +32,12 @@
     </nav>
 
     <div class="container mt-5" id="playerApp" v-cloak>
-        <video playsinline controls :src="videoURL" :poster="thumbnailURL"
-            type="video/mp4" style="width: inherit; max-height: 75vh;">
-            Sorry, your browser doesn't support embedded videos.
-        </video>
-        <h2 class="fw-bold mb-0">{{ title }}</h2>    
+        <div class='text-center ratio ratio-16x9'>
+            <video playsinline controls :src="videoURL" :poster="thumbnailURL" type="video/mp4" class="mx-auto" style="background-color: black;">
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+        </div>
+        <h2 class="fw-bold mb-0">{{ title }}</h2>
         <p class="text-muted">Released {{ releaseDate }}</p>
     </div>
 

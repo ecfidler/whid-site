@@ -14,19 +14,14 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-2">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="../resources/image/logo-l.svg" height="45"></a>
-            <div class="collapse navbar-collapse d-flex flex-sm-row-reverse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-sm-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">whidubbed</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Anniversary</a>
-                    </li>
-                </ul>
+            <a class="navbar-brand" href="#">
+                <img src="../resources/image/logo-l.svg" height="45" class="me-2">
+                what have i done
+            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <button class="btn btn-outline-success orange me-2" type="button">Home</button>
+                <button class="btn btn-outline-success orange me-2" type="button">whidubbed</button>
+                <button class="btn btn-outline-success orange me-2" type="button">Anniversary</button>
             </div>
         </div>
     </nav>
@@ -69,8 +64,8 @@
                         </a>
                     </div>
                     <div v-if="seasons[activeSeason]['episodes'].length === 0" class="text-center mt-5">
-                            <img src="resources/images/ethan.png" class="mx-auto mt-5 pt-5" width="100">
-                            <h5 class="mt-3">looks like there's nothing here... yet</h5>
+                        <img src="resources/images/ethan.png" class="mx-auto mt-5 pt-5" width="100">
+                        <h5 class="mt-3">looks like there's nothing here... yet</h5>
                     </div>
                 </div>
             </div>

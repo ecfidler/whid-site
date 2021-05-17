@@ -74,9 +74,7 @@ const gallery = {
 Vue.createApp(gallery).mount('#galleryApp')
 
 function getErrorFromURL() {
-    let params = getParamsFromURL();
-    let error = params.get("error");
-    return Boolean(error)
+    return Boolean(getParamFromURL("error"))
 }
 
 function getID() {
@@ -88,9 +86,13 @@ function getID() {
 }
 
 function getIDFromURL() {
+    return getParamFromURL("v");
+}
+
+function getParamFromURL(key) {
     let params = getParamsFromURL();
-    let id = params.get("v");
-    return id;
+    let param = params.get(key);
+    return param;
 }
 
 function getParamsFromURL() {

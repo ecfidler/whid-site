@@ -36,11 +36,11 @@
 
         <div class="container d-flex my-5">
             <div class="btn-group mx-auto" role="group" aria-label="Basic radio toggle button group">
-                <div v-for="season in Object.keys(seasons)" v-bind:key="season">
+                <template v-for="season in Object.keys(seasons)" v-bind:key="season">
                     <input type="radio" class="btn-check" name="btnradio" :id="season" :value="season"
                         autocomplete="off" v-model="activeSeason">
-                    <label class="btn btn-outline-primary mx-1" :for="season">{{ seasons[season]["name"] }}</label>
-                </div>
+                    <label class="btn btn-outline-primary" :for="season">{{ seasons[season]["name"] }}</label>
+                </template>
             </div>
         </div>
 

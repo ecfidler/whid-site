@@ -25,7 +25,8 @@
                         <a href="#" class="btn btn-text-primary me-2" type="button">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="btn btn-text-primary me-2 active" type="button" aria-current="page" >whidubbed</a>
+                        <a href="#" class="btn btn-text-primary me-2 active" type="button"
+                            aria-current="page">whidubbed</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="btn btn-text-primary me-2" type="button">Anniversary</a>
@@ -40,6 +41,23 @@
             <div class="alert alert-info alert-dismissible fade show m-2" role="alert">
                 <strong>Error:</strong> Invalid video ID
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <h2 class="text-center">Featured Video</h2>
+            <div class="card mb-3 mx-auto" style="max-width: 770px;">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="resources/thumbnails/s1-e1.png" alt="..." style="max-width: inherit;">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h4 class="card-title">1. The One We Talk About</h4>
+                            <p class="card-text text-muted">Released 4/14/2020</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -65,7 +83,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title text-truncate">
                                         {{ title(episode) }}</h5>
-                                    <h6 class="card-subtitle text-muted">Released {{ date(episode) }}</h6>
+                                    <h6 class="card-subtitle"><small class="text-muted">Released {{ date(episode) }}</small></h6>
                                 </div>
                             </div>
                         </a>

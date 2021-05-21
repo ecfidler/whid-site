@@ -19,11 +19,6 @@ $primary: $major-orange !default;
   color: $white;
   border-color: transparent;
 
-  &:hover {
-    color: $color-hover;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
 
   .btn-check:focus + &,
   &:focus {
@@ -47,6 +42,12 @@ $primary: $major-orange !default;
         box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
       }
     }
+  }
+
+  &:hover {
+    color: $color-hover;
+    background-color: $active-background;
+    border-color: $active-border;
   }
 
   &:disabled,

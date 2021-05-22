@@ -35,26 +35,6 @@
         </div>
     </nav>
 
-    <div class="container mt-4" id="featuredVideoApp" v-cloak>
-        <h2 class="text-center">Featured Video</h2>
-        <a v-if="episode" class="card mb-3 mx-auto text-reset text-decoration-none" style="max-width: 770px;"
-            :href="video(episode)">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <img :src="thumbnail()" alt="..." style="max-width: inherit;">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h4 class="card-title">{{ title() }}</h4>
-                        <h6 class="card-text text-muted">Released {{ date() }}</h6>
-                        <p class='mt-4 mb-0'>{{ description }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-
     <div id="galleryApp" v-cloak>
         <div class="container" v-if="showAlert">
             <div class="alert alert-info alert-dismissible fade show m-2" role="alert">
@@ -62,6 +42,24 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
+
+        <h3 class="text-center mt-4">Featured Video</h3>
+        <a v-if="featured" class="card mb-4 mx-auto text-reset text-decoration-none" style="max-width: 770px;"
+            :href="video(featured)">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img :src="thumbnail(featured)" alt="..." style="max-width: inherit;">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ title(featured) }}</h4>
+                        <h6 class="card-text text-muted">Released {{ date(featured) }}</h6>
+                        <p class='mt-4 mb-0'>{{ featuredDesc }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
 
         <div class="container d-flex my-5">
             <div class="btn-group mx-auto" role="group" aria-label="Basic radio toggle button group">
@@ -74,7 +72,7 @@
         </div>
 
 
-        <div class="container">
+        <div class="container mt-1">
             <div v-if="seasons[activeSeason]">
                 <div class="row">
                     <div class="col-md-6 col-lg-3 my-3 mt-1" v-for="episode in seasons[activeSeason]['episodes']"

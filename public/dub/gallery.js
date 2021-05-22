@@ -4,12 +4,15 @@ const gallery = {
             activeSeason: "s1",
             seasons: {},
             showAlert: false,
+            featured: null,
+            featuredDesc: "",
         }
     },
     async mounted() {
         await loadCatalog();
         this.seasons = getSeasons();
         this.showAlert = getErrorFromURL();
+        [this.featured, this.featuredDesc] = getFeaturedVideo();
     },
     methods: {
         title(episode) {

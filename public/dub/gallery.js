@@ -8,7 +8,7 @@ const gallery = {
     },
     async mounted() {
         await loadCatalog();
-        this.seasons = await loadSeasons();
+        this.seasons = loadSeasons();
         this.showAlert = getErrorFromURL();
     },
     methods: {

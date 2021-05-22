@@ -7,7 +7,7 @@ const featured = {
     },
     async mounted() {
         await loadCatalog();
-        [this.episode, this.description] = await loadFeaturedVideo();
+        [this.episode, this.description] = loadFeaturedVideo();
     },
     methods: {
         title() {

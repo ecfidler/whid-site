@@ -11,7 +11,7 @@ const player = {
         await loadCatalog();
         // populate instance variables
         try {
-            await this.setupPage();
+            this.setupPage();
         } catch (err) {
             if (err instanceof VideoIDError)
                 goToGallery();
@@ -21,7 +21,7 @@ const player = {
     methods: {
         async setupPage() {
             let id = getID();
-            let data = await getVideoDataFromID(id);
+            let data = getVideoDataFromID(id);
 
             this.title = data["title"];
             this.releaseDate = constructDate(data["releaseDate"]);

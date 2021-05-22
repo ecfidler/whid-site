@@ -8,6 +8,14 @@ class VideoIDError extends Error {
     }
 }
 
+async function loadCatalog() {
+    const request = async () => {
+        const response = await fetch(jsonPath);
+        catalog = await response.json();
+    };
+    await request();
+}
+
 function getErrorFromURL() {
     return Boolean(getParamFromURL("error"))
 }
@@ -36,28 +44,20 @@ function getParamsFromURL() {
     return params;
 }
 
-async function getVideoDataFromID(id) {
+function getVideoDataFromID(id) {
     const season = getSeason(id);
     const episodes = season["episodes"];
     let outEp = getEpisodeFromList(episodes, id);
     return outEp
 }
 
-async function loadSeasons() {
+function loadSeasons() {
     return catalog["seasons"]
 }
 
-async function loadCatalog() {
-    const request = async () => {
-        const response = await fetch(jsonPath);
-        catalog = await response.json();
-    };
-    await request();
-}
-
-async function loadFeaturedVideo() {
+function loadFeaturedVideo() {
     let [id, desc] = getFeaturedVideoData();
-    let data = await getVideoDataFromID(id);
+    let data = getVideoDataFromID(id);
     return [data, desc]
 }
 

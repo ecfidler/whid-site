@@ -8,6 +8,7 @@ const player = {
         }
     },
     async mounted() {
+        await loadCatalog();
         // populate instance variables
         try {
             await this.setupPage();

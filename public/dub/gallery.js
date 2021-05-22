@@ -7,6 +7,7 @@ const gallery = {
         }
     },
     async mounted() {
+        await loadCatalog();
         this.seasons = await loadSeasons();
         this.showAlert = getErrorFromURL();
     },

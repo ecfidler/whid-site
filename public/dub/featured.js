@@ -6,6 +6,7 @@ const featured = {
         }
     },
     async mounted() {
+        await loadCatalog();
         [this.episode, this.description] = await loadFeaturedVideo();
     },
     methods: {

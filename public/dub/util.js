@@ -1,4 +1,5 @@
 let jsonPath = "catalog.json"
+let catalog;
 
 class VideoIDError extends Error {
     constructor(message) {
@@ -36,37 +37,31 @@ function getParamsFromURL() {
 }
 
 async function getVideoDataFromID(id) {
-    var catalog = await loadCatalog()
-    // const season = catalog[getSeason(id)];
-    const season = getSeason(catalog, id);
+    const season = getSeason(id);
     const episodes = season["episodes"];
     let outEp = getEpisodeFromList(episodes, id);
     return outEp
 }
 
 async function loadSeasons() {
-    var catalog = await loadCatalog();
     return catalog["seasons"]
 }
 
 async function loadCatalog() {
-    var json;
     const request = async () => {
         const response = await fetch(jsonPath);
-        json = await response.json();
+        catalog = await response.json();
     };
     await request();
-    return json;
 }
 
 async function loadFeaturedVideo() {
-    var catalog = await loadCatalog()
-    let [id, desc] = getFeaturedVideoData(catalog);
+    let [id, desc] = getFeaturedVideoData();
     let data = await getVideoDataFromID(id);
     return [data, desc]
 }
 
-function getFeaturedVideoData(catalog) {
+function getFeaturedVideoData() {
     return [catalog['featured']["id"], catalog["featured"]["description"]]
 }
 
@@ -91,7 +86,7 @@ function getSeasonID(id) {
     return id.split('-')[0];
 }
 
-function getSeason(catalog, id) {
+function getSeason(id) {
     let seasonID = getSeasonID(id);
     return catalog["seasons"][seasonID]
 }

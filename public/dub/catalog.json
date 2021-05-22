@@ -1,55 +1,61 @@
 {
-  "s1": {
-    "name": "Season 1",
-    "episodes": [
-      {
-        "title": "1. The One We Don't Talk About",
-        "releaseDate": "4/14/2020",
-        "id": "s1-e1"
-      },
-      {
-        "title": "2. Get Isekaied",
-        "releaseDate": "4/21/2020",
-        "id": "s1-e2"
-      },
-      {
-        "title": "3. SIMP",
-        "releaseDate": "5/12/2020",
-        "id": "s1-e3"
-      },
-      {
-        "title": "4. Attack On Tacos",
-        "releaseDate": "6/4/2020",
-        "id": "s1-e4"
-      },
-      {
-        "title": "5. Jojo's Smashing Adventure",
-        "releaseDate": "6/21/2020",
-        "id": "s1-e5"
-      },
-      {
-        "title": "6. My Saucy AAAAcademia",
-        "releaseDate": "7/12/2020",
-        "id": "s1-e6"
-      },
-      {
-        "title": "7. The OTHER One We Don't Talk About",
-        "releaseDate": "8/3/2020",
-        "id": "s1-e7"
-      },
-      {
-        "title": "8. Snord",
-        "releaseDate": "8/29/2020",
-        "id": "s1-e8"
-      }
-    ]
+  "featured": {
+    "id": "s1-e8",
+    "description": "This is some description text about the episode. It's really a very good one, I promise. Just kidding! It's as bad as the rest are."
   },
-  "s2": {
-    "name": "Season 2",
-    "episodes": []
-  },
-  "extras": {
-    "name": "Specials",
-    "episodes": []
+  "seasons": {
+    "s1": {
+      "name": "Season 1",
+      "episodes": [
+        {
+          "title": "1. The One We Don't Talk About",
+          "releaseDate": "4/14/2020",
+          "id": "s1-e1"
+        },
+        {
+          "title": "2. Get Isekaied",
+          "releaseDate": "4/21/2020",
+          "id": "s1-e2"
+        },
+        {
+          "title": "3. SIMP",
+          "releaseDate": "5/12/2020",
+          "id": "s1-e3"
+        },
+        {
+          "title": "4. Attack On Tacos",
+          "releaseDate": "6/4/2020",
+          "id": "s1-e4"
+        },
+        {
+          "title": "5. Jojo's Smashing Adventure",
+          "releaseDate": "6/21/2020",
+          "id": "s1-e5"
+        },
+        {
+          "title": "6. My Saucy AAAAcademia",
+          "releaseDate": "7/12/2020",
+          "id": "s1-e6"
+        },
+        {
+          "title": "7. The OTHER One We Don't Talk About",
+          "releaseDate": "8/3/2020",
+          "id": "s1-e7"
+        },
+        {
+          "title": "8. Snord",
+          "releaseDate": "8/29/2020",
+          "id": "s1-e8"
+        }
+      ]
+    },
+    "s2": {
+      "name": "Season 2",
+      "episodes": []
+    },
+    "extras": {
+      "name": "Specials",
+      "episodes": []
+    }
   }
 }

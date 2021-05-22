@@ -35,34 +35,32 @@
         </div>
     </nav>
 
+    <div class="container mt-4" id="featuredVideoApp" v-cloak>
+        <h2 class="text-center">Featured Video</h2>
+        <a v-if="episode" class="card mb-3 mx-auto text-reset text-decoration-none" style="max-width: 770px;"
+            :href="video(episode)">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img :src="thumbnail()" alt="..." style="max-width: inherit;">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ title() }}</h4>
+                        <h6 class="card-text text-muted">Released {{ date() }}</h6>
+                        <p class='mt-4 mb-0'>{{ description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
     <div id="galleryApp" v-cloak>
         <div class="container" v-if="showAlert">
             <div class="alert alert-info alert-dismissible fade show m-2" role="alert">
                 <strong>Error:</strong> Invalid video ID
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        </div>
-
-        <div class="container mt-4">
-            <h2 class="text-center">Featured Video</h2>
-            <a class="card mb-3 mx-auto text-reset text-decoration-none" style="max-width: 770px;"
-                href="video(episode)">
-                <div class="row g-0">
-                    <div class="col-md-6">
-                        <img src="resources/thumbnails/s1-e1.png" alt="..." style="max-width: inherit;">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <h4 class="card-title">1. The One We Talk About</h4>
-                            <h6 class="card-text text-muted">Released 4/14/2020</h6>
-                            <p class='mt-4 mb-0'>This is some description text about the episode. It's really a very
-                                good one, I promise.
-                                Just kidding! It's as bad as the rest are.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
         </div>
 
         <div class="container d-flex my-5">
@@ -107,6 +105,7 @@
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
     <script src="util.js"></script>
+    <script src="featured.js"></script>
     <script src="gallery.js"></script>
 </body>
 

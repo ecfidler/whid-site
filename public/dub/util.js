@@ -1,4 +1,4 @@
-jsonPath = "catalog.json"
+let jsonPath = "catalog.json"
 
 class VideoIDError extends Error {
     constructor(message) {
@@ -36,11 +36,17 @@ function getParamsFromURL() {
 }
 
 async function getVideoDataFromID(id) {
-    var catalog = await loadCatalog();
-    const season = catalog[getSeason(id)];
+    var catalog = await loadCatalog()
+    // const season = catalog[getSeason(id)];
+    const season = getSeason(catalog, id);
     const episodes = season["episodes"];
     let outEp = getEpisodeFromList(episodes, id);
     return outEp
+}
+
+async function loadSeasons() {
+    var catalog = await loadCatalog();
+    return catalog["seasons"]
 }
 
 async function loadCatalog() {
@@ -51,6 +57,17 @@ async function loadCatalog() {
     };
     await request();
     return json;
+}
+
+async function loadFeaturedVideo() {
+    var catalog = await loadCatalog()
+    let [id, desc] = getFeaturedVideoData(catalog);
+    let data = await getVideoDataFromID(id);
+    return [data, desc]
+}
+
+function getFeaturedVideoData(catalog) {
+    return [catalog['featured']["id"], catalog["featured"]["description"]]
 }
 
 function getEpisodeFromList(episodes, id) {
@@ -67,11 +84,16 @@ function constructWatchURL(id) {
 }
 
 function constructVideoURL(id) {
-    return "resources/videos/" + getSeason(id) + "/" + id + ".mp4"
+    return "resources/videos/" + getSeasonID(id) + "/" + id + ".mp4"
 }
 
-function getSeason(id) {
+function getSeasonID(id) {
     return id.split('-')[0];
+}
+
+function getSeason(catalog, id) {
+    let seasonID = getSeasonID(id);
+    return catalog["seasons"][seasonID]
 }
 
 function constructThumbnailURL(id) {

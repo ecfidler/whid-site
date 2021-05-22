@@ -47,15 +47,14 @@ function getParamsFromURL() {
 function getVideoDataFromID(id) {
     const season = getSeason(id);
     const episodes = season["episodes"];
-    let outEp = getEpisodeFromList(episodes, id);
-    return outEp
+    return getEpisodeFromList(episodes, id);
 }
 
-function loadSeasons() {
+function getSeasons() {
     return catalog["seasons"]
 }
 
-function loadFeaturedVideo() {
+function getFeaturedVideo() {
     let [id, desc] = getFeaturedVideoData();
     let data = getVideoDataFromID(id);
     return [data, desc]

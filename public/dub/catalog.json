@@ -189,8 +189,12 @@
       "name": "Season 2",
       "episodes": []
     },
-    "extras": {
+    "special": {
       "name": "Specials",
+      "episodes": []
+    },
+    "extra": {
+      "name": "Extras",
       "episodes": []
     }
   }

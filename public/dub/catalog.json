@@ -29,37 +29,159 @@
         {
           "title": "2. Get Isekaied",
           "releaseDate": "4/21/2020",
-          "id": "s1-e2"
+          "id": "s1-e2",
+          "parts": [
+            {
+              "members": "Brendan, Juan, Markwood, Thomas",
+              "timestamp": "0:31"
+            },
+            {
+              "members": "Ben, Josh, Kian, Russell",
+              "timestamp": "5:04"
+            },
+            {
+              "members": "Ethan, Trent, Tristan, Wyatt",
+              "timestamp": "9:11"
+            },
+            {
+              "members": "Trent",
+              "timestamp": "14:18"
+            }
+          ]
         },
         {
           "title": "3. SIMP",
           "releaseDate": "5/12/2020",
-          "id": "s1-e3"
+          "id": "s1-e3",
+          "parts": [
+            {
+              "members": "Ben, Josh, Markwood",
+              "timestamp": "0:00"
+            },
+            {
+              "members": "Brendan, Kian, Wyatt",
+              "timestamp": "4:59"
+            },
+            {
+              "members": "Ethan, Gabe, Jackson",
+              "timestamp": "10:59"
+            },
+            {
+              "members": "Chris, Jacob, Trent",
+              "timestamp": "15:14"
+            }
+          ]
         },
         {
           "title": "4. Attack On Tacos",
           "releaseDate": "6/4/2020",
-          "id": "s1-e4"
+          "id": "s1-e4",
+          "parts": [
+            {
+              "members": "Ethan, Tristan, Yoni",
+              "timestamp": "1:30"
+            },
+            {
+              "members": "Ben, Kian, Wyatt",
+              "timestamp": "6:35"
+            },
+            {
+              "members": "Trent",
+              "timestamp": "11:479"
+            },
+            {
+              "members": "Brendan, Chris, Jackson, Markwood",
+              "timestamp": "16:36"
+            }
+          ]
         },
         {
           "title": "5. Jojo's Smashing Adventure",
           "releaseDate": "6/21/2020",
-          "id": "s1-e5"
+          "id": "s1-e5",
+          "parts": [
+            {
+              "members": "Ben, Brendan, Gabe, Markwood",
+              "timestamp": "1:32"
+            },
+            {
+              "members": "Jackson, Jacob, Juan, Russell",
+              "timestamp": "6:40"
+            },
+            {
+              "members": "Sergei, Trent, Tristan, Wyatt",
+              "timestamp": "11:26"
+            },
+            {
+              "members": "Ben Hay, Chris, Ethan, Kian, Yoni",
+              "timestamp": "17:55"
+            }
+          ]
         },
         {
           "title": "6. My Saucy AAAAcademia",
           "releaseDate": "7/12/2020",
-          "id": "s1-e6"
+          "id": "s1-e6",
+          "parts": [
+            {
+              "members": "Brendan, Chris, Josh, Kian, Trent",
+              "timestamp": "2:18"
+            },
+            {
+              "members": "Ben, Gabe, Jackson, Josh, Tristan",
+              "timestamp": "7:07"
+            },
+            {
+              "members": "Ben Hay, Ethan, Jacob, Markwood, Ross",
+              "timestamp": "12:48"
+            },
+            {
+              "members": "Juan, Russell, Wyatt, Yoni",
+              "timestamp": "17:42"
+            }
+          ]
         },
         {
           "title": "7. The OTHER One We Don't Talk About",
           "releaseDate": "8/3/2020",
-          "id": "s1-e7"
+          "id": "s1-e7",
+          "parts": [
+            {
+              "members": "Ethan, Josh, Juan, Rob, Tristan",
+              "timestamp": "0:42"
+            },
+            {
+              "members": "Chris, Jacob, Markwood, Wyatt",
+              "timestamp": "6:27"
+            },
+            {
+              "members": "Ben, Ben Hay, Sergei, Trent, Yoni",
+              "timestamp": "12:02"
+            },
+            {
+              "members": "Brendan, Gabe, Jackson, Kian, Ross",
+              "timestamp": "18:40"
+            }
+          ]
         },
         {
           "title": "8. Snord",
           "releaseDate": "8/29/2020",
-          "id": "s1-e8"
+          "id": "s1-e8",
+          "parts": [
+            {
+              "members": "Ben, Ethan, Juan, Kian, Markwood",
+              "timestamp": "2:16"
+            },
+            {
+              "members": "Chris, Josh, Ross, Russell, Wyatt",
+              "timestamp": "8:29"
+            },
+            {
+              "members": "Ben Hay, Jackson, Trent, Yoni",
+              "timestamp": "15:11"
+            }
+          ]
         }
       ]
     },

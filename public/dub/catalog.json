@@ -195,7 +195,64 @@
     },
     "extra": {
       "name": "Extras",
-      "episodes": []
+      "episodes": [
+        {
+          "title": "All whidubbed Season One Episodes at Once",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "Film Students React to WHID 7",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "get that shit outta my face",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "i'm doing this instead of finals",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "kian and his sick beats",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "let.me.leave.",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "qu'est-ce que j'ai doublé EP 1 - français",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "What Have I Dubbed Out of Context",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "whid 8 but i dont know what happened",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "WHID Season 1 in 30 Seconds",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "WHID8xMyHeroAcademia Ending Comparison",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "WHIDubbed EP 6 But It_s Just Screaming",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "Youre laughing... A simp just died and youre laughing...",
+          "id": "all-s1-at-once"
+        },
+        {
+          "title": "whid perfectly cut screams (s1)",
+          "id": "all-s1-at-once"
+        }
+      ]
     }
   }
 }

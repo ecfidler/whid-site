@@ -33,7 +33,7 @@ const player = {
             document.title = "Watching " + this.title
         },
         goToPart(partIndex) {
-            this.$refs.video.currentTime = convertTimestampToSeconds(parts[partIndex]["timestamp"]);
+            this.$refs.video.currentTime = convertTimestampToSeconds(this.parts[partIndex]["timestamp"]);
         }
     }
 }

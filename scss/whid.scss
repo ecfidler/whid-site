@@ -5,10 +5,11 @@ $major-purple: rgb(189, 166, 255);
 
 $primary: $major-orange !default;
 
+$link-color: $major-orange !default;
+
 @import "../scss/darkly/variables";
 @import "../bootstrap/scss/bootstrap";
 
-// scss-docs-start btn-text-variant
 @mixin button-text-variant(
   $color,
   $color-hover: $color,
@@ -56,15 +57,11 @@ $primary: $major-orange !default;
     background-color: transparent;
   }
 }
-// scss-docs-end btn-text-variant
 
-
-// scss-docs-start btn-text-loops
 @each $color, $value in $theme-colors {
     .btn-text-#{$color} {
         @include button-text-variant($value);
     }
 }
-// scss-docs-end btn-text-loops
 
 @import "../scss/darkly/bootswatch";

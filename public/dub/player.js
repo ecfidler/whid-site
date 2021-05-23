@@ -5,6 +5,7 @@ const player = {
             releaseDate: "",
             videoURL: "",
             thumbnailURL: "",
+            parts: [],
         }
     },
     async mounted() {
@@ -23,14 +24,23 @@ const player = {
             let id = getID();
             let data = getVideoDataFromID(id);
 
+            this.thumbnailURL = constructThumbnailURL(id);
+            this.videoURL = constructVideoURL(id);
             this.title = data["title"];
             this.releaseDate = constructDate(data["releaseDate"]);
-            this.videoURL = constructVideoURL(id);
-            this.thumbnailURL = constructThumbnailURL(id);
+            this.parts = data["parts"]
 
             document.title = "Watching " + this.title
+        },
+        goToPart(partIndex) {
+            this.$refs.video.currentTime = convertTimestampToSeconds(parts[partIndex]["timestamp"]);
         }
     }
 }
 
 Vue.createApp(player).mount('#playerApp')
+
+function convertTimestampToSeconds(timestamp) {
+    let [min, sec] = timestamp.split(":").map(x => Number(x));
+    return min * 60 + sec
+}

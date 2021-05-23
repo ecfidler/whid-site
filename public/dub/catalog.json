@@ -10,7 +10,21 @@
         {
           "title": "1. The One We Don't Talk About",
           "releaseDate": "4/14/2020",
-          "id": "s1-e1"
+          "id": "s1-e1",
+          "parts": [
+            {
+              "members": "Brendan, Ethan, Markwood, Trent",
+              "timestamp": "0:00"
+            },
+            {
+              "members": "Ben, Russell, Wyatt",
+              "timestamp": "4:22"
+            },
+            {
+              "members": "Chris, Kian, Yoni",
+              "timestamp": "9:32"
+            }
+          ]
         },
         {
           "title": "2. Get Isekaied",

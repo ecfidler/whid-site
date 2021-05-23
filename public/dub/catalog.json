@@ -197,6 +197,10 @@
       "name": "Extras",
       "episodes": [
         {
+          "title": "The Best of whidubbed [Season One]",
+          "id": "s1-bestof"
+        },
+        {
           "title": "All whidubbed Season One Episodes at Once",
           "id": "all-s1-at-once"
         },

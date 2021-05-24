@@ -1,21 +1,8 @@
-let colors = ['orange', 'blue', 'pink', 'purple']
-let col = Math.floor(Math.random() * 4)
-links = document.querySelectorAll("#navbarSupportedContent .btn")
-links.forEach(link => {
-    link.classList.add(colors[col])
-});
+const styles = ["cyan", "orange", "pink", "purple"]
+var link = document.createElement( "link" );
+link.href = "style/whid-" + styles[Math.floor(Math.random() * 4)] + ".css";
+link.type = "text/css";
+link.rel = "stylesheet";
+link.media = "screen,print";
 
-var head = document.getElementsByTagName('HEAD')[0]; 
-  
-// Create new link Element
-var link = document.createElement('link');
-
-// set the attributes for link element 
-link.rel = 'stylesheet'; 
-
-link.type = 'text/css';
-
-link.href = 'header.css'; 
-
-// Append link element to HTML head
-head.appendChild(link); 
+document.getElementsByTagName("head")[0].appendChild(link);

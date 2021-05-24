@@ -1,0 +1,58 @@
+
+@mixin button-text-variant(
+    $color,
+    $color-hover: $color,
+    $active-background: rgba($color, .1),
+    $active-border: transparent,
+    $active-color: $white
+  ) {
+    color: $white;
+    border-color: transparent;
+  
+  
+    .btn-check:focus + &,
+    &:focus {
+      box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+    }
+  
+    .btn-check:checked + &,
+    .btn-check:active + &,
+    &:active,
+    &.active,
+    &.dropdown-toggle.show {
+      color: $active-color;
+      background-color: $active-background;
+      border-color: $active-border;
+  
+      &:focus {
+        @if $enable-shadows {
+          @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5));
+        } @else {
+          // Avoid using mixin so we can pass custom focus shadow properly
+          box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+        }
+      }
+    }
+  
+    &:hover {
+      color: $color-hover;
+      background-color: $active-background;
+      border-color: $active-border;
+    }
+  
+    &:disabled,
+    &.disabled {
+      color: $color;
+      background-color: transparent;
+    }
+  }
+  
+  @each $color, $value in $theme-colors {
+      .btn-text-#{$color} {
+          @include button-text-variant($value);
+      }
+  }
+  
+  h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    font-weight: 600;
+  }

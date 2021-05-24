@@ -9,7 +9,17 @@
 
     <link href="../resources/styles/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="style/style.css" rel="stylesheet" type="text/css">
-    <link href="style/whid.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        const styles = ["cyan", "orange", "pink", "purple"]
+        var link = document.createElement( "link" );
+        link.href = "style/whid-" + styles[Math.floor(Math.random() * 4)] + ".css";
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.media = "screen,print";
+
+        document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
 
     <link rel="icon" type="image/png" href="https://whid.live/icon-l.png">
 </head>

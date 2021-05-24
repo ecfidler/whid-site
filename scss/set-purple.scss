@@ -1,0 +1,12 @@
+@import "major-colors";
+
+$primary: $major-purple !default;
+
+$link-color: $major-purple !default;
+
+@import "../scss/darkly/variables";
+@import "../bootstrap/scss/bootstrap";
+
+@import "overrides";
+
+@import "../scss/darkly/bootswatch";

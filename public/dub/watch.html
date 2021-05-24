@@ -45,7 +45,7 @@
             </video>
         </div>
         <h2 class="fw-bold mb-0 mt-1">{{ title }}</h2>
-        <p class="text-muted">Released {{ releaseDate }}</p>
+        <p class="text-muted" v-if="releaseDate">Released {{ releaseDate }}</p>
 
         <p class="mb-0" v-for="(part, index) in parts">
             <a @click="goToPart(index)" href="#">Part {{ index + 1 }}</a>: {{ part.members }}

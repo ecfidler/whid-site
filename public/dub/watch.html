@@ -41,7 +41,7 @@
     <div class="container mt-5" id="playerApp" v-cloak>
         <div class='text-center ratio ratio-16x9'>
             <video playsinline controls :src="videoURL" :poster="thumbnailURL" type="video/mp4" class="mx-auto"
-                style="background-color: black;" ref="video">
+                style="background-color: black;" ref="video" preload="auto">
                 Sorry, your browser doesn't support embedded videos.
             </video>
         </div>

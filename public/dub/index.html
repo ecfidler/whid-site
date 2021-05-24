@@ -46,22 +46,24 @@
         </div>
 
         <h3 class="text-center mt-4">Featured Video</h3>
-        <a v-if="featured" class="card mb-4 mx-auto text-reset text-decoration-none" style="max-width: 770px;"
-            :href="videoFeatured()">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <img :src="thumbnailFeatured()" alt="..." style="max-width: inherit;">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h4 class="card-title">{{ title(featured) }}</h4>
-                        <h6 class="card-text text-muted">Released {{ date(featured) }}</h6>
-                        <p class='mt-4 mb-0'>{{ featuredDesc }}
-                        </p>
+        <div class="container">
+            <a v-if="featured" class="card mb-4 mx-auto text-reset text-decoration-none" style="max-width: 770px;"
+                :href="videoFeatured()">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <img :src="thumbnailFeatured()" alt="..." style="max-width: inherit;">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ title(featured) }}</h4>
+                            <h6 class="card-text text-muted">Released {{ date(featured) }}</h6>
+                            <p class='mt-4 mb-0'>{{ featuredDesc }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
 
         <div class="container d-flex my-5">
             <div class="btn-group mx-auto" role="group" aria-label="Basic radio toggle button group">

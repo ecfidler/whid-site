@@ -9,7 +9,7 @@ const gallery = {
         }
     },
     async mounted() {
-        await loadCatalog();
+        await initCatalog();
         this.seasons = getSeasons();
         this.showAlert = getErrorFromURL();
         [this.featured, this.featuredDesc] = getFeaturedVideo();
@@ -19,14 +19,20 @@ const gallery = {
             return episode['title']
         },
         date(episode) {
-            return constructDate(episode['releaseDate'])
+            return constructDate(episode)
         },
         thumbnail(episode) {
-            return constructThumbnailURL(episode['id'])
+            return constructThumbnailURL(episode)
         },
         video(episode) {
-            return constructWatchURL(episode['id'])
-        }
+            return constructWatchURL(episode)
+        },
+        thumbnailFeatured() {
+            return constructThumbnailURL(this.featured)
+        },
+        videoFeatured() {
+            return constructVideoURL(this.featured)
+        },
     }
 }
 

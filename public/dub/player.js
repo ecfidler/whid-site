@@ -9,8 +9,7 @@ const player = {
         }
     },
     async mounted() {
-        await loadCatalog();
-        // populate instance variables
+        await initCatalog();
         try {
             this.setupPage();
         } catch (err) {
@@ -21,14 +20,14 @@ const player = {
     },
     methods: {
         async setupPage() {
-            let id = getID();
-            let data = getVideoDataFromID(id);
+            let [season, id] = getSeasonAndEpisodeFromURL();
+            let ep = getVideoDataFromID(season, id);
 
-            this.thumbnailURL = constructThumbnailURL(id);
-            this.videoURL = constructVideoURL(id);
-            this.title = data["title"];
-            this.releaseDate = constructDate(data["releaseDate"]);
-            this.parts = data["parts"]
+            this.thumbnailURL = constructThumbnailURL(ep);
+            this.videoURL = constructVideoURL(ep);
+            this.title = ep["title"];
+            this.releaseDate = constructDate(ep);
+            this.parts = ep["parts"]
 
             document.title = "Watching " + this.title
         },

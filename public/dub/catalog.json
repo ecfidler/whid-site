@@ -1,6 +1,7 @@
 {
   "featured": {
-    "id": "s1-e8",
+    "season": "s1",
+    "id": "8",
     "description": "This is some description text about the episode. It's really a very good one, I promise. Just kidding! It's as bad as the rest are."
   },
   "seasons": {
@@ -10,7 +11,7 @@
         {
           "title": "1. The One We Don't Talk About",
           "releaseDate": "4/14/2020",
-          "id": "s1-e1",
+          "id": "1",
           "parts": [
             {
               "members": "Brendan, Ethan, Markwood, Trent",
@@ -29,7 +30,7 @@
         {
           "title": "2. Get Isekaied",
           "releaseDate": "4/21/2020",
-          "id": "s1-e2",
+          "id": "2",
           "parts": [
             {
               "members": "Brendan, Juan, Markwood, Thomas",
@@ -52,7 +53,7 @@
         {
           "title": "3. SIMP",
           "releaseDate": "5/12/2020",
-          "id": "s1-e3",
+          "id": "3",
           "parts": [
             {
               "members": "Ben, Josh, Markwood",
@@ -75,7 +76,7 @@
         {
           "title": "4. Attack On Tacos",
           "releaseDate": "6/4/2020",
-          "id": "s1-e4",
+          "id": "4",
           "parts": [
             {
               "members": "Ethan, Tristan, Yoni",
@@ -98,7 +99,7 @@
         {
           "title": "5. Jojo's Smashing Adventure",
           "releaseDate": "6/21/2020",
-          "id": "s1-e5",
+          "id": "5",
           "parts": [
             {
               "members": "Ben, Brendan, Gabe, Markwood",
@@ -121,7 +122,7 @@
         {
           "title": "6. My Saucy AAAAcademia",
           "releaseDate": "7/12/2020",
-          "id": "s1-e6",
+          "id": "6",
           "parts": [
             {
               "members": "Brendan, Chris, Josh, Kian, Trent",
@@ -144,7 +145,7 @@
         {
           "title": "7. The OTHER One We Don't Talk About",
           "releaseDate": "8/3/2020",
-          "id": "s1-e7",
+          "id": "7",
           "parts": [
             {
               "members": "Ethan, Josh, Juan, Rob, Tristan",
@@ -167,7 +168,7 @@
         {
           "title": "8. Snord",
           "releaseDate": "8/29/2020",
-          "id": "s1-e8",
+          "id": "8",
           "parts": [
             {
               "members": "Ben, Ethan, Juan, Kian, Markwood",

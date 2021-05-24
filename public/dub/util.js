@@ -8,6 +8,14 @@ class VideoIDError extends Error {
     }
 }
 
+async function initCatalog() {
+    await loadCatalog();
+    for (seasonID in catalog["seasons"]) {
+        let season = catalog["seasons"][seasonID]
+        season["episodes"].map(x => x["season"] = seasonID)
+    }
+}
+
 async function loadCatalog() {
     const request = async () => {
         const response = await fetch(jsonPath);
@@ -16,16 +24,8 @@ async function loadCatalog() {
     await request();
 }
 
-function getSeason(epid) {
-    return getSeasonByID(getSeasonID(epid))
-}
-
 function getSeasonByID(seasonID) {
     return getSeasons()[seasonID]
-}
-
-function getSeasonID(id) {
-    return id.split('-')[0];
 }
 
 function getSeasons() { // called outside of file
@@ -33,19 +33,27 @@ function getSeasons() { // called outside of file
 }
 
 function getFeaturedVideo() {
-    let [id, desc] = getFeaturedVideoData();
-    let data = getVideoDataFromID(id);
+    let [season, id, desc] = getFeaturedVideoData();
+    let data = getVideoDataFromID(season, id);
     return [data, desc]
 }
 
 function getFeaturedVideoData() {
-    return [catalog['featured']["id"], catalog["featured"]["description"]]
+    return [catalog['featured']["season"],
+        catalog['featured']["id"],
+        catalog["featured"]["description"]
+    ]
 }
 
-function getVideoDataFromID(epid) {
-    const season = getSeason(epid);
-    const episodes = season["episodes"];
-    return getEpisodeFromList(episodes, epid);
+function getVideoDataFromID(season, id) {
+    const episodes = getEpisodesFromSeason(season);
+    let episode = getEpisodeFromList(episodes, id);
+    console.log(episode)
+    return episode
+}
+
+function getEpisodesFromSeason(season) {
+    return catalog["seasons"][season]["episodes"]
 }
 
 function getEpisodeFromList(episodes, epid) {
@@ -57,20 +65,20 @@ function getEpisodeFromList(episodes, epid) {
     throw new VideoIDError("Video ID not found in catalog")
 }
 
-function constructWatchURL(epid) {
-    return "watch.html?v=" + epid
+function constructWatchURL(ep) {
+    return "watch.html?s=" + ep["season"] + "&e=" + ep["id"]
 }
 
-function constructVideoURL(epid) {
-    return "resources/videos/" + getSeasonID(epid) + "/" + epid + ".mp4"
+function constructVideoURL(ep) {
+    return "resources/videos/" + ep["season"] + "/" + ep["id"] + ".mp4"
 }
 
-function constructThumbnailURL(id) {
-    return "resources/thumbnails/" + id + ".png"
+function constructThumbnailURL(ep) {
+    return "resources/thumbnails/" + ep["season"] + "/" + ep["id"] + ".png"
 }
 
-function constructDate(date) {
-    return date;
+function constructDate(ep) {
+    return ep["releaseDate"];
 }
 
 function goToGallery() {
@@ -81,16 +89,13 @@ function getErrorFromURL() {
     return Boolean(getParamFromURL("error"))
 }
 
-function getID() {
-    let id = getIDFromURL()
-    if (id === null) {
+function getSeasonAndEpisodeFromURL() {
+    let season = getParamFromURL("s");
+    let ep = getParamFromURL("e");
+    if (season === null || ep === null) {
         throw new VideoIDError("No ID supplied in URL");
     }
-    return id
-}
-
-function getIDFromURL() {
-    return getParamFromURL("v");
+    return [season, ep]
 }
 
 function getParamFromURL(key) {

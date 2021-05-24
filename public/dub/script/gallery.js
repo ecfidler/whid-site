@@ -30,8 +30,8 @@ const gallery = {
         thumbnailFeatured() {
             return constructThumbnailURL(this.featured)
         },
-        videoFeatured() {
-            return constructVideoURL(this.featured)
+        watchFeatured() {
+            return constructWatchURL(this.featured)
         },
     }
 }

@@ -11,7 +11,7 @@ const player = {
     async mounted() {
         await initCatalog();
         try {
-            this.setupPage();
+            await this.setupPage();
         } catch (err) {
             if (err instanceof VideoIDError)
                 goToGallery();

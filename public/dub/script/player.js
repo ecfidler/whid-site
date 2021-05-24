@@ -30,6 +30,7 @@ const player = {
             this.parts = ep["parts"]
 
             document.title = "Watching " + this.title
+            this.$refs.video.volume = 0.4
         },
         goToPart(partIndex) {
             this.$refs.video.currentTime = convertTimestampToSeconds(this.parts[partIndex]["timestamp"]);

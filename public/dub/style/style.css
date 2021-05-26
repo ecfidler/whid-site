@@ -6,3 +6,17 @@
     padding-top: 0.7rem !important;
     padding-bottom: 0.7rem !important;
 }
+
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .1s ease;
+}
+
+.fade-enter-active {
+    transition-delay: .15s;
+}
+
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+}
+

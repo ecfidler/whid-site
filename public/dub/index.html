@@ -52,7 +52,9 @@
                 :href="watchFeatured()">
                 <div class="row g-0">
                     <div class="col-lg-6">
-                        <img :src="thumbnailFeatured()" alt="..." style="max-width: inherit;">
+                        <div class="ratio ratio-16x9">
+                            <img :src="thumbnailFeatured()" alt="..." style="max-width: inherit;">
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="card-body">
@@ -87,7 +89,9 @@
                         v-bind:key="episode['title']">
                         <a :href="video(episode)" class="text-reset text-decoration-none">
                             <div class="card">
-                                <img :src="thumbnail(episode)" class="card-img-top" :alt="title(episode)">
+                                <div class="ratio ratio-16x9">
+                                    <img :src="thumbnail(episode)" class="card-img-top" :alt="title(episode)">
+                                </div>
                                 <div class="card-body" id="gallery-card">
                                     <h5 class="card-title text-truncate pb-1 mb-0">
                                         {{ title(episode) }}</h5>

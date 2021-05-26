@@ -8,7 +8,7 @@
     <title>Watch what have i dubbed</title>
 
     <link href="style/style.css" rel="stylesheet" type="text/css">
-    <link href="style/whid-orange.css" rel="stylesheet" type="text/css">
+    <link href="../styles/whid-orange.css" rel="stylesheet" type="text/css">
 
     <script src="script/header.js"></script>
 

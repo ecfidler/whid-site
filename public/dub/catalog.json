@@ -256,6 +256,18 @@
         {
           "title": "whid perfectly cut screams (s1)",
           "id": "screams"
+        },
+        {
+          "title": "@majors",
+          "id": "majors"
+        },
+        {
+          "title": "WHIDubbed Google Translate",
+          "id": "translated"
+        },
+        {
+          "title": "whidubbed but only the forbidden word",
+          "id": "forbidden-word"
         }
       ]
     }

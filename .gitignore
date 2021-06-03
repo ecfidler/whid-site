@@ -1,5 +1,6 @@
 .vscode
 
 */dub/resources/videos
+*/dub/resources/thumbnails
 
 node_modules

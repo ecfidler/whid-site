@@ -20,7 +20,7 @@
 
     $info = [
         ["site_name", "Test Website"],
-        ["url", "https://whid.live/dub/watch.php?s=". $season ."&e=". $ep + "#"],
+        ["url", "https://whid.live/dub/watch.php?s=". $season ."&e=". $ep ."#"],
         ["title", "1. The One We Don't Talk About"],
         ["image", "https://whid.live/dub/resources/thumbnails/". $season ."/". $ep .".png"],
         ["image:width", "1280"],

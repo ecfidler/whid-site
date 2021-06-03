@@ -18,14 +18,22 @@
     $season = htmlspecialchars($_GET["s"]);
     $ep = htmlspecialchars($_GET["e"]);
 
-    $info = [
-        ["site_name", "Test Website"],
+    $catalog = fopen("catalog.json", "r");
+    $catalog = fread($catalog, filesize("catalog.json"));
+    $catalog = json_decode($catalog);
+    
+    $title = $catalog->{$season}->{$episode};
+    
+    fclose($jsonMetaFile);
+
+    $tags = [
+        ["site_name", "whid.live"],
         ["url", "https://whid.live/dub/watch.php?s=". $season ."&e=". $ep ."#"],
-        ["title", "1. The One We Don't Talk About"],
+        ["title", $title],
         ["image", "https://whid.live/dub/resources/thumbnails/". $season ."/". $ep .".png"],
         ["image:width", "1280"],
         ["image:height", "720"],
-        ["description", "LOL A VIDEO HAHA"],
+        ["description", "Watch what have i dubbed"],
         ["type", "video.other"],
         ["video:url", "https://whid.live/dub/resources/videos/". $season ."/". $ep .".mp4"],
         ["video:secure_url", "https://whid.live/dub/resources/videos/". $season ."/". $ep .".mp4"],
@@ -34,7 +42,7 @@
         ["video:height", "720"]
     ];
 
-    foreach ($info as $tag) {
+    foreach ($tags as $tag) {
         echo "<meta property=\"og:" . $tag[0] . "\" content=\"" . $tag[1] . "\"/>";
     }
     ?>

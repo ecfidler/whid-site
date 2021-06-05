@@ -1,8 +1,8 @@
 {
   "featured": {
-    "season": "s1",
-    "id": "8",
-    "description": "This is some description text about the episode. It's really a very good one, I promise. Just kidding! It's as bad as the rest are."
+    "season": "special",
+    "id": "halloween",
+    "description": "Once upon a time, Trent got his Discord buddies together, in hopes of creating the most spectacularly spooky parody dub, just in time for Halloween. Unfortunately, nobody working on it had a calendar. Now, 8 months later, the boys have finally finished their magnums opus about fruitless war, sexual obsession and underage drug abuse. Join the gang of ‘whidubbed’ as they present their dub of.... wait, what anime did we dub for this special?"
   },
   "seasons": {
     "s1": {
@@ -192,7 +192,27 @@
     },
     "special": {
       "name": "Specials",
-      "episodes": []
+      "episodes": [
+        {
+          "title": "The Spooky Fourth of July",
+          "releaseDate": "6/5/2021",
+          "id": "halloween",
+          "parts": [
+            {
+              "members": "Ben, Ben Hay, Chris, Ethan, James, Juan, Sergei",
+              "timestamp": "1:12"
+            },
+            {
+              "members": "Jackson, Kian, Markwood, Tony, Tristan, Yoni",
+              "timestamp": "10:39"
+            },
+            {
+              "members": "Gabe, Jacob, Josh, Luq, Ross, Trent, Wyatt",
+              "timestamp": "19:21"
+            }
+          ]
+        }
+      ]
     },
     "extra": {
       "name": "Extras",

@@ -13,6 +13,39 @@
     <script src="script/header.js"></script>
 
     <link rel="icon" type="image/png" href="https://whid.live/resources/images/icon-l.png">
+
+    <?php
+    $season = htmlspecialchars($_GET["s"]);
+    $ep = htmlspecialchars($_GET["e"]);
+
+    $catalog = fopen("catalog.json", "r");
+    $catalog = fread($catalog, filesize("catalog.json"));
+    $catalog = json_decode($catalog);
+    
+    $title = $catalog->{$season}->{$episode};
+    
+    fclose($jsonMetaFile);
+
+    $tags = [
+        ["site_name", "whid.live"],
+        ["url", "https://whid.live/dub/watch.php?s=". $season ."&e=". $ep ."#"],
+        ["title", $title],
+        ["image", "https://whid.live/dub/resources/thumbnails/". $season ."/". $ep .".png"],
+        ["image:width", "1280"],
+        ["image:height", "720"],
+        ["description", "Watch what have i dubbed"],
+        ["type", "video.other"],
+        ["video:url", "https://whid.live/dub/resources/videos/". $season ."/". $ep .".mp4"],
+        ["video:secure_url", "https://whid.live/dub/resources/videos/". $season ."/". $ep .".mp4"],
+        ["video:type", "text/html"],
+        ["video:width", "1280"],
+        ["video:height", "720"]
+    ];
+
+    foreach ($tags as $tag) {
+        echo "<meta property=\"og:" . $tag[0] . "\" content=\"" . $tag[1] . "\"/>";
+    }
+    ?>
 </head>
 
 <body>
@@ -40,8 +73,7 @@
 
     <div class="container mt-5" id="playerApp" v-cloak>
         <div class='text-center ratio ratio-16x9'>
-            <video playsinline controls :src="videoURL" :poster="thumbnailURL" type="video/mp4" class="mx-auto"
-                style="background-color: black;" ref="video" preload="auto">
+            <video playsinline controls :src="videoURL" :poster="thumbnailURL" type="video/mp4" class="mx-auto" style="background-color: black;" ref="video" preload="auto">
                 Sorry, your browser doesn't support embedded videos.
             </video>
         </div>
@@ -55,9 +87,7 @@
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="script/util.js"></script>
     <script src="script/player.js"></script>
 </body>

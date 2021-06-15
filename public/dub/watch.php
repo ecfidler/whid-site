@@ -18,32 +18,60 @@
     $season = htmlspecialchars($_GET["s"]);
     $ep = htmlspecialchars($_GET["e"]);
 
-    $catalog = fopen("catalog.json", "r");
-    $catalog = fread($catalog, filesize("catalog.json"));
-    $catalog = json_decode($catalog);
-    
-    $title = $catalog->{$season}->{$episode};
-    
-    fclose($jsonMetaFile);
+    $catalog = get_catalog();
+    $episodes = get_episodes($catalog, $season);
+    $title = get_title($episodes, $ep);
 
-    $tags = [
-        ["site_name", "whid.live"],
-        ["url", "https://whid.live/dub/watch.php?s=". $season ."&e=". $ep ."#"],
-        ["title", $title],
-        ["image", "https://whid.live/dub/resources/thumbnails/". $season ."/". $ep .".png"],
-        ["image:width", "1280"],
-        ["image:height", "720"],
-        ["description", "Watch what have i dubbed"],
-        ["type", "video.other"],
-        ["video:url", "https://whid.live/dub/resources/videos/". $season ."/". $ep .".mp4"],
-        ["video:secure_url", "https://whid.live/dub/resources/videos/". $season ."/". $ep .".mp4"],
-        ["video:type", "text/html"],
-        ["video:width", "1280"],
-        ["video:height", "720"]
-    ];
+    $tags = construct_tags($season, $ep, $title);
+    add_tags_to_page($tags);
 
-    foreach ($tags as $tag) {
-        echo "<meta property=\"og:" . $tag[0] . "\" content=\"" . $tag[1] . "\"/>";
+    function get_catalog() {
+        $catalogFile = fopen("catalog.json", "r");
+        $catalogStream = fread($catalogFile, filesize("catalog.json"));
+        $catalog = json_decode($catalogStream);
+        fclose($catalogFile);
+        return $catalog;
+    }
+    
+    function get_episodes($catalog, $season) {
+        $episodes = $catalog->{"seasons"}->{$season}->{"episodes"};
+        return $episodes;
+    }
+    
+    function get_title($episodes, $ep)
+    {
+        foreach ($episodes as $episode) {
+            if ($episode->{"id"} == $ep) {
+                return $episode->{"title"};
+            }
+        }
+        return "Error!";
+    }
+
+    function construct_tags($season, $ep, $title)
+    {
+        return [
+            ["site_name", "whid.live"],
+            ["url", "https://whid.live/dub/watch.php?s=" . $season . "&e=" . $ep . "#"],
+            ["title", $title],
+            ["image", "https://whid.live/dub/resources/thumbnails/" . $season . "/" . $ep . ".png"],
+            ["image:width", "1280"],
+            ["image:height", "720"],
+            ["description", "Watch what have i dubbed"],
+            ["type", "video.other"],
+            ["video:url", "https://whid.live/dub/resources/videos/" . $season . "/" . $ep . ".mp4"],
+            ["video:secure_url", "https://whid.live/dub/resources/videos/" . $season . "/" . $ep . ".mp4"],
+            ["video:type", "text/html"],
+            ["video:width", "1280"],
+            ["video:height", "720"]
+        ];
+    }
+
+    function add_tags_to_page($tags)
+    {
+        foreach ($tags as $tag) {
+            echo "<meta property=\"og:" . $tag[0] . "\" content=\"" . $tag[1] . "\"/>";
+        }
     }
     ?>
 </head>

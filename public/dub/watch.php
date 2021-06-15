@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watch what have i dubbed</title>
 
-    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
     <link href="../styles/whid-orange.css" rel="stylesheet" type="text/css">
 
-    <script src="script/header.js"></script>
+    <script src="scripts/header.js"></script>
 
     <link rel="icon" type="image/png" href="https://whid.live/resources/images/icon-l.png">
 
@@ -119,8 +119,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
-    <script src="script/util.js"></script>
-    <script src="script/player.js"></script>
+    <script src="scripts/util.js"></script>
+    <script src="scripts/player.js"></script>
 </body>
 
 </html>

@@ -109,7 +109,7 @@
         <p class="text-muted" v-if="releaseDate">Released {{ releaseDate }}</p>
 
         <p class="mb-0" v-for="(part, index) in parts">
-            <a @click="goToPart(index)" href="#">Part {{ index + 1 }}</a>: {{ part.members }}
+            <a @click="goToPart(index)" href="javascript:void(0)">Part {{ index + 1 }}</a>: {{ part.members }}
         </p>
         <br>
     </div>

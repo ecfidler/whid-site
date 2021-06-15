@@ -66,7 +66,7 @@ function getEpisodeFromList(episodes, epid) {
 }
 
 function constructWatchURL(ep) {
-    return "watch.php?s=" + ep["season"] + "&e=" + ep["id"] + "#"
+    return "watch.php?s=" + ep["season"] + "&e=" + ep["id"]
 }
 
 function constructVideoURL(ep) {

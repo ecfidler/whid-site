@@ -53,7 +53,7 @@
     function construct_tags($season, $ep, $title)
     {
         return [
-            ["theme-color", "#ffd294"],
+            ["theme-color", get_major_color()],
             ["og:site_name", "whid.live"],
             ["og:url", "https://whid.live/dub/watch.php?s=" . $season . "&e=" . $ep . "#"],
             ["og:title", $title],
@@ -68,6 +68,17 @@
             ["og:video:width", "1280"],
             ["og:video:height", "720"]
         ];
+    }
+
+    function get_major_color()
+    {
+        $cols = [
+            "#ffd294",
+            "#a3eff7",
+            "#fcaecf",
+            "#bda6ff",
+        ];
+        return $cols[rand(0, sizeof($cols) - 1)];
     }
 
     function add_tags_to_page($tags)

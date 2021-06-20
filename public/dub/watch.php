@@ -25,19 +25,21 @@
     $tags = construct_tags($season, $ep, $title);
     add_tags_to_page($tags);
 
-    function get_catalog() {
+    function get_catalog()
+    {
         $catalogFile = fopen("catalog.json", "r");
         $catalogStream = fread($catalogFile, filesize("catalog.json"));
         $catalog = json_decode($catalogStream);
         fclose($catalogFile);
         return $catalog;
     }
-    
-    function get_episodes($catalog, $season) {
+
+    function get_episodes($catalog, $season)
+    {
         $episodes = $catalog->{"seasons"}->{$season}->{"episodes"};
         return $episodes;
     }
-    
+
     function get_title($episodes, $ep)
     {
         foreach ($episodes as $episode) {
@@ -51,26 +53,27 @@
     function construct_tags($season, $ep, $title)
     {
         return [
-            ["site_name", "whid.live"],
-            ["url", "https://whid.live/dub/watch.php?s=" . $season . "&e=" . $ep . "#"],
-            ["title", $title],
-            ["image", "https://whid.live/dub/resources/thumbnails/" . $season . "/" . $ep . ".png"],
-            ["image:width", "1280"],
-            ["image:height", "720"],
-            ["description", "Watch what have i dubbed"],
-            ["type", "video.other"],
-            ["video:url", "https://whid.live/dub/resources/videos/" . $season . "/" . $ep . ".mp4"],
-            ["video:secure_url", "https://whid.live/dub/resources/videos/" . $season . "/" . $ep . ".mp4"],
-            ["video:type", "text/html"],
-            ["video:width", "1280"],
-            ["video:height", "720"]
+            ["theme-color", "#ffd294"],
+            ["og:site_name", "whid.live"],
+            ["og:url", "https://whid.live/dub/watch.php?s=" . $season . "&e=" . $ep . "#"],
+            ["og:title", $title],
+            ["og:image", "https://whid.live/dub/resources/thumbnails/" . $season . "/" . $ep . ".png"],
+            ["og:image:width", "1280"],
+            ["og:image:height", "720"],
+            ["og:description", "Watch what have i dubbed"],
+            ["og:type", "video.other"],
+            ["og:video:url", "https://whid.live/dub/resources/videos/" . $season . "/" . $ep . ".mp4"],
+            ["og:video:secure_url", "https://whid.live/dub/resources/videos/" . $season . "/" . $ep . ".mp4"],
+            ["og:video:type", "text/html"],
+            ["og:video:width", "1280"],
+            ["og:video:height", "720"]
         ];
     }
 
     function add_tags_to_page($tags)
     {
         foreach ($tags as $tag) {
-            echo "<meta property=\"og:" . $tag[0] . "\" content=\"" . $tag[1] . "\"/>";
+            echo "<meta property=\"" . $tag[0] . "\" content=\"" . $tag[1] . "\"/>";
         }
     }
     ?>
@@ -101,8 +104,7 @@
 
     <div class="container mt-5" id="playerApp" v-cloak>
         <div class='text-center ratio ratio-16x9'>
-            <video playsinline controls :src="videoURL" :poster="thumbnailURL" type="video/mp4" class="mx-auto"
-                style="background-color: black;" ref="video" preload="auto">
+            <video playsinline controls :src="videoURL" :poster="thumbnailURL" type="video/mp4" class="mx-auto" style="background-color: black;" ref="video" preload="auto">
                 Sorry, your browser doesn't support embedded videos.
             </video>
         </div>
@@ -116,9 +118,7 @@
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="scripts/util.js"></script>
     <script src="scripts/player.js"></script>
 </body>

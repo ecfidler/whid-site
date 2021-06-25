@@ -36,7 +36,7 @@
 
     function get_episodes($catalog, $season)
     {
-        $episodes = $catalog->{"seasons"}->{$season}->{"episodes"};
+        $episodes = $catalog->{"seasons"}->$season->{"episodes"};
         return $episodes;
     }
 

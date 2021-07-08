@@ -1,8 +1,8 @@
 {
   "featured": {
-    "season": "special",
-    "id": "halloween",
-    "description": "Once upon a time, Trent got his Discord buddies together, in hopes of creating the most spectacularly spooky parody dub for Halloween. Unfortunately, nobody working on it had a calendar. Now, 8 months later, the boys have finally finished their magnum opus about fruitless war, sexual obsession and underage drug abuse. Join the gang of ‘whidubbed’ as they present their version of.... wait, what anime did we dub for this special?"
+    "season": "s2",
+    "id": "1",
+    "description": "In another spectacularly stupid episode, the gang of ‘whidubbed’ dips their greasy toes into parodying the shambles of reality with multiple segments of ‘Planet Earth.’ Monkees and Cheetos and Club Penguinos, oh my!"
   },
   "seasons": {
     "s1": {
@@ -188,7 +188,28 @@
     },
     "s2": {
       "name": "Season 2",
-      "episodes": []
+      "episodes": [
+        {
+          "title": "1. whidubbed on Ice",
+          "releaseDate": "7/8/2021",
+          "id": "1",
+          "parts": [
+            {
+              "members": "Chris, Juan, Markwood, Russell, Sergei, Wyatt",
+              "timestamp": "0:25"
+            },
+            {
+              "members": "Gabe, Jacob, Jackson, Josh, Tristan",
+              "timestamp": "4:44"
+            },
+            {
+              "members": "Ben Rucker, Ethan, Kian, Ben Hay, James, Alex, Trent",
+              "timestamp": "9:28"
+            }
+          ],
+          "description": "In another spectacularly stupid episode, the gang of ‘whidubbed’ dips their greasy toes into parodying the shambles of reality with multiple segments of ‘Planet Earth.’ Monkees and Cheetos and Club Penguinos, oh my!"
+        }
+      ]
     },
     "special": {
       "name": "Specials",
@@ -210,7 +231,8 @@
               "members": "Gabe, Jacob, Josh, Luq, Ross, Trent, Wyatt",
               "timestamp": "19:08"
             }
-          ]
+          ],
+          "description": "Once upon a time, Trent got his Discord buddies together, in hopes of creating the most spectacularly spooky parody dub for Halloween. Unfortunately, nobody working on it had a calendar. Now, 8 months later, the boys have finally finished their magnum opus about fruitless war, sexual obsession and underage drug abuse. Join the gang of ‘whidubbed’ as they present their version of.... wait, what anime did we dub for this special?"
         }
       ]
     },

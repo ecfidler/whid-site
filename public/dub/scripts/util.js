@@ -98,6 +98,13 @@ function getSeasonAndEpisodeFromURL() {
     return [season, ep]
 }
 
+function getTimestampFromURL() {
+    let time = getParamFromURL("t");
+    if (time != null && time < 0)
+        throw new VideoIDError("Invalid timestamp");
+    return time;
+}
+
 function getParamFromURL(key) {
     let params = getParamsFromURL();
     let param = params.get(key);

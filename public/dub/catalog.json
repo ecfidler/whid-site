@@ -318,7 +318,14 @@
         {
           "title": "whidubbed But It's Just All the Swear Words",
           "id": "swears"
-        }
+        },
+        {
+          "title": "whidubbed Out of Context 2",
+          "id": "context2"
+        },
+        {
+          "title": "whidubbed Outtakes",
+          "id": "outtakes"        }
       ]
     }
   }

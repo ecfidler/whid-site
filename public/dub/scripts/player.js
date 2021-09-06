@@ -31,9 +31,16 @@ const player = {
 
             document.title = "Watching " + this.title
             this.$refs.video.volume = 0.4
+
+            let time = getTimestampFromURL();
+            if (time)
+                this.goToTime(time);
         },
         goToPart(partIndex) {
-            this.$refs.video.currentTime = convertTimestampToSeconds(this.parts[partIndex]["timestamp"]);
+            this.goToTime(convertTimestampToSeconds(this.parts[partIndex]["timestamp"]));
+        },
+        goToTime(time) {
+            this.$refs.video.currentTime = time;
         }
     }
 }

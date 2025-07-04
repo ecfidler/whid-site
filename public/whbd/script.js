@@ -1,17 +1,20 @@
-var confettiCanvas = document.getElementById('header_canvas');
+var confettiCanvas = document.getElementById("header_canvas");
 var confettiCount = 200;
 var confettiDefaults = {
-  origin: { y: 0.5 }
+  origin: { y: 0.5 },
 };
 
 // you should  only initialize a canvas once, so save this function
 // we'll save it to the canvas itself for the purpose of this demo
-confettiCanvas.confetti = confettiCanvas.confetti || confetti.create(confettiCanvas, { resize: true });
+confettiCanvas.confetti =
+  confettiCanvas.confetti || confetti.create(confettiCanvas, { resize: true });
 
 function fire(particleRatio, opts) {
-  confettiCanvas.confetti(Object.assign({}, confettiDefaults, opts, {
-    particleCount: Math.floor(confettiCount * particleRatio)
-  }));
+  confettiCanvas.confetti(
+    Object.assign({}, confettiDefaults, opts, {
+      particleCount: Math.floor(confettiCount * particleRatio),
+    })
+  );
 }
 
 setTimeout(() => {
@@ -25,13 +28,13 @@ setTimeout(() => {
   fire(0.35, {
     spread: 100,
     decay: 0.91,
-    scalar: 0.8
+    scalar: 0.8,
   });
   fire(0.1, {
     spread: 120,
     startVelocity: 25,
     decay: 0.92,
-    scalar: 1.2
+    scalar: 1.2,
   });
   fire(0.1, {
     spread: 120,
@@ -46,13 +49,30 @@ const Carousel = {
       name2: true,
       counter1: 1,
       counter2: 0,
-      words: ['quality discussion', 'cheeto', 'games', 'gaming', 'gamers',
-        'art', 'tierlists', 'videos', 'music', 'laughs', 'memes',
-        'good times', '𝓗𝓮𝓪𝓿𝓮𝓷', 'movies', 'dubs', 'Ls', 'jerma', 'james'],
-    }
+      words: [
+        "quality discussion",
+        "cheeto",
+        "games",
+        "gaming",
+        "gamers",
+        "art",
+        "tierlists",
+        "videos",
+        "music",
+        "laughs",
+        "memes",
+        "good times",
+        "𝓗𝓮𝓪𝓿𝓮𝓷",
+        "movies",
+        "dubs",
+        "Ls",
+        "jerma",
+        "james",
+      ],
+    };
   },
   mounted() {
-    this.words = shuffleExceptFirst(this.words)
+    this.words = shuffleExceptFirst(this.words);
     setInterval(() => {
       if (this.name2 === true) {
         this.counter1 = (this.counter2 + 1) % this.words.length;
@@ -64,40 +84,37 @@ const Carousel = {
         this.name2 = true;
       }
     }, 3000);
-  }
+  },
 };
 
 function shuffleExceptFirst(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i) + 1);
+    const j = Math.floor(Math.random() * i + 1);
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-  return arr
+  return arr;
 }
 
 // Actual most optimal code
 function chooseRandomFunction(total, old) {
   const pick = Math.floor(Math.random() * 2);
-  if (pick == 1)
-    return getRandomIntBen(total, old);
+  if (pick == 1) return getRandomIntBen(total, old);
   return getRandomIntBrendan(total, old);
 }
 
 function getRandomIntBrendan(total, old) {
   let newNum = Math.floor(Math.random() * total);
-  if (newNum == old)
-    ++newNum < total ? null : newNum -= 2;
+  if (newNum == old) ++newNum < total ? null : (newNum -= 2);
   return newNum;
 }
 
 function getRandomIntBen(total, old) {
   let newNum = Math.floor(Math.random() * (total - 1));
-  if (newNum >= old)
-    newNum = (newNum + 1) % total;
+  if (newNum >= old) newNum = (newNum + 1) % total;
   return newNum;
 }
 
-Vue.createApp(Carousel).mount('#header_ticker');
+Vue.createApp(Carousel).mount("#header_ticker");
 
 const messageLeaderboard = {
   data() {
@@ -117,7 +134,7 @@ const messageLeaderboard = {
         ["4.", "noss#0773", "7,119"],
         ["5.", "Sharkwood#8876", "5,008"],
       ],
-    }
+    };
   },
   methods: {
     toggleSpam() {
@@ -125,11 +142,11 @@ const messageLeaderboard = {
       this.active = this.hidden;
       this.hidden = temp;
 
-      this.currentlySpam = !this.currentlySpam
-    }
-  }
+      this.currentlySpam = !this.currentlySpam;
+    },
+  },
 };
-Vue.createApp(messageLeaderboard).mount("#messagesApp")
+Vue.createApp(messageLeaderboard).mount("#messagesApp");
 
 const mentionsLeaderboard = {
   data() {
@@ -148,8 +165,8 @@ const mentionsLeaderboard = {
         ["3.", "@noss", "518"],
         ["4.", "@bebenebenebeb", "440"],
         ["5.", "@Klankyer", "242"],
-      ]
-    }
+      ],
+    };
   },
   methods: {
     toggleSpam() {
@@ -159,129 +176,135 @@ const mentionsLeaderboard = {
 
       setTimeout(() => {
         enableTooltips();
-      }, 100)
+      }, 100);
     },
     map(key) {
-      return map[key]
-    }
-  }
+      return map[key];
+    },
+  },
 };
-Vue.createApp(mentionsLeaderboard).mount("#mentionsApp")
+Vue.createApp(mentionsLeaderboard).mount("#mentionsApp");
 
 map = {
-  "🎲": "https://twemoji.maxcdn.com/v/latest/72x72/1f3b2.png",
-  "👋": "https://twemoji.maxcdn.com/v/latest/72x72/1f44b.png",
-  "📌": "https://twemoji.maxcdn.com/v/latest/72x72/1f4cc.png",
-  "👍": "https://twemoji.maxcdn.com/v/latest/72x72/1f44d.png",
-  "😋": "https://twemoji.maxcdn.com/v/latest/72x72/1f60b.png",
-  "🔜": "https://twemoji.maxcdn.com/v/latest/72x72/1f51c.png",
-  "🤰": "https://twemoji.maxcdn.com/v/latest/72x72/1f930.png",
-  "🕺": "https://twemoji.maxcdn.com/v/latest/72x72/1f57a.png",
-  "🍑": "https://twemoji.maxcdn.com/v/latest/72x72/1f351.png",
-  "🤺": "https://twemoji.maxcdn.com/v/latest/72x72/1f93a.png",
-  "😳": "https://twemoji.maxcdn.com/v/latest/72x72/1f633.png",
-  "⬛": "https://twemoji.maxcdn.com/v/latest/72x72/2b1b.png",
-  "👎": "https://twemoji.maxcdn.com/v/latest/72x72/1f44e.png",
-  "👇": "https://twemoji.maxcdn.com/v/latest/72x72/1f447.png",
-  "🔻": "https://twemoji.maxcdn.com/v/latest/72x72/1f53b.png",
-  "⬇️": "https://twemoji.maxcdn.com/v/latest/72x72/2b07.png",
-  "🔽": "https://twemoji.maxcdn.com/v/latest/72x72/1f53d.png",
-  "😱": "https://twemoji.maxcdn.com/v/latest/72x72/1f631.png",
-  "🥭": "https://twemoji.maxcdn.com/v/latest/72x72/1f96d.png",
-  "😩": "https://twemoji.maxcdn.com/v/latest/72x72/1f629.png",
-  "🍔": "https://twemoji.maxcdn.com/v/latest/72x72/1f354.png",
-  "🤢": "https://twemoji.maxcdn.com/v/latest/72x72/1f922.png",
-  "💯": "https://twemoji.maxcdn.com/v/latest/72x72/1f4af.png",
-  "❤️": "https://twemoji.maxcdn.com/v/latest/72x72/2764.png",
-  "😫": "https://twemoji.maxcdn.com/v/latest/72x72/1f62b.png",
-  "😤": "https://twemoji.maxcdn.com/v/latest/72x72/1f624.png",
-  "🇩": "https://twemoji.maxcdn.com/v/latest/72x72/1f1e9.png",
-  "🇦": "https://twemoji.maxcdn.com/v/latest/72x72/1f1e6.png",
-  "🇧": "https://twemoji.maxcdn.com/v/latest/72x72/1f1e7.png",
-  
-  ":ahegao1:": "resources/emojis/ahegao1.png", 
-  ":ahriHeart:": "resources/emojis/ahriheart.png", 
-  ":BarryBustaNutBenson:": "resources/emojis/BarryBustaNutBenson.png", 
-  ":bea:": "resources/emojis/bea.png", 
-  ":bigdrake1:": "resources/emojis/bigdrake1.gif", 
-  ":bigdrake2:": "resources/emojis/bigdrake2.gif", 
-  ":bigdrake3:": "resources/emojis/bigdrake3.gif", 
-  ":bigdrake4:": "resources/emojis/bigdrake4.gif", 
-  ":bananna:": "resources/emojis/bananna.gif",
-  ":blushcat:": "resources/emojis/blushcat.png", 
-  ":Celly:": "resources/emojis/Celly.gif", 
-  ":chad:": "resources/emojis/chad.png", 
-  ":cheeto:": "resources/emojis/cheeto.png", 
-  ":cum:": "resources/emojis/cum.png", 
-  ":dab:": "resources/emojis/dab.png", 
-  ":dabThumbsDown:": "resources/emojis/dabThumbsDown.png", 
-  ":davithumbsdown:": "resources/emojis/davithumbsdown.png", 
-  ":defaultDance:": "resources/emojis/defaultDance.gif", 
-  ":dogeKek:": "resources/emojis/dogeKek.png", 
-  ":Doubt1:": "resources/emojis/Doubt1.png", 
-  ":downdoot:": "resources/emojis/downvote.png", 
-  ":downvote-reddit:": "resources/emojis/downvote-reddit.png", 
-  ":downvote:": "resources/emojis/downvote.png", 
-  ":Downvote:": "resources/emojis/downvote.png", 
-  ":drake:": "resources/emojis/drake.gif", 
-  ":elaineDance:": "resources/emojis/elaineDance.gif", 
-  ":EraEra:": "resources/emojis/EraEra.gif", 
-  ":goopie:": "resources/emojis/goopie.gif", 
-  ":gunright:": "resources/emojis/gunright.png", 
-  ":intensifeyes:": "resources/emojis/intensifeyes.png", 
-  ":jam:": "resources/emojis/jam.gif", 
-  ":joe:": "resources/emojis/joe.png", 
-  ":kale:": "resources/emojis/kale.png", 
-  ":kass:": "resources/emojis/kass.png", 
-  ":kevingif:": "resources/emojis/kevingif.gif", 
-  ":kill:": "resources/emojis/kill.png", 
-  ":kirby:": "resources/emojis/kirby.gif", 
-  ":KomodoHype:": "resources/emojis/KomodoHype.png", 
-  ":kylecum:": "resources/emojis/kylecum.png", 
-  ":lfg:": "resources/emojis/lfg.png", 
-  ":littleman:": "resources/emojis/littleman.gif", 
-  ":markwood:": "resources/emojis/markwood.png", 
-  ":Nora:": "resources/emojis/Nora.png", 
-  ":partyparrot:": "resources/emojis/partyparrot.gif", 
-  ":pizza:": "resources/emojis/pizza.png", 
-  ":PogBreathing:": "resources/emojis/PogBreathing.gif", 
-  ":popcat:": "resources/emojis/popcat.gif", 
-  ":ranbowfrog:": "resources/emojis/ranbowfrog.gif", 
-  ":shredward:": "resources/emojis/shredward.png", 
-  ":smug1:": "resources/emojis/smug1.png", 
-  ":snek:": "resources/emojis/snek.png", 
-  ":snowWiggle:": "resources/emojis/snowWiggle.gif", 
-  ":sonervous:": "resources/emojis/sonervous.png", 
-  ":speen:": "resources/emojis/speen.gif", 
-  ":spotify:": "resources/emojis/spotify.png", 
-  ":stevespin:": "resources/emojis/stevespin.gif", 
-  ":themeaning:": "resources/emojis/themeaning.png", 
-  ":troll:": "resources/emojis/troll.png", 
-  ":trueshred:": "resources/emojis/trueshred.gif", 
-  ":upvote:": "resources/emojis/upvote.png",
-  ":upvote-reddit:": "resources/emojis/upvote-reddit.png", 
-  ":voredoor:": "resources/emojis/voredoor.png", 
-  ":votedown:": "resources/emojis/votedown.png", 
-  ":wyatt2:": "resources/emojis/wyatt2.png", 
-  ":wyatt3:": "resources/emojis/wyatt3.png", 
-  ":wyattPog:": "resources/emojis/wyattPog.png", 
-  ":YAMERO:": "resources/emojis/YAMERO.gif", 
-  ":YOOO:": "resources/emojis/YOOO.png", 
-  ":YOOOOOO:": "resources/emojis/yoooooo.png", 
-  ":youtube:": "resources/emojis/youtube.png",
+  "🎲": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f3b2.png",
+  "👋": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png",
+  "📌": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4cc.png",
+  "👍": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44d.png",
+  "😋": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f60b.png",
+  "🔜": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f51c.png",
+  "🤰": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f930.png",
+  "🕺": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f57a.png",
+  "🍑": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f351.png",
+  "🤺": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f93a.png",
+  "😳": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f633.png",
+  "⬛": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/2b1b.png",
+  "👎": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44e.png",
+  "👇": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f447.png",
+  "🔻": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f53b.png",
+  "⬇️": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/2b07.png",
+  "🔽": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f53d.png",
+  "😱": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f631.png",
+  "🥭": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f96d.png",
+  "😩": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f629.png",
+  "🍔": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f354.png",
+  "🤢": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f922.png",
+  "💯": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4af.png",
+  "❤️": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/2764.png",
+  "😫": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f62b.png",
+  "😤": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f624.png",
+  "🇩": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f1e9.png",
+  "🇦": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f1e6.png",
+  "🇧": "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f1e7.png",
 
-}
+  ":ahegao1:": "resources/emojis/ahegao1.png",
+  ":ahriHeart:": "resources/emojis/ahriheart.png",
+  ":BarryBustaNutBenson:": "resources/emojis/BarryBustaNutBenson.png",
+  ":bea:": "resources/emojis/bea.png",
+  ":bigdrake1:": "resources/emojis/bigdrake1.gif",
+  ":bigdrake2:": "resources/emojis/bigdrake2.gif",
+  ":bigdrake3:": "resources/emojis/bigdrake3.gif",
+  ":bigdrake4:": "resources/emojis/bigdrake4.gif",
+  ":bananna:": "resources/emojis/bananna.gif",
+  ":blushcat:": "resources/emojis/blushcat.png",
+  ":Celly:": "resources/emojis/Celly.gif",
+  ":chad:": "resources/emojis/chad.png",
+  ":cheeto:": "resources/emojis/cheeto.png",
+  ":cum:": "resources/emojis/cum.png",
+  ":dab:": "resources/emojis/dab.png",
+  ":dabThumbsDown:": "resources/emojis/dabThumbsDown.png",
+  ":davithumbsdown:": "resources/emojis/davithumbsdown.png",
+  ":defaultDance:": "resources/emojis/defaultDance.gif",
+  ":dogeKek:": "resources/emojis/dogeKek.png",
+  ":Doubt1:": "resources/emojis/Doubt1.png",
+  ":downdoot:": "resources/emojis/downvote.png",
+  ":downvote-reddit:": "resources/emojis/downvote-reddit.png",
+  ":downvote:": "resources/emojis/downvote.png",
+  ":Downvote:": "resources/emojis/downvote.png",
+  ":drake:": "resources/emojis/drake.gif",
+  ":elaineDance:": "resources/emojis/elaineDance.gif",
+  ":EraEra:": "resources/emojis/EraEra.gif",
+  ":goopie:": "resources/emojis/goopie.gif",
+  ":gunright:": "resources/emojis/gunright.png",
+  ":intensifeyes:": "resources/emojis/intensifeyes.png",
+  ":jam:": "resources/emojis/jam.gif",
+  ":joe:": "resources/emojis/joe.png",
+  ":kale:": "resources/emojis/kale.png",
+  ":kass:": "resources/emojis/kass.png",
+  ":kevingif:": "resources/emojis/kevingif.gif",
+  ":kill:": "resources/emojis/kill.png",
+  ":kirby:": "resources/emojis/kirby.gif",
+  ":KomodoHype:": "resources/emojis/KomodoHype.png",
+  ":kylecum:": "resources/emojis/kylecum.png",
+  ":lfg:": "resources/emojis/lfg.png",
+  ":littleman:": "resources/emojis/littleman.gif",
+  ":markwood:": "resources/emojis/markwood.png",
+  ":Nora:": "resources/emojis/Nora.png",
+  ":partyparrot:": "resources/emojis/partyparrot.gif",
+  ":pizza:": "resources/emojis/pizza.png",
+  ":PogBreathing:": "resources/emojis/PogBreathing.gif",
+  ":popcat:": "resources/emojis/popcat.gif",
+  ":ranbowfrog:": "resources/emojis/ranbowfrog.gif",
+  ":shredward:": "resources/emojis/shredward.png",
+  ":smug1:": "resources/emojis/smug1.png",
+  ":snek:": "resources/emojis/snek.png",
+  ":snowWiggle:": "resources/emojis/snowWiggle.gif",
+  ":sonervous:": "resources/emojis/sonervous.png",
+  ":speen:": "resources/emojis/speen.gif",
+  ":spotify:": "resources/emojis/spotify.png",
+  ":stevespin:": "resources/emojis/stevespin.gif",
+  ":themeaning:": "resources/emojis/themeaning.png",
+  ":troll:": "resources/emojis/troll.png",
+  ":trueshred:": "resources/emojis/trueshred.gif",
+  ":upvote:": "resources/emojis/upvote.png",
+  ":upvote-reddit:": "resources/emojis/upvote-reddit.png",
+  ":voredoor:": "resources/emojis/voredoor.png",
+  ":votedown:": "resources/emojis/votedown.png",
+  ":wyatt2:": "resources/emojis/wyatt2.png",
+  ":wyatt3:": "resources/emojis/wyatt3.png",
+  ":wyattPog:": "resources/emojis/wyattPog.png",
+  ":YAMERO:": "resources/emojis/YAMERO.gif",
+  ":YOOO:": "resources/emojis/YOOO.png",
+  ":YOOOOOO:": "resources/emojis/yoooooo.png",
+  ":youtube:": "resources/emojis/youtube.png",
+};
 
 const mostReactedMessages = {
   data() {
     return {
-      jacobStr: 'lfg (11),lfg (11),upvote (10),drake (11),upvote (9),drake (11),bigdrake1 (11),bigdrake2 (11),trueshred (10),bigdrake3 (11),bigdrake4 (11),😤 (9),YOOO (9),elaineDance (9),voredoor (8),troll (9),goopie (8),🇩 (2),🇦 (2),🇧 (2)',
-      russellStr:  'lfg (7),upvote (8),❤️ (7),intensifeyes (7),wyattPog (7),👍 (7),trueshred (7),drake (7),chad (7),dogeKek (8),BarryBustaNutBenson (7),YAMERO (7),😫 (8),😩 (7),💯 (7),YOOOOOO (7),blushcat (7),kirby (7),partyparrot (7),ranbowfrog (7)',
-      kianStr:  'upvote (7),😱 (7),🥭 (7),YAMERO (7),😩 (7),🍔 (7),ahegao1 (7),sonervous (7),cum (7),🤢 (7),💯 (6),kylecum (7),joe (7),dab (7),Nora (7),ahriHeart (7),partyparrot (7),PogBreathing (7),wyatt2 (7),lfg (7)',
-      sergeiStr:  'upvote (10),cheeto (9),⬛ (5),downvote (7),Downvote (7),👎 (6),downvote (7),downvote (7),Downvote (7),downvote (7),downvote (7),downvote (7),downvote (6),davithumbsdown (6),👇 (7),dabThumbsDown (6),votedown (6),🔻 (5),🔽 (5),⬇️ (6)',
-      ethanStr:  '😋 (7),🔜 (6),🤰 (6),🕺 (6),🍑 (7),🤺 (6),snek (6),kass (6),wyatt2 (6),smug1 (6),wyatt3 (6),bea (6),kale (6),😳 (6),ahegao1 (6),Doubt1 (6),pizza (5),sonervous (6),markwood (6),themeaning (6)',
-      wyattStr1:  'lfg (7),partyparrot (6),PogBreathing (7),trueshred (7),drake (6),ranbowfrog (6),littleman (6),jam (5),bananna (5),KomodoHype (5),popcat (6),EraEra (5),Celly (6),kevingif (5),stevespin (6),goopie (6),elaineDance (6),defaultDance (6),snowWiggle (6),speen (6)',
-      wyattStr2:  'votedown (17),downvote (15),downvote (15),downdoot (15),downvote (15),downvote (10),Downvote (10),downvote (10),downvote (10)',
+      jacobStr:
+        "lfg (11),lfg (11),upvote (10),drake (11),upvote (9),drake (11),bigdrake1 (11),bigdrake2 (11),trueshred (10),bigdrake3 (11),bigdrake4 (11),😤 (9),YOOO (9),elaineDance (9),voredoor (8),troll (9),goopie (8),🇩 (2),🇦 (2),🇧 (2)",
+      russellStr:
+        "lfg (7),upvote (8),❤️ (7),intensifeyes (7),wyattPog (7),👍 (7),trueshred (7),drake (7),chad (7),dogeKek (8),BarryBustaNutBenson (7),YAMERO (7),😫 (8),😩 (7),💯 (7),YOOOOOO (7),blushcat (7),kirby (7),partyparrot (7),ranbowfrog (7)",
+      kianStr:
+        "upvote (7),😱 (7),🥭 (7),YAMERO (7),😩 (7),🍔 (7),ahegao1 (7),sonervous (7),cum (7),🤢 (7),💯 (6),kylecum (7),joe (7),dab (7),Nora (7),ahriHeart (7),partyparrot (7),PogBreathing (7),wyatt2 (7),lfg (7)",
+      sergeiStr:
+        "upvote (10),cheeto (9),⬛ (5),downvote (7),Downvote (7),👎 (6),downvote (7),downvote (7),Downvote (7),downvote (7),downvote (7),downvote (7),downvote (6),davithumbsdown (6),👇 (7),dabThumbsDown (6),votedown (6),🔻 (5),🔽 (5),⬇️ (6)",
+      ethanStr:
+        "😋 (7),🔜 (6),🤰 (6),🕺 (6),🍑 (7),🤺 (6),snek (6),kass (6),wyatt2 (6),smug1 (6),wyatt3 (6),bea (6),kale (6),😳 (6),ahegao1 (6),Doubt1 (6),pizza (5),sonervous (6),markwood (6),themeaning (6)",
+      wyattStr1:
+        "lfg (7),partyparrot (6),PogBreathing (7),trueshred (7),drake (6),ranbowfrog (6),littleman (6),jam (5),bananna (5),KomodoHype (5),popcat (6),EraEra (5),Celly (6),kevingif (5),stevespin (6),goopie (6),elaineDance (6),defaultDance (6),snowWiggle (6),speen (6)",
+      wyattStr2:
+        "votedown (17),downvote (15),downvote (15),downdoot (15),downvote (15),downvote (10),Downvote (10),downvote (10),downvote (10)",
       jacobReacts: [],
       russellReacts: [],
       kianReacts: [],
@@ -289,7 +312,7 @@ const mostReactedMessages = {
       ethanReacts: [],
       wyattReacts1: [],
       wyattReacts2: [],
-    }
+    };
   },
   mounted() {
     this.jacobReacts = strToReacts(this.jacobStr);
@@ -299,29 +322,28 @@ const mostReactedMessages = {
     this.ethanReacts = strToReacts(this.ethanStr);
     this.wyattReacts1 = strToReacts(this.wyattStr1);
     this.wyattReacts2 = strToReacts(this.wyattStr2);
-    console.log(this.russellReacts);  
-    
-    setTimeout(s => enableTooltips(), 100);
-  },
-  methods: {
+    console.log(this.russellReacts);
 
-  }
-}
+    setTimeout((s) => enableTooltips(), 100);
+  },
+  methods: {},
+};
 
 function strToReacts(str) {
   pairs = str.split(",");
   reacts = [];
-  pairs.forEach(pair => {
+  pairs.forEach((pair) => {
     [emoji, count] = pair.split(" ");
-    if (emoji.length > 2) // on our data, this means it's custom
-      emoji = ":" + emoji + ":"
-    count = count.substring(1, count.length-1);
+    if (emoji.length > 2)
+      // on our data, this means it's custom
+      emoji = ":" + emoji + ":";
+    count = count.substring(1, count.length - 1);
     reacts.push([emoji, count, map[emoji]]);
   });
   return reacts;
 }
 
-Vue.createApp(mostReactedMessages).mount("#reactedMessagesApp")
+Vue.createApp(mostReactedMessages).mount("#reactedMessagesApp");
 
 const emojisLeaderboard = {
   data() {
@@ -342,8 +364,8 @@ const emojisLeaderboard = {
         ["3.", ":kill:", "218"],
         ["4.", ":gunright:", "172"],
         ["5.", ":lfg:", "167"],
-      ]
-    }
+      ],
+    };
   },
   methods: {
     toggleSpam() {
@@ -353,17 +375,20 @@ const emojisLeaderboard = {
 
       this.currentlySpam = !this.currentlySpam;
 
-      [this.totalActive, this.totalHidden] = [this.totalHidden, this.totalActive];
+      [this.totalActive, this.totalHidden] = [
+        this.totalHidden,
+        this.totalActive,
+      ];
       setTimeout(() => {
         enableTooltips();
-      }, 100)
+      }, 100);
     },
     map(key) {
-      return map[key]
-    }
-  }
+      return map[key];
+    },
+  },
 };
-Vue.createApp(emojisLeaderboard).mount("#emojisApp")
+Vue.createApp(emojisLeaderboard).mount("#emojisApp");
 
 const reactsLeaderboard = {
   data() {
@@ -384,8 +409,8 @@ const reactsLeaderboard = {
         ["3.", ":lfg:", "526"],
         ["4.", "📌", "250"],
         ["5.", ":shredward:", "247"],
-      ]
-    }
+      ],
+    };
   },
   methods: {
     toggleSpam() {
@@ -395,14 +420,17 @@ const reactsLeaderboard = {
 
       this.currentlySpam = !this.currentlySpam;
 
-      [this.totalActive, this.totalHidden] = [this.totalHidden, this.totalActive];
+      [this.totalActive, this.totalHidden] = [
+        this.totalHidden,
+        this.totalActive,
+      ];
     },
     map(key) {
-      return map[key]
-    }
-  }
+      return map[key];
+    },
+  },
 };
-Vue.createApp(reactsLeaderboard).mount("#reactionsApp")
+Vue.createApp(reactsLeaderboard).mount("#reactionsApp");
 
 const combinedLeaderboard = {
   data() {
@@ -423,8 +451,8 @@ const combinedLeaderboard = {
         ["3.", ":lfg:", "693"],
         ["4.", ":YOOOOOO:", "477"],
         ["5.", ":trueshred:", "382"],
-      ]
-    }
+      ],
+    };
   },
   methods: {
     toggleSpam() {
@@ -434,28 +462,31 @@ const combinedLeaderboard = {
 
       this.currentlySpam = !this.currentlySpam;
 
-      [this.totalActive, this.totalHidden] = [this.totalHidden, this.totalActive];
+      [this.totalActive, this.totalHidden] = [
+        this.totalHidden,
+        this.totalActive,
+      ];
       setTimeout(() => {
         enableTooltips();
-      }, 100)
+      }, 100);
     },
     map(key) {
-      return map[key]
-    }
-  }
+      return map[key];
+    },
+  },
 };
-Vue.createApp(combinedLeaderboard).mount("#combinedApp")
-
+Vue.createApp(combinedLeaderboard).mount("#combinedApp");
 
 var tooltipList;
 
 function enableTooltips() {
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
 
-  tooltipList = tooltipTriggerList.map(
-    function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-};
+  tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+}
 
 enableTooltips();
